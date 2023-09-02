@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exfiltration Scenarios and Setup &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The REST API" href="../../The-REST-API.html" />
+    <link rel="prev" title="Sandcat Plugin Details" href="../sandcat/Sandcat-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exfiltration Scenarios and Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#groundwork-destinations">Groundwork - Destinations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dropbox">Dropbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-repositories">GitHub Repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-gist">GitHub Gist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ftp">FTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aws">AWS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-fact-source">The Fact Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adversaries">Adversaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#an-example">An Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-work-github">Pre-Work: GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operation-planning">Operation Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-content">Finding Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limiting-our-results">Limiting our results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#staging">Staging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-piece-a-password">Final Piece: A Password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operation">Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Exfiltration Scenarios and Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/plugins/stockpile/Exfiltration-How-Tos.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exfiltration-scenarios-and-setup">
+<h1>Exfiltration Scenarios and Setup<a class="headerlink" href="#exfiltration-scenarios-and-setup" title="Permalink to this heading">¶</a></h1>
+<p>This document will discuss how to utilize various exfiltration abilities within CALDERA, specifically focused on the
+following abilities:</p>
+<ul class="simple">
+<li><p>Advanced File Search and Stager</p></li>
+<li><p>Find Git Repositories &amp; Compress Git Repository (local host)</p></li>
+<li><p>Compress Staged Directory (Password Protected) – 7z and tar+gpg</p></li>
+<li><p>Compress Staged Directory (Password Protected) and Break Into Smaller Files</p></li>
+<li><p>Exfil Compressed Archive to FTP</p></li>
+<li><p>Exfil Compressed Archive to Dropbox</p></li>
+<li><p>Exfil Compressed Archive to GitHub Repositories | Gists</p>
+<ul>
+<li><p>Additionally: Exfil Directory Files to Github</p></li>
+</ul>
+</li>
+<li><p>Exfil Compressed Archive to S3 via AWS CLI</p></li>
+<li><p>Transfer Compressed Archive to Separate S3 Bucket via AWS CLI</p></li>
+<li><p>Scheduled Exfiltration (uses the standard HTTP C2 channel)</p></li>
+</ul>
+<p>Note: the exfiltration abilities (to GitHub, Dropbox, FTP, and AWS) require a compressed archive with a corresponding
+<code class="docutils literal notranslate"><span class="pre">host.dir.compress</span></code> fact unless otherwise noted.</p>
+<p>If you want to skip straight to an example, <a class="reference internal" href="#operation"><span class="std std-doc">click here</span></a></p>
+<div class="section" id="groundwork-destinations">
+<h2>Groundwork - Destinations<a class="headerlink" href="#groundwork-destinations" title="Permalink to this heading">¶</a></h2>
+<p>To fully capitalize on the exfiltration abilities, you will need to do a little set up on the far end to
+receive the exfiltrated data.</p>
+<div class="section" id="dropbox">
+<h3>Dropbox<a class="headerlink" href="#dropbox" title="Permalink to this heading">¶</a></h3>
+<p>If you do not have a Dropbox account already, you can obtain a free account (with storage size limitations) by navigating
+to the <a class="reference external" href="https://dropbox.com/basic">signup page for a basic account</a> and fill in the required information.</p>
+<p>Once you have an activated account, you will navigate to the App Center and select ‘Manage’. In the left-hand toolbar and
+near the bottom, select ‘Build an App’. The name will need to be unique; fill out the requested information. Generate
+an access token and set it for the desired expiration time (default as of this document is 4 hours). You may need to
+update your access token periodically prior to operations.</p>
+<p>On the permissions tab, grant the application read and write access for files and folders, then submit the application.</p>
+<p>Uploaded files should appear under Apps/AppName/FolderName if you elected to segregate app folders.</p>
+</div>
+<div class="section" id="github-repositories">
+<h3>GitHub Repositories<a class="headerlink" href="#github-repositories" title="Permalink to this heading">¶</a></h3>
+<p>Chances are you already have a <a class="reference external" href="https://github.com">GitHub account</a> if you’re using this platform.
+Create a new repository per the standard instructions. If you do not already have a private access token, you can create
+it under Settings &gt; Developer Settings &gt; Personal Access Tokens. Select if you want the token to also apply to Gists
+while you’re here.</p>
+<p>You can commit directly to main if desired, or you can use a branch for your operations (just be sure to update the fact
+source with the desired branch, discussed below). Keep track of your GitHub username, access token, and branch name for
+the fact source.</p>
+</div>
+<div class="section" id="github-gist">
+<h3>GitHub Gist<a class="headerlink" href="#github-gist" title="Permalink to this heading">¶</a></h3>
+<p>This is a much simpler case - simply have a GitHub account and obtain an access token as described above (Settings &gt;
+Developer Settings &gt; Personal Access Tokens). Ensure the access token also applies to Gists if you already have one.</p>
+<p>Keep track of the access token and your username for the fact source.</p>
+</div>
+<div class="section" id="ftp">
+<h3>FTP<a class="headerlink" href="#ftp" title="Permalink to this heading">¶</a></h3>
+<p>There are a number of ways to start an FTP server depending on your OS; start the service per your operating system’s
+requirements. As a note, FTP services may not like writable chroots if configured. To avoid this, either allow writeable
+chroots or designate a specific folder for CALDERA uploads and supply that in the fact source.</p>
+<p>For example, with vsftpd you can either:</p>
+<ul class="simple">
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">/etc/vsftpd.conf</span></code> to include <code class="docutils literal notranslate"><span class="pre">allow_writable_chroot=YES</span></code></p></li>
+<li><p>Supply a writable folder in addition to the FTP server address in the CALDERA fact source. E.g. <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">192.168.1.2/upload</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="aws">
+<h3>AWS<a class="headerlink" href="#aws" title="Permalink to this heading">¶</a></h3>
+<p>The exfiltration via AWS CLI abilities assume the AWS CLI is installed on the host machine. For use with an IAM user,
+the proper credentials (access key, secret access key, and also session token if using MFA) must be provided for the
+<code class="docutils literal notranslate"><span class="pre">[default]</span></code> profile in <code class="docutils literal notranslate"><span class="pre">~/.aws/credentials</span></code>. The <code class="docutils literal notranslate"><span class="pre">[default]</span></code> profile may require some additional setup with the correct
+region and output within <code class="docutils literal notranslate"><span class="pre">~/.aws/config</span></code>.</p>
+<p>For exfiltration to S3 bucket, the permissions must be in place to allow the <code class="docutils literal notranslate"><span class="pre">[default]</span></code> profile read/write accesses
+to the target S3 bucket (examples: <code class="docutils literal notranslate"><span class="pre">s3:ListBucket</span></code>, <code class="docutils literal notranslate"><span class="pre">s3:PutObject</span></code>).</p>
+<p>For transferring data to a separate S3 bucket, proper policies must be configured in the source AWS account to allow
+listing (<code class="docutils literal notranslate"><span class="pre">s3:ListBucket</span></code>) and getting (<code class="docutils literal notranslate"><span class="pre">s3:PutObject</span></code>) objects from the source S3 bucket in addition to listing,
+putting objects, and setting the ACL when putting (<code class="docutils literal notranslate"><span class="pre">s3:PutObjectAcl</span></code>) an object to the destination S3 bucket. Policies
+must also be configured in the destination AWS account to allow the source AWS account to put objects and set the
+object’s ACL in the destination S3 bucket. This will ensure that objects transferred to the destination account will
+automatically become owned by the destination bucket owner, who will then have full control of the transferred objects.</p>
+</div>
+</div>
+<div class="section" id="the-fact-source">
+<h2>The Fact Source<a class="headerlink" href="#the-fact-source" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA uses <strong>facts</strong> in its operations to collect and act upon information of import. For more general information,
+see the <a class="reference external" href="https://caldera.readthedocs.io/en/latest/Basic-Usage.html#facts">docs</a>. To aid in exfiltration testing, Stockpile
+contains a fact source for basic testing with the various facts consumed by the abilities listed above (data/sources/2ccb822c-088a-4664-8976-91be8879bc1d).
+Note that this <strong>does not</strong> include all facts used by other exfiltration abilities in CALDERA, such as those offered by
+the Atomic plugin.</p>
+<p>Most of the fact source is commented-out by default excepting the search and stage ability. To plan an operation,
+first consider the various file searching and staging options available. The source file contains information on the
+options available to you as the user along with the required formatting and default values as examples.</p>
+<p>Review the remaining facts and un-comment (remove the <code class="docutils literal notranslate"><span class="pre">#</span></code> at the start of the line) the applicable facts – both the trait
+and value lines. For sections like GitHub, notes have been left regarding which facts are required for either exfil to
+repositories or Gists. For example, only the first two facts below need to be un-commented and updated if using Gists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># GitHub Exfiltration</span>
+  <span class="c1"># -------------------------------------</span>
+  <span class="c1">#- trait: github.user.name        &lt;--- Uncomment</span>
+  <span class="c1">#  value: CHANGEME-BOTH           &lt;--- Uncomment &amp; Update</span>
+  <span class="c1">#- trait: github.access.token     &lt;--- Uncomment</span>
+  <span class="c1">#  value: CHANGEME-BOTH           &lt;--- Uncomment &amp; Update</span>
+  <span class="c1">#- trait: github.repository.name</span>
+  <span class="c1">#  value: CHANGEME-RepoOnly</span>
+  <span class="c1">#- trait: github.repository.branch</span>
+  <span class="c1">#  value: CHANGEME-RepoOnly</span>
+</pre></div>
+</div>
+<p>If you’re planning a longer operation requiring other facts, feel free to add them to this file using the standard syntax.</p>
+</div>
+<div class="section" id="adversaries">
+<h2>Adversaries<a class="headerlink" href="#adversaries" title="Permalink to this heading">¶</a></h2>
+<p>Before diving into an example, one last thing you should be aware of: pre-built adversaries. You may already be familiar
+with adversaries like Hunter and Thief – to give you a baseline, we’ve included four adversaries covering exfiltration
+operations to Dropbox, FTP, and GitHub (1x Repository, 1x Gist). If you want to try them out quickly, simply create
+the corresponding exfiltration destination account/service and run an operation as normal using
+Advanced Thief via [ Dropbox | FTP | GitHub Repo | GitHub Gist ] and the provided fact source with appropriate entries.</p>
+<p>These adversaries work nearly identically, first finding and staging files using Advanced File Search and Stager and
+compressing the staged directory via utility with a password. Once converted to an archive, the last ability is exfil
+to the selected destination.</p>
+</div>
+</div>
+<div class="section" id="an-example">
+<h1>An Example<a class="headerlink" href="#an-example" title="Permalink to this heading">¶</a></h1>
+<p>Let’s walk through an example of exfiltrating a compressed archive to a GitHub repository.</p>
+<div class="section" id="pre-work-github">
+<h2>Pre-Work: GitHub<a class="headerlink" href="#pre-work-github" title="Permalink to this heading">¶</a></h2>
+<p>First, ensure you have an account and that you have generated an access token as described above. In either the UI
+(github.com) or via the command line interface, create a repository to house the exfiltrated data. If desired,
+additionally create a branch. For this demo, we have selected ‘caldera-exfil-test’ as the repository and ‘demo-op’ as
+the branch. In the source file, edit the section marked for GitHub as follows. In the event you choose to use the main
+branch, supply that instead for the branch fact.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">:</span> <span class="mi">2</span><span class="n">ccb822c</span><span class="o">-</span><span class="mi">088</span><span class="n">a</span><span class="o">-</span><span class="mi">4664</span><span class="o">-</span><span class="mi">8976</span><span class="o">-</span><span class="mi">91</span><span class="n">be8879bc1d</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">Exfil</span> <span class="n">Operation</span>
+<span class="o">...</span>
+
+  <span class="c1"># GitHub Exfiltration</span>
+  <span class="c1"># -------------------------------------</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">github</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span>           <span class="c1"># &lt;--- Uncommented</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">calderauser</span>                <span class="c1"># &lt;--- Uncommented &amp; Updated</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">github</span><span class="o">.</span><span class="n">access</span><span class="o">.</span><span class="n">token</span>        <span class="c1"># &lt;--- Uncommented</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">ghp_dG90YWxseW1V1cG</span><span class="o">...</span>     <span class="c1"># &lt;--- Uncommented &amp; Updated</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">github</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">name</span>     <span class="c1"># &lt;--- Uncommented</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">caldera</span><span class="o">-</span><span class="n">exfil</span><span class="o">-</span><span class="n">test</span>         <span class="c1"># &lt;--- Uncommented &amp; Updated</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">github</span><span class="o">.</span><span class="n">repository</span><span class="o">.</span><span class="n">branch</span>   <span class="c1"># &lt;--- Uncommented</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">demo</span><span class="o">-</span><span class="n">op</span>                    <span class="c1"># &lt;--- Uncommented &amp; Updated</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operation-planning">
+<h2>Operation Planning<a class="headerlink" href="#operation-planning" title="Permalink to this heading">¶</a></h2>
+<p>With GitHub ready to go, it’s time to consider other operational facts. For this example, we will focus on a quick
+smash-and-grab without any other actions. Returning to the source file, let’s look at the topic section for file search
+and stage. While there are instructions in the file, we’ll cover a little more detail here.</p>
+<p>To summarize options, you can find files by: <strong>extension</strong> and <strong>content</strong> and cull the results by providing a variety
+of limiters: <strong>modified timeframe</strong> (default: last 30 days) and/or <strong>accessed timeframe</strong> (default: last 30 days), only
+searching certain directories (e.g. <code class="docutils literal notranslate"><span class="pre">c:\users</span></code> or <code class="docutils literal notranslate"><span class="pre">/home</span></code>) or explicitly excluding directories (e.g. any “Music” folders).
+Additionally, for Windows targets you can exclude certain extensions. This is largely to exclude executables from capture
+by the content search, which the Linux command can do inherently. The included source file has default values for many
+of these options but can easily be adjusted.</p>
+</div>
+<div class="section" id="finding-content">
+<h2>Finding Content<a class="headerlink" href="#finding-content" title="Permalink to this heading">¶</a></h2>
+<p>Looking first at how to identify content we want, we’ll discuss the extensions and content search. For extensions, you
+can control Windows and Linux separately to account for different important file types between the operating systems. For the
+extensions, you’ll note instructions in the file regarding format. These extensions should be provided in a
+comma-separated list with no periods or asterisks as they are added in the payload. If you’re not picky, you can also
+supply <strong>all</strong> or <strong>none</strong>.</p>
+<p>The content search looks inside of files for the given string(s). This is shared between operating systems; simply include
+your terms of import (spaces are ok!) in a comma-separated list. By default, Linux will ignore any binary files when
+performing this search; Windows targets should use the excluded extensions list.</p>
+<p>For this example, we’ll leave the default values and be sure to exclude common binary files we might find from Windows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+  <span class="c1"># ---- Comma-separated values, do not include &#39;.&#39; or &#39;*&#39;, these are added in the payload if needed. Example: doc,docx</span>
+  <span class="c1"># ---- May also use &#39;all&#39; for INCLUDED extensions and &#39;none&#39; for EXCLUDED extensions</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">linux</span><span class="o">.</span><span class="n">included</span><span class="o">.</span><span class="n">extensions</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">txt</span><span class="p">,</span><span class="n">cfg</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">yml</span><span class="p">,</span><span class="n">doc</span><span class="p">,</span><span class="n">docx</span><span class="p">,</span><span class="n">xls</span><span class="p">,</span><span class="n">xlsx</span><span class="p">,</span><span class="n">pdf</span><span class="p">,</span><span class="n">sh</span><span class="p">,</span><span class="n">jpg</span><span class="p">,</span><span class="n">p7b</span><span class="p">,</span><span class="n">p7s</span><span class="p">,</span><span class="n">p7r</span><span class="p">,</span><span class="n">p12</span><span class="p">,</span><span class="n">pfx</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">windows</span><span class="o">.</span><span class="n">included</span><span class="o">.</span><span class="n">extensions</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">doc</span><span class="p">,</span><span class="n">xps</span><span class="p">,</span><span class="n">xls</span><span class="p">,</span><span class="n">ppt</span><span class="p">,</span><span class="n">pps</span><span class="p">,</span><span class="n">wps</span><span class="p">,</span><span class="n">wpd</span><span class="p">,</span><span class="n">ods</span><span class="p">,</span><span class="n">odt</span><span class="p">,</span><span class="n">lwp</span><span class="p">,</span><span class="n">jtd</span><span class="p">,</span><span class="n">pdf</span><span class="p">,</span><span class="nb">zip</span><span class="p">,</span><span class="n">rar</span><span class="p">,</span><span class="n">docx</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">xlsx</span><span class="p">,</span><span class="n">pptx</span><span class="p">,</span><span class="n">ppsx</span><span class="p">,</span><span class="n">pst</span><span class="p">,</span><span class="n">ost</span><span class="p">,</span><span class="n">jpg</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="n">lnk</span><span class="p">,</span><span class="n">p7b</span><span class="p">,</span><span class="n">p7s</span><span class="p">,</span><span class="n">p7r</span><span class="p">,</span><span class="n">p12</span><span class="p">,</span><span class="n">pfx</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">windows</span><span class="o">.</span><span class="n">excluded</span><span class="o">.</span><span class="n">extensions</span> <span class="c1"># Mainly used to avoid binary files during content search, not needed for Linux</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">exe</span><span class="p">,</span><span class="n">jar</span><span class="p">,</span><span class="n">dll</span><span class="p">,</span><span class="n">msi</span><span class="p">,</span><span class="n">bak</span><span class="p">,</span><span class="n">vmx</span><span class="p">,</span><span class="n">vmdx</span><span class="p">,</span><span class="n">vmdk</span><span class="p">,</span><span class="n">lck</span>
+    
+  <span class="c1"># ---- Comma-separated values to look for. Spaces are allowed in terms. May also use &#39;none&#39;</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">file</span><span class="o">.</span><span class="n">sensitive</span><span class="o">.</span><span class="n">content</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span><span class="k">pass</span><span class="p">,</span><span class="n">username</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">uname</span><span class="p">,</span><span class="n">psw</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limiting-our-results">
+<h2>Limiting our results<a class="headerlink" href="#limiting-our-results" title="Permalink to this heading">¶</a></h2>
+<p>With the content identified, we may want to focus our efforts on areas that might contain sensitive documents to save
+time in the operation and post-processing. Adversaries have been observed using similar tactics, limiting results
+to certain directories or documents seeing use in a given time period. As with the extensions and content, the provided
+source file has default values set, but they can easily be changed.</p>
+<p>First, you can choose an information cutoff date. As with the extensions, you can specify ‘none’ if you do not wish to
+limit the results. You can also pick one or the other (modified or accessed) if you only care about one metric. Simply
+supply a negative integer value, which represents the number of past days from today to include. We’ll leave it with
+the default here.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># ---- Integer; cutoff for access/modification (-30 = accessed/modified in last 30 days)</span>
+  <span class="c1"># ---- May also use &#39;none&#39; for either or both options. Note on usage: if both options are present, the script</span>
+  <span class="c1"># ---- uses a boolean &quot;or&quot; - if a file was accessed in the desired timeframe but not modified in the time frame,</span>
+  <span class="c1"># ---- it will still be collected. If modification is more important, set accessed time to &quot;none&quot;.</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">file</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">accessed</span>
+    <span class="n">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">30</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">file</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">modified</span>
+    <span class="n">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">30</span>
+</pre></div>
+</div>
+<p>Next, let’s look at the directories. You can again supply comma-separated lists of directories or a single directory. These
+items will be used as the root nodes for a recursive search within. The default is <code class="docutils literal notranslate"><span class="pre">c:\users</span></code> and <code class="docutils literal notranslate"><span class="pre">/home</span></code>, but we have
+changed things up here to limit it to a folder containing test files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># ---- Comma-separated, full paths to base folders (will recurse inside)</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">windows</span><span class="o">.</span><span class="n">included</span><span class="o">.</span><span class="n">directories</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">c</span><span class="p">:</span>\<span class="n">caldera</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">files</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">linux</span><span class="o">.</span><span class="n">included</span><span class="o">.</span><span class="n">directories</span>
+    <span class="n">value</span><span class="p">:</span> <span class="o">/</span><span class="n">caldera</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">files</span>
+</pre></div>
+</div>
+<p>If searching a directory like <code class="docutils literal notranslate"><span class="pre">c:\users</span></code> or <code class="docutils literal notranslate"><span class="pre">/home</span></code>, you will likely encounter folders you (or an attacker) do not much
+care for. To address this, you can supply a comma-separated list of <strong>phrases</strong> to exclude from directory paths. These
+<strong>do not</strong> need to be full paths and <strong>can</strong> include spaces. For the example below, we have excluded things like “Music”
+and “saved games”, folders found by default in user directories. Because these folders aren’t likely in the test folder
+we’re using, these shouldn’t be issues. Be sure to account for any folders that may contain information that would
+violate your organization’s policy if it were to be published to a site outside of organizational control.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># ----  Comma-separated, does not need to be full paths. May also use &#39;none&#39;</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">windows</span><span class="o">.</span><span class="n">excluded</span><span class="o">.</span><span class="n">directories</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">links</span><span class="p">,</span><span class="n">music</span><span class="p">,</span><span class="n">saved</span> <span class="n">games</span><span class="p">,</span><span class="n">contacts</span><span class="p">,</span><span class="n">videos</span><span class="p">,</span><span class="n">source</span><span class="p">,</span><span class="n">onedrive</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">linux</span><span class="o">.</span><span class="n">excluded</span><span class="o">.</span><span class="n">directories</span>
+    <span class="n">value</span><span class="p">:</span> <span class="o">.</span><span class="n">local</span><span class="p">,</span><span class="o">.</span><span class="n">cache</span><span class="p">,</span><span class="n">lib</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="staging">
+<h2>Staging<a class="headerlink" href="#staging" title="Permalink to this heading">¶</a></h2>
+<p>Next up, we’ll discuss staging. Because this file does search <em>and</em> stage, users can specify where to move the files.
+By default, Windows targets will stage to the user’s recycle bin and Linux targets will stage to /tmp as both of these
+locations should be writable by default. In each case, the ability will create a <em>hidden</em> folder called “s” at these
+locations.</p>
+<p>If changing the default location, be sure to include a <strong>full path</strong>. Because the Recycle Bin requires some processing
+to get the user’s SID, you can instead use the string “Recycle Bin” which will be parsed into the correct location. As
+noted in the instructions, if the staging directory is changed from the default, the ability does contain a fall-back
+in the event the selected directory is not writable. These values are <code class="docutils literal notranslate"><span class="pre">c:\users\public</span></code> and <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Include the full path or use &quot;Recycle Bin&quot;. Fall-back in the payload file is &quot;c:\users\public&quot;.</span>
+  <span class="c1"># Recycle Bin will attempt to create a staging folder at c:\$Recycle.Bin\{SID} which should be writable by default</span>
+  <span class="c1"># Takes given location and creates a hidden folder called &#39;s&#39; at the location.</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">windows</span><span class="o">.</span><span class="n">staging</span><span class="o">.</span><span class="n">location</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">Recycle</span> <span class="n">Bin</span>
+
+  <span class="c1"># ---- Include the full path, ensure it&#39;s writable for the agent. Fallback is /tmp. Creates a hidden folder called .s</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">linux</span><span class="o">.</span><span class="n">staging</span><span class="o">.</span><span class="n">location</span>
+    <span class="n">value</span><span class="p">:</span> <span class="o">/</span><span class="n">tmp</span>
+</pre></div>
+</div>
+<p>To support safe testing, the ability additionally has a <strong>safe mode</strong> option. It is <strong>disabled by default</strong> and will
+find all files matching the parameters set before. If this fact is changed to ‘true’, you can supply an identifying value
+which indicates the file is for testing. This identifying value <strong>must be at the end</strong> of the file. The
+default value is “_pseudo”. If Safe Mode is enabled, CALDERA <strong>will not</strong> stage any files that do not end in “_pseudo”.</p>
+<p>To provide a few examples, if safe mode is on with the value “_pseudo”:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interesting_file.docx</span></code> – matches the requested extension – <strong>will not be staged</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interesting_content.txt</span></code> – matches the requested content – <strong>will not be staged</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interesting_pseudo_data.doc</span></code> – matches the requested content – <strong>will not be staged</strong> because “_pseudo” is in the wrong place</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uninteresting_file_pseudo.random</span></code> – doesn’t match the requested extension – <strong>will not be staged</strong> despite the “_pseudo”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interesting_file_pseudo.docx</span></code> – matches the requested extension – <strong>will be staged</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interesting_content_pseudo.txt</span></code> – that matches the requested content – <strong>will be staged</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># ---- Safe Mode - Only stages files with the appropriate file ending if enabled (e.g. report_pseudo.docx)</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">safe</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">enabled</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">false</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">pseudo</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">identifier</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">_pseudo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="final-piece-a-password">
+<h2>Final Piece: A Password<a class="headerlink" href="#final-piece-a-password" title="Permalink to this heading">¶</a></h2>
+<p>For this demonstration, we will be using the password-protected archive ability added in this update. The source contains
+a default value of C4ld3ra but can be changed to anything if more security is required (e.g., real files used in testing).
+As noted in the source file, certain special characters may be escaped when inserted into the command. This may result
+in a different password than what you entered - view the operation logs to see exactly what was used. You should still
+be able to decrypt the archive, but will need to include any escape characters added during the operation. For example,
+<code class="docutils literal notranslate"><span class="pre">Pa$$word</span></code> may have become <code class="docutils literal notranslate"><span class="pre">Pa\$\$word</span></code> or <code class="docutils literal notranslate"><span class="pre">Pa`$`$word</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Encrypted Compression</span>
+  <span class="c1"># Note: For passwords with special characters like # and $, you may need to include escapes (\ or `)</span>
+  <span class="c1"># when re-entering the password to decrypt the archive. Examine the operation output to see the exact password used.</span>
+  <span class="c1"># If using special characters, put the password in &#39;single quotes&#39; here to prevent parser errors.</span>
+  <span class="c1"># -------------------------------------</span>
+  <span class="o">-</span> <span class="n">trait</span><span class="p">:</span> <span class="n">host</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">password</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">C4ld3ra</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operation">
+<h2>Operation<a class="headerlink" href="#operation" title="Permalink to this heading">¶</a></h2>
+<p>Whew. Let’s recap a few things. So far we have:</p>
+<ol class="arabic simple">
+<li><p>Set up a GitHub repository and branch to receive the exfiltrated files, using a personal access token</p></li>
+<li><p>Updated the selected source file with the pertinent information about the GitHub account and ensured the lines are uncommented</p></li>
+<li><p>Adjusted and reviewed the source file for the files we want to find and exclude, provided a staging location, and provided a password</p></li>
+</ol>
+<p>With all of that in place, fire up CALDERA as normal. For this demonstration, we’ll use a pre-built adversary, but you
+can easily add other abilities (even multi-exfil paths) to your own adversary or operation.</p>
+<p>Navigate to the Operations tab and hit “Create an Operation”. Fill in the name, select “Advanced Thief via GitHub Repo”
+as the adversary, and finally select the source file (“Exfil Operation” if using the supplied file) containing the facts
+we set up earlier. Adjust any settings under Advanced if desired, otherwise start the operation. The agent should
+collect the requested files in the staging directory, compress them, and POST the files to the desired repository/branch.
+The filename will be a timestamp (YYYYMMDDHHmmss), exfil, the agent’s paw, and the original file name.</p>
+<p>In our demonstration, refreshing the repository shows the following: 20211112094022-exfil-gwsnys-s.tar.gz.gpg. This
+file could then be downloaded an decrypted with the default password.</p>
+<p>Operation cleanup should remove the compressed archive and the staging directory (+ contents). This cleanup does not occur until the operation is terminated, so you could add another exfiltration (e.g. to Dropbox) in the interim.</p>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h1>Wrap-up<a class="headerlink" href="#wrap-up" title="Permalink to this heading">¶</a></h1>
+<p>That about does it! If you have any questions, please reach out to the team on Slack.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../The-REST-API.html" class="btn btn-neutral float-right" title="The REST API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sandcat/Sandcat-Details.html" class="btn btn-neutral float-left" title="Sandcat Plugin Details" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

