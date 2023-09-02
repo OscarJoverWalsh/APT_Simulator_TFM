@@ -1,0 +1,16 @@
+id: 2833788c-0047-4532-8c57-eaface229596
+name: prueba4
+description: Description of the APT
+atomic_ordering:
+- 02de522f-7e0a-4544-8afc-0c195f400f5f
+- 2f90d4de-2612-4468-9251-b220e3727452
+- e7bf5dc7-62e4-48b2-acf8-abaf8734c19c
+- d7456d8122cfc76421fc4806934fc448
+- ba3f3acd2d5a1429dfc2e4612b1a8953
+- 90c2efaa-8205-480d-8bb6-61d90dbaf81b
+- 6469befa-748a-4b9c-a96d-f191fde47d89
+- 4e97e699-93d7-4040-b5a3-2e906a58199e
+- 300157e5-f4ad-4569-b533-9d1fa0e74d74
+- ea713bc4-63f0-491c-9a6f-0b01d560b87e
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc
+adversary_id: 2833788c-0047-4532-8c57-eaface229596

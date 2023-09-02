@@ -1,0 +1,16 @@
+id: b1ab1597-dab2-4217-96db-e4698efbc892
+name: prueba2
+description: Description of the APT
+atomic_ordering:
+- 6469befa-748a-4b9c-a96d-f191fde47d89
+- 7da5d03a766f4d6b2dbaf8a8a17d53ad
+- 30a8cf10-73dc-497c-8261-a64cc9e91505
+- 0582dc26-e0cf-4645-88cf-f37a02279976
+- a0676fe1-cd52-482e-8dde-349b73f9aa69
+- 90c2efaa-8205-480d-8bb6-61d90dbaf81b
+- 6469befa-748a-4b9c-a96d-f191fde47d89
+- 4e97e699-93d7-4040-b5a3-2e906a58199e
+- 300157e5-f4ad-4569-b533-9d1fa0e74d74
+- ea713bc4-63f0-491c-9a6f-0b01d560b87e
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc
+adversary_id: b1ab1597-dab2-4217-96db-e4698efbc892
