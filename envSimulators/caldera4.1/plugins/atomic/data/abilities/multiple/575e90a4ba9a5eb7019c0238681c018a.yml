@@ -1,0 +1,18 @@
+- description: 'An adversary may try to re-purpose a system account to appear legitimate.
+    In this test change the login shell of the nobody account, change its password
+    to nobody, su to nobody, exit, then reset nobody''s shell to /usr/sbin/nologin.
+
+    '
+  id: 575e90a4ba9a5eb7019c0238681c018a
+  name: Login as nobody (Linux)
+  platforms:
+    linux:
+      sh:
+        cleanup: 'chsh --shell /usr/sbin/nologin nobody; cat /etc/passwd |grep nobody '
+        command: cat /etc/passwd |grep nobody ; chsh --shell /bin/bash nobody; usermod
+          --password $(openssl passwd -1 nobody) nobody; su nobody; whoami; exit
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1078.003
+    name: 'Valid Accounts: Local Accounts'
