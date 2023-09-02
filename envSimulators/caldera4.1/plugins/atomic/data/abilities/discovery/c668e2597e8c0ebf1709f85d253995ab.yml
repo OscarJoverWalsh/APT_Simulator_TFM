@@ -1,0 +1,24 @@
+- description: 'Get a listing of network connections.
+
+
+    Upon successful execution, sh will execute `netstat` and `who -a`. Results will
+    output via stdout.
+
+    '
+  id: c668e2597e8c0ebf1709f85d253995ab
+  name: System Network Connections Discovery Linux & MacOS
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: netstat; who -a
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: netstat; who -a
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1049
+    name: System Network Connections Discovery

@@ -1,0 +1,17 @@
+- description: Attackers may try to obtain a list of services that are operating on
+    remote hosts and local network infrastructure devices, in order to identify potential
+    vulnerabilities that can be exploited through remote software attacks. They typically
+    use tools to conduct port and vulnerability scans in order to obtain this information.
+  id: 6920475188a41452389e254b61f745b4
+  name: Permission Groups Discovery for Containers- Local Groups
+  platforms:
+    unknown:
+      sh:
+        cleanup: docker stop t1069_container; docker rmi -f t1069
+        command: docker build -t t1069 $PathtoAtomicsFolder/T1069.001/src/; docker
+          run --name t1069_container  -d -t t1069; docker exec t1069_container ./test.sh
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1069.001
+    name: 'Permission Groups Discovery: Local Groups'

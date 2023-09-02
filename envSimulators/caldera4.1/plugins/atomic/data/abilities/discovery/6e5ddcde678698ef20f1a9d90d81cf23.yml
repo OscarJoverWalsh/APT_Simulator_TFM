@@ -1,0 +1,21 @@
+- description: 'This module runs the Windows executable of SharpHound in order to
+    remotely list members of the local Administrators group (SAMR)
+
+    '
+  id: 6e5ddcde678698ef20f1a9d90d81cf23
+  name: SharpHound3 - LocalAdmin
+  platforms:
+    windows:
+      psh:
+        cleanup: Remove-Item -Recurse $env:TEMP\SharpHound\ -ErrorAction Ignore
+        command: New-Item -Path "$env:TEMP\SharpHound\" -ItemType Directory > $null;
+          & "$env:TEMP\SharpHound.exe" -d "$env:UserDnsDomain" --CollectionMethod
+          LocalAdmin --NoSaveCache --OutputDirectory "$env:TEMP\SharpHound\"
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1069.001
+    name: 'Permission Groups Discovery: Local Groups'

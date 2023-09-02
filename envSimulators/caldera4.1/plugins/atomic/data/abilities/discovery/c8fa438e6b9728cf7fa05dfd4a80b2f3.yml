@@ -1,0 +1,20 @@
+- description: 'Adfind tool can be used for reconnaissance in an Active directory
+    environment. This example has been documented by ransomware actors enumerating
+    Active Directory Domain Controller Objects
+
+    reference- http://www.joeware.net/freetools/tools/adfind/, https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html
+
+    '
+  id: c8fa438e6b9728cf7fa05dfd4a80b2f3
+  name: Adfind - Enumerate Active Directory Domain Controller Objects
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: 12011c_AdFind.exe -sc dclist
+        payloads:
+        - 12011c_AdFind.exe
+  tactic: discovery
+  technique:
+    attack_id: T1018
+    name: Remote System Discovery

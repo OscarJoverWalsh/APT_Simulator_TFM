@@ -1,0 +1,32 @@
+- additional_info: {}
+  privilege: ''
+  tactic: discovery
+  executors:
+  - command: 'if [ -x "$(command -v ip)" ]; then : else apt-get install iproute2 -y;
+      fi && ip tcp_metrics show | grep --invert-match "^127\."'
+    additional_info: {}
+    uploads: []
+    name: sh
+    variations: []
+    cleanup: []
+    parsers: []
+    language: null
+    platform: linux
+    build_target: null
+    timeout: 60
+    code: null
+    payloads: []
+  name: Remote System Discovery - ip tcp_metrics
+  technique_id: T1018
+  buckets:
+  - discovery
+  description: "Use the ip tcp_metrics command to display the recent cached entries\
+    \ for IPv4 and IPv6 source and destination addresses. \n"
+  singleton: false
+  delete_payload: true
+  technique_name: Remote System Discovery
+  access: {}
+  requirements: []
+  plugin: atomic
+  repeatable: false
+  id: d29305a9be37f6892e33f7ee7c06b880

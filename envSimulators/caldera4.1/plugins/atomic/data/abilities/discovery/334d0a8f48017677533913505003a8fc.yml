@@ -1,0 +1,65 @@
+- name: System Network Configuration Discovery
+  description: 'Identify network configuration information.
+
+
+    Upon successful execution, sh will spawn multiple commands and output will be
+    via stdout.
+
+    '
+  tactic: discovery
+  privilege: ''
+  buckets:
+  - discovery
+  additional_info: {}
+  technique_id: T1016
+  access: {}
+  singleton: false
+  executors:
+  - name: sh
+    command: 'if [ -x "$(command -v arp)" ]; then : ; else (which yum && yum -y install
+      net-tools)||(which apt-get && DEBIAN_FRONTEND=noninteractive apt-get install
+      -y net-tools); fi;  ;  if [ -x "$(command -v arp)" ]; then arp -a; else echo
+      "arp is missing from the machine. skipping..."; fi; if [ -x "$(command -v ifconfig)"
+      ]; then ifconfig; else echo "ifconfig is missing from the machine. skipping...";
+      fi; if [ -x "$(command -v ip)" ]; then ip addr; else echo "ip is missing from
+      the machine. skipping..."; fi; if [ -x "$(command -v netstat)" ]; then netstat
+      -ant | awk ''{print $NF}'' | grep -v ''[a-z]'' | sort | uniq -c; else echo "netstat
+      is missing from the machine. skipping..."; fi;'
+    variations: []
+    additional_info: {}
+    uploads: []
+    code: null
+    build_target: null
+    parsers: []
+    platform: darwin
+    language: null
+    cleanup: []
+    payloads: []
+    timeout: 60
+  - name: sh
+    command: 'if [ -x "$(command -v arp)" ]; then : ; else (which yum && yum -y install
+      net-tools)||(which apt-get && DEBIAN_FRONTEND=noninteractive apt-get install
+      -y net-tools); fi; if [ -x "$(command -v arp)" ]; then arp -a; else echo ''arp
+      is missing from the machine. skipping...''; fi; if [ -x "$(command -v ifconfig)"
+      ]; then ifconfig; else echo ''ifconfig is missing from the machine. skipping...'';
+      fi; if [ -x "$(command -v ip)" ]; then ip addr; else echo ''ip is missing from
+      the machine. skipping...''; fi; if [ -x "$(command -v netstat)" ]; then netstat
+      -ant | awk ''{print $NF}'' | grep -v ''[a-z]'' | sort | uniq -c; else echo ''netstat
+      is missing from the machine. skipping...''; fi;'
+    variations: []
+    additional_info: {}
+    uploads: []
+    code: null
+    build_target: null
+    parsers: []
+    platform: linux
+    language: null
+    cleanup: []
+    payloads: []
+    timeout: 60
+  delete_payload: true
+  plugin: atomic
+  requirements: []
+  repeatable: false
+  technique_name: System Network Configuration Discovery
+  id: 334d0a8f48017677533913505003a8fc

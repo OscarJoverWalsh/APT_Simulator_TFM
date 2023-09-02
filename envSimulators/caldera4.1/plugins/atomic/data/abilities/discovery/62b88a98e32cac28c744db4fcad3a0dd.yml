@@ -1,0 +1,54 @@
+- access: {}
+  repeatable: false
+  delete_payload: true
+  description: 'Scan ports to check for listening ports.
+
+
+    Upon successful execution, sh will perform a network connection against a single
+    host (192.168.1.1) and determine what ports are open in the range of 1-65535.
+    Results will be via stdout.
+
+    '
+  name: Port Scan
+  privilege: ''
+  buckets:
+  - discovery
+  tactic: discovery
+  additional_info: {}
+  technique_name: Network Service Discovery
+  executors:
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup: []
+    command: for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/192.168.1.1/$port)
+      && echo port $port is open ; done
+    language: null
+    additional_info: {}
+    payloads: []
+    variations: []
+    platform: darwin
+    uploads: []
+    code: null
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup: []
+    command: 'for port in {1..65535}; do (2>/dev/null echo >/dev/tcp/10.0.2.15/$port)
+      && echo port $port is open ; done
+
+      '
+    language: null
+    additional_info: {}
+    payloads: []
+    variations: []
+    platform: linux
+    uploads: []
+    code: null
+  technique_id: T1046
+  singleton: false
+  requirements: []
+  plugin: atomic
+  id: 62b88a98e32cac28c744db4fcad3a0dd

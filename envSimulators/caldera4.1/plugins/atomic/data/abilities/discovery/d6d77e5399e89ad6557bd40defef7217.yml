@@ -1,0 +1,16 @@
+- description: Scan ports to check for listening ports for the local host 127.0.0.1
+  id: d6d77e5399e89ad6557bd40defef7217
+  name: Port Scan NMap for Windows
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: nmap 127.0.0.1
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Discovery

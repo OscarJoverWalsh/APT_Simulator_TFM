@@ -1,0 +1,20 @@
+- description: 'Adfind tool can be used for reconnaissance in an Active directory
+    environment. This example has been documented by ransomware actors enumerating
+    Active Directory User Objects
+
+    reference- http://www.joeware.net/freetools/tools/adfind/, https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html
+
+    '
+  id: 157278cc77e4503c58945cec5129f566
+  name: Adfind - Enumerate Active Directory User Objects
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: 12011c_AdFind.exe -f (objectcategory=person)
+        payloads:
+        - 12011c_AdFind.exe
+  tactic: discovery
+  technique:
+    attack_id: T1087.002
+    name: 'Account Discovery: Domain Account'
