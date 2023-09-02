@@ -1,0 +1,18 @@
+- description: 'When the word document opens it will prompt the user to click ok on
+    a dialogue box, then attempt to run PowerShell with DDEAUTO to download and execute
+    a powershell script
+
+    '
+  id: e401dd1a8de06f4a52b66736c2050bb7
+  name: Execute PowerShell script via Word DDE
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: start 0a4081_DDE_Document.docx
+        payloads:
+        - 0a4081_DDE_Document.docx
+  tactic: execution
+  technique:
+    attack_id: T1559.002
+    name: 'Inter-Process Communication: Dynamic Data Exchange'

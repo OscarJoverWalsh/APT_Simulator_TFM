@@ -1,0 +1,16 @@
+- description: 'Copies a file to a remote host and executes it using PsExec. Requires
+    the download of PsExec from [https://docs.microsoft.com/en-us/sysinternals/downloads/psexec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec).
+
+    '
+  id: ca1f1ab85939ac18903d5abc4367fec1
+  name: Copy and Execute File with PsExec
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: C:\PSTools\PsExec.exe \\localhost -accepteula -c C:\Windows\System32\cmd.exe
+        payloads: []
+  tactic: lateral-movement
+  technique:
+    attack_id: T1021.002
+    name: 'Remote Services: SMB/Windows Admin Shares'

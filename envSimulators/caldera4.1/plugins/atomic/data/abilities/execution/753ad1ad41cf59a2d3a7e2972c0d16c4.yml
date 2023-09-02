@@ -1,0 +1,22 @@
+- description: 'Requires having RemCom installed, path to RemCom is one of the input
+    input_arguments
+
+    Will start a process on a remote host.
+
+    Upon successful execution, cmd will utilize RemCom.exe to spawn calc.exe on a
+    remote endpoint (default:localhost).
+
+    '
+  id: 753ad1ad41cf59a2d3a7e2972c0d16c4
+  name: Use RemCom to execute a command on a remote host
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: '"$pathtoatomicsfolder\T1569.002\bin\remcom.exe" \\localhost /user:Administrator
+          /pwd:P@ssw0rd1 cmd.exe'
+        payloads: []
+  tactic: execution
+  technique:
+    attack_id: T1569.002
+    name: 'System Services: Service Execution'
