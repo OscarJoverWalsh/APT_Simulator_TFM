@@ -1,0 +1,24 @@
+- description: 'Methods to identify Security Software on an endpoint
+
+
+    when sucessfully executed, the test is going to display running processes, firewall
+    configuration on network profiles
+
+    and specific security software.
+
+    '
+  id: 301c21998e9aac686942a33d328248e7
+  name: Security Software Discovery
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: netsh.exe advfirewall  show allprofiles && tasklist.exe && tasklist.exe
+          | findstr /i virus && tasklist.exe | findstr /i cb && tasklist.exe | findstr
+          /i defender && tasklist.exe | findstr /i cylance && tasklist.exe | findstr
+          /i mc && tasklist.exe | findstr /i "virus cb defender cylance mc"
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1518.001
+    name: 'Software Discovery: Security Software Discovery'

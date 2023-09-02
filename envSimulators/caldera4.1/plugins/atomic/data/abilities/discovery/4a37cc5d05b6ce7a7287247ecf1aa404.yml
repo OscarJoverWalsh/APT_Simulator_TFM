@@ -1,0 +1,20 @@
+- description: 'Identify system hostname for Linux and macOS systems.
+
+    '
+  id: 4a37cc5d05b6ce7a7287247ecf1aa404
+  name: Hostname Discovery
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: hostname
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: hostname
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery

@@ -1,0 +1,14 @@
+- description: "Identify system time. Upon execution, the local computer system time\
+    \ and timezone will be displayed. \n"
+  id: eaf91088bebfec0863a94bbee470f9f2
+  name: System Time Discovery in macOS
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: date
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1124
+    name: System Time Discovery

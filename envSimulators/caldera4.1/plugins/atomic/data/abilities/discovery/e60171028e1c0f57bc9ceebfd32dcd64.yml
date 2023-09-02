@@ -1,0 +1,16 @@
+- description: Adversaries may attempt to discover containers and other resources
+    that are available within a containers environment.
+  id: e60171028e1c0f57bc9ceebfd32dcd64
+  name: Container and ResourceDiscovery
+  platforms:
+    unknown:
+      sh:
+        cleanup: docker stop t1613_container; docker rmi -f t1613_container
+        command: docker build -t t1613  $PathtoAtomicsFolder/T1613/src/; docker run
+          --name t1613_container  -d -t t1613; docker ps; docker stats --no-stream;
+          docker inspect $(docker ps -l -q --filter ancestor=t1613)
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1613
+    name: Container and Resource Discovery

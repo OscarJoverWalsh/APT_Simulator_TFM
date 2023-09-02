@@ -1,0 +1,22 @@
+- description: 'View accounts with UID 0
+
+    '
+  id: 59703a9c143cdc58377b103a1c7acc59
+  name: View accounts with UID 0
+  platforms:
+    darwin:
+      sh:
+        cleanup: rm -f /tmp/T1087.001.txt 2>/dev/null
+        command: grep 'x:0:' /etc/passwd > /tmp/T1087.001.txt; cat /tmp/T1087.001.txt
+          2>/dev/null
+        payloads: []
+    linux:
+      sh:
+        cleanup: rm -f /tmp/T1087.001.txt 2>/dev/null
+        command: grep 'x:0:' /etc/passwd > /tmp/T1087.001.txt; cat /tmp/T1087.001.txt
+          2>/dev/null
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1087.001
+    name: 'Account Discovery: Local Account'

