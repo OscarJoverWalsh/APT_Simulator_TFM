@@ -1,0 +1,22 @@
+- description: 'This test sets the SetUID flag on a file in Linux and macOS.
+
+    '
+  id: 13dee93f2cdf7f027718d0c517c60c8c
+  name: Set a SetUID flag on file
+  platforms:
+    darwin:
+      sh:
+        cleanup: sudo rm /tmp/evilBinary
+        command: sudo touch /tmp/evilBinary; sudo chown root /tmp/evilBinary; sudo
+          chmod u+xs /tmp/evilBinary
+        payloads: []
+    linux:
+      sh:
+        cleanup: sudo rm /tmp/evilBinary
+        command: sudo touch /tmp/evilBinary; sudo chown root /tmp/evilBinary; sudo
+          chmod u+xs /tmp/evilBinary
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1548.001
+    name: 'Abuse Elevation Control Mechanism: Setuid and Setgid'

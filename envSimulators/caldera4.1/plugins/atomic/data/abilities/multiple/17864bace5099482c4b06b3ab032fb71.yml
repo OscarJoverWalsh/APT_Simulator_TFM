@@ -1,0 +1,19 @@
+- description: 'GCP Service Accounts can be used to gain intial access as well as
+    maintain persistence inside Google Cloud.
+
+    '
+  id: 17864bace5099482c4b06b3ab032fb71
+  name: Creating GCP Service Account and Service Account Key
+  platforms:
+    unknown:
+      sh:
+        cleanup: gcloud iam service-accounts delete gcp-art-service-account-1@art-project-1.iam.gserviceaccount.com
+          --quiet
+        command: gcloud auth login --no-launch-browser; gcloud config set project
+          art-project-1; gcloud iam service-accounts create gcp-art-service-account-1;
+          gcloud iam service-accounts keys create gcp-art-service-account-1.json --iam-account=gcp-art-service-account-1@art-project-1.iam.gserviceaccount.com
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1078.004
+    name: 'Valid Accounts: Cloud Accounts'

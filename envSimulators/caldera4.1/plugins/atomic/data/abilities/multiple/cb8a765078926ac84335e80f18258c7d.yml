@@ -1,0 +1,25 @@
+- description: 'Identifies when an Azure Automation runbook is created or modified.
+    An adversary may create or modify an Azure
+
+    Automation runbook to execute malicious code and maintain persistence in their
+    target''s environment.
+
+    '
+  id: cb8a765078926ac84335e80f18258c7d
+  name: Azure Persistence Automation Runbook Created or Modified
+  platforms:
+    unknown:
+      psh:
+        cleanup: ''
+        command: $secure_pwd = "#{password}" | ConvertTo-SecureString -AsPlainText
+          -Force; $creds = New-Object System.Management.Automation.PSCredential -ArgumentList
+          "#{username}", $secure_pwd; Connect-AzAccount -Credential $creds; New-AzAutomationRunbook
+          -Name; Remove-AzAutomationRunbook -AutomationAccountName
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1078.004
+    name: 'Valid Accounts: Cloud Accounts'

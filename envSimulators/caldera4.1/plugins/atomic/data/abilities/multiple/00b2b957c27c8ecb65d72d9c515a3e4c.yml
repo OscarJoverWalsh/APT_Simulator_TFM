@@ -1,0 +1,18 @@
+- description: 'Hooks functions in PowerShell to read TLS Communications
+
+    '
+  id: 00b2b957c27c8ecb65d72d9c515a3e4c
+  name: Hook PowerShell TLS Encrypt/Decrypt Messages
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: mavinject $pid /INJECTRUNNING; Invoke-WebRequest
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1056.004
+    name: 'Input Capture: Credential API Hooking'

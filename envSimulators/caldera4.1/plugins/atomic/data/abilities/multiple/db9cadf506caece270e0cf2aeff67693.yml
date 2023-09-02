@@ -1,0 +1,20 @@
+- description: 'GUP is an open source signed binary used by Notepad++ for software
+    updates, and is vulnerable to DLL Side-Loading, thus enabling the libcurl dll
+    to be loaded.
+
+    Upon execution, calc.exe will be opened.
+
+    '
+  id: db9cadf506caece270e0cf2aeff67693
+  name: DLL Side-Loading using the Notepad++ GUP.exe binary
+  platforms:
+    windows:
+      cmd:
+        cleanup: taskkill /F /IM calculator.exe >nul 2>&1
+        command: 67baa5_GUP.exe
+        payloads:
+        - 67baa5_GUP.exe
+  tactic: multiple
+  technique:
+    attack_id: T1574.002
+    name: 'Hijack Execution Flow: DLL Side-Loading'
