@@ -6,7 +6,7 @@
 * [Instalación](#instalación)
 * [Ejecución](#ejecución)
 
-![Screenshot](diagrama_bloques.png)
+![Diagrama_bloques](diagrama_bloques.png)
 
 ## Información General
 Como solución se propone el desarrollo de un proyecto para el modelado y simulación de APTs basada en inteligencia artificial, para su uso en pruebas de penetración en entornos simulados. El proceso de generación del modelo se basa en la construcción de cadenas de habilidades aplicando el algoritmo de aprendizaje por refuerzo Q-Learning. Este proyecto tiene como objetivo la definición formal de los modelos que permitan caracterizar los APTs siguiendo el estándar MITRE.
