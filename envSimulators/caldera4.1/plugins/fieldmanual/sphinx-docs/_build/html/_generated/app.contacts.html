@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>app.contacts namespace &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="app.contacts.handles namespace" href="app.contacts.handles.html" />
+    <link rel="prev" title="app.api.v2.schemas namespace" href="app.api.v2.schemas.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">app</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="app.html">app package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="app.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="app.api.html">app.api namespace</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">app.contacts namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.data_encoders.html">app.data_encoders namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.learning.html">app.learning namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.objects.html">app.objects namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.service.html">app.service namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.utility.html">app.utility namespace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#module-app.version">app.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#module-app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">app</a> &raquo;</li>
+        
+          <li><a href="app.html">app package</a> &raquo;</li>
+        
+      <li>app.contacts namespace</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_generated/app.contacts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-app.contacts">
+<span id="app-contacts-namespace"></span><h1>app.contacts namespace<a class="headerlink" href="#module-app.contacts" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.contacts.handles.html">app.contacts.handles namespace</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.contacts.handles.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.contacts.handles.html#module-app.contacts.handles.h_beacon">app.contacts.handles.h_beacon module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="app.contacts.tunnels.html">app.contacts.tunnels namespace</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.contacts.tunnels.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.contacts.tunnels.html#module-app.contacts.tunnels.tunnel_ssh">app.contacts.tunnels.tunnel_ssh module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-app.contacts.contact_dns">
+<span id="app-contacts-contact-dns-module"></span><h2>app.contacts.contact_dns module<a class="headerlink" href="#module-app.contacts.contact_dns" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsAnswerObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">DnsAnswerObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dns_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsAnswerObj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsAnswerObj.get_bytes">
+<span class="sig-name descname"><span class="pre">get_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'big'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsAnswerObj.get_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">DnsPacket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_questions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_answer_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auth_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_additional_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dns_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.authoritative_resp_flag">
+<span class="sig-name descname"><span class="pre">authoritative_resp_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1024</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.authoritative_resp_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.generate_packet_from_bytes">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_packet_from_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'big'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.generate_packet_from_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.get_opcode">
+<span class="sig-name descname"><span class="pre">get_opcode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.get_opcode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.get_response_code">
+<span class="sig-name descname"><span class="pre">get_response_code</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.get_response_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.has_standard_query">
+<span class="sig-name descname"><span class="pre">has_standard_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.has_standard_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.is_query">
+<span class="sig-name descname"><span class="pre">is_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.is_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.is_response">
+<span class="sig-name descname"><span class="pre">is_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.is_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.opcode_mask">
+<span class="sig-name descname"><span class="pre">opcode_mask</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30720</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.opcode_mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.opcode_offset">
+<span class="sig-name descname"><span class="pre">opcode_offset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.opcode_offset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.query_response_flag">
+<span class="sig-name descname"><span class="pre">query_response_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32768</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.query_response_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.recursion_available">
+<span class="sig-name descname"><span class="pre">recursion_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.recursion_available" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.recursion_available_flag">
+<span class="sig-name descname"><span class="pre">recursion_available_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.recursion_available_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.recursion_desired">
+<span class="sig-name descname"><span class="pre">recursion_desired</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.recursion_desired" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.recursion_desired_flag">
+<span class="sig-name descname"><span class="pre">recursion_desired_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.recursion_desired_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.response_code_mask">
+<span class="sig-name descname"><span class="pre">response_code_mask</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.response_code_mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.truncated">
+<span class="sig-name descname"><span class="pre">truncated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.truncated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsPacket.truncated_flag">
+<span class="sig-name descname"><span class="pre">truncated_flag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">512</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsPacket.truncated_flag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">DnsRecordType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType.A">
+<span class="sig-name descname"><span class="pre">A</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType.AAAA">
+<span class="sig-name descname"><span class="pre">AAAA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType.AAAA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType.CNAME">
+<span class="sig-name descname"><span class="pre">CNAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType.CNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType.NS">
+<span class="sig-name descname"><span class="pre">NS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType.NS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsRecordType.TXT">
+<span class="sig-name descname"><span class="pre">TXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsRecordType.TXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">DnsResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_questions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_answer_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_auth_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_additional_rrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dns_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.contacts.contact_dns.DnsPacket" title="app.contacts.contact_dns.DnsPacket"><code class="xref py py-class docutils literal notranslate"><span class="pre">DnsPacket</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.default_ttl">
+<span class="sig-name descname"><span class="pre">default_ttl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.default_ttl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.generate_response_for_query">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_response_for_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dns_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authoritative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursion_available</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.generate_response_for_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given DnsPacket query, return response with provided fields.
+Answers is list of DnsAnswerObj for the given query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.get_bytes">
+<span class="sig-name descname"><span class="pre">get_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">byteorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'big'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.get_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.max_ttl">
+<span class="sig-name descname"><span class="pre">max_ttl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">86400</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.max_ttl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.max_txt_size">
+<span class="sig-name descname"><span class="pre">max_txt_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">255</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.max_txt_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.min_ttl">
+<span class="sig-name descname"><span class="pre">min_ttl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">300</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.min_ttl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponse.standard_pointer">
+<span class="sig-name descname"><span class="pre">standard_pointer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">49164</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponse.standard_pointer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponseCodes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">DnsResponseCodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.DnsResponseCodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponseCodes.NXDOMAIN">
+<span class="sig-name descname"><span class="pre">NXDOMAIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponseCodes.NXDOMAIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.DnsResponseCodes.SUCCESS">
+<span class="sig-name descname"><span class="pre">SUCCESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#app.contacts.contact_dns.DnsResponseCodes.SUCCESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_dns.</span></span><span class="sig-name descname"><span class="pre">Handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DatagramProtocol</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.ClientRequestContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ClientRequestContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dns_request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_contents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.ClientRequestContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.FileUploadRequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FileUploadRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requesting_paw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.FileUploadRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MessageType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.Beacon">
+<span class="sig-name descname"><span class="pre">Beacon</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'be'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.Beacon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.FileUploadData">
+<span class="sig-name descname"><span class="pre">FileUploadData</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ud'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.FileUploadData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.FileUploadRequest">
+<span class="sig-name descname"><span class="pre">FileUploadRequest</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ur'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.FileUploadRequest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.InstructionDownload">
+<span class="sig-name descname"><span class="pre">InstructionDownload</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'id'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.InstructionDownload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.PayloadDataDownload">
+<span class="sig-name descname"><span class="pre">PayloadDataDownload</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pd'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.PayloadDataDownload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.PayloadFilenameDownload">
+<span class="sig-name descname"><span class="pre">PayloadFilenameDownload</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pf'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.PayloadFilenameDownload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.MessageType.PayloadRequest">
+<span class="sig-name descname"><span class="pre">PayloadRequest</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pr'</span></em><a class="headerlink" href="#app.contacts.contact_dns.Handler.MessageType.PayloadRequest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.StoredResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StoredResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.StoredResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.StoredResponse.finished_reading">
+<span class="sig-name descname"><span class="pre">finished_reading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.StoredResponse.finished_reading" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.StoredResponse.read_data">
+<span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.StoredResponse.read_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.TunneledMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TunneledMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_chunks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.TunneledMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.TunneledMessage.add_chunk">
+<span class="sig-name descname"><span class="pre">add_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.TunneledMessage.add_chunk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.TunneledMessage.export_contents">
+<span class="sig-name descname"><span class="pre">export_contents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.TunneledMessage.export_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.TunneledMessage.is_complete">
+<span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.TunneledMessage.is_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.connection_made">
+<span class="sig-name descname"><span class="pre">connection_made</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.connection_made" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a connection is made.</p>
+<p>The argument is the transport representing the pipe connection.
+To receive data, wait for data_received() calls.
+When the connection is closed, connection_lost() is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.datagram_received">
+<span class="sig-name descname"><span class="pre">datagram_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.datagram_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when some datagram is received.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_dns.Handler.generate_dns_tunneling_response_bytes">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_dns_tunneling_response_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_dns.Handler.generate_dns_tunneling_response_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_ftp">
+<span id="app-contacts-contact-ftp-module"></span><h2>app.contacts.contact_ftp module<a class="headerlink" href="#module-app.contacts.contact_ftp" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_ftp.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.check_config">
+<span class="sig-name descname"><span class="pre">check_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.check_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.ftp_server_python_new">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ftp_server_python_new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.ftp_server_python_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.ftp_server_python_old">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ftp_server_python_old</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.ftp_server_python_old" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.set_up_server">
+<span class="sig-name descname"><span class="pre">set_up_server</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.set_up_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.setup_ftp_users">
+<span class="sig-name descname"><span class="pre">setup_ftp_users</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.setup_ftp_users" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.Contact.stop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.Contact.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_ftp.</span></span><span class="sig-name descname"><span class="pre">FtpHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_svc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_svc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Server</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.contact_caldera_server">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contact_caldera_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.contact_caldera_server" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.create_beacon_response">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_beacon_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instructions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.create_beacon_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.get_payload_file">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_payload_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.get_payload_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.handle_agent_file">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_agent_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">split_file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_bytes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.handle_agent_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.stor">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.stor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.submit_uploaded_file">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">submit_uploaded_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.submit_uploaded_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_ftp.FtpHandler.write_file">
+<span class="sig-name descname"><span class="pre">write_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_ftp.FtpHandler.write_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_gist">
+<span id="app-contacts-contact-gist-module"></span><h2>app.contacts.contact_gist module<a class="headerlink" href="#module-app.contacts.contact_gist" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_gist.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.GistUpload">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GistUpload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upload_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_chunks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.GistUpload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.GistUpload.add_chunk">
+<span class="sig-name descname"><span class="pre">add_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.GistUpload.add_chunk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.GistUpload.export_contents">
+<span class="sig-name descname"><span class="pre">export_contents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.GistUpload.export_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.GistUpload.is_complete">
+<span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.GistUpload.is_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.VALID_TOKEN_FORMATS">
+<span class="sig-name descname"><span class="pre">VALID_TOKEN_FORMATS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['^[a-fA-F0-9]{40,255}$',</span> <span class="pre">'^ghp_[A-Za-z0-9_]{36,251}$']</span></em><a class="headerlink" href="#app.contacts.contact_gist.Contact.VALID_TOKEN_FORMATS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.get_beacons">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_beacons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.get_beacons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all GIST beacons for a particular api token
+:return: the beacons</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.get_results">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.get_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all GIST posted results for a this C2’s api token
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.get_uploads">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_uploads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.get_uploads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all GIST posted file uploads for this C2’s api token
+:return: list of (raw content, gist description, gist filename) tuples for upload GISTs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.gist_operation_loop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gist_operation_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.gist_operation_loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.handle_beacons">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_beacons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beacons</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.handle_beacons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles various beacons types (beacon and results)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.handle_uploads">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_uploads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upload_gist_info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.handle_uploads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.retrieve_config">
+<span class="sig-name descname"><span class="pre">retrieve_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.retrieve_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.Contact.valid_config">
+<span class="sig-name descname"><span class="pre">valid_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.Contact.valid_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.contacts.contact_gist.api_access">
+<span class="sig-prename descclassname"><span class="pre">app.contacts.contact_gist.</span></span><span class="sig-name descname"><span class="pre">api_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_gist.api_access" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_html">
+<span id="app-contacts-contact-html-module"></span><h2>app.contacts.contact_html module<a class="headerlink" href="#module-app.contacts.contact_html" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_html.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_html.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_html.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_html.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_html.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_http">
+<span id="app-contacts-contact-http-module"></span><h2>app.contacts.contact_http module<a class="headerlink" href="#module-app.contacts.contact_http" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_http.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_http.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_http.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_http.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_http.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_slack">
+<span id="app-contacts-contact-slack-module"></span><h2>app.contacts.contact_slack module<a class="headerlink" href="#module-app.contacts.contact_slack" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_slack.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.SlackUpload">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SlackUpload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upload_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_chunks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.SlackUpload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.SlackUpload.add_chunk">
+<span class="sig-name descname"><span class="pre">add_chunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.SlackUpload.add_chunk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.SlackUpload.export_contents">
+<span class="sig-name descname"><span class="pre">export_contents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.SlackUpload.export_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.SlackUpload.is_complete">
+<span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.SlackUpload.is_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.get_beacons">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_beacons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.get_beacons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all SLACK beacons for a particular api key
+:return: the beacons</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.get_results">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.get_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all SLACK posted results for a this C2’s api key
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.get_uploads">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_uploads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.get_uploads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all SLACK posted file uploads for this C2’s api key
+:return: list of (raw content, slack description, slack filename) tuples for upload SLACKs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.handle_beacons">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_beacons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beacons</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.handle_beacons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles various beacons types (beacon and results)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.handle_uploads">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_uploads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upload_slack_info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.handle_uploads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.retrieve_config">
+<span class="sig-name descname"><span class="pre">retrieve_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.retrieve_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.slack_operation_loop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">slack_operation_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.slack_operation_loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.Contact.valid_config">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">valid_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.Contact.valid_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.contacts.contact_slack.api_access">
+<span class="sig-prename descclassname"><span class="pre">app.contacts.contact_slack.</span></span><span class="sig-name descname"><span class="pre">api_access</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_slack.api_access" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_tcp">
+<span id="app-contacts-contact-tcp-module"></span><h2>app.contacts.contact_tcp module<a class="headerlink" href="#module-app.contacts.contact_tcp" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_tcp.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.Contact.operation_loop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">operation_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.Contact.operation_loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.TcpSessionHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_tcp.</span></span><span class="sig-name descname"><span class="pre">TcpSessionHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.TcpSessionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.TcpSessionHandler.accept">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">writer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.TcpSessionHandler.accept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.TcpSessionHandler.refresh">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_tcp.TcpSessionHandler.refresh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_tcp.TcpSessionHandler.send">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#app.contacts.contact_tcp.TcpSessionHandler.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_udp">
+<span id="app-contacts-contact-udp-module"></span><h2>app.contacts.contact_udp module<a class="headerlink" href="#module-app.contacts.contact_udp" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_udp.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_udp.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_udp.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_udp.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_udp.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_udp.Handler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_udp.</span></span><span class="sig-name descname"><span class="pre">Handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_udp.Handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DatagramProtocol</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_udp.Handler.datagram_received">
+<span class="sig-name descname"><span class="pre">datagram_received</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_udp.Handler.datagram_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when some datagram is received.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.contacts.contact_websocket">
+<span id="app-contacts-contact-websocket-module"></span><h2>app.contacts.contact_websocket module<a class="headerlink" href="#module-app.contacts.contact_websocket" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_websocket.Contact">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_websocket.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_websocket.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.utility.html#app.utility.base_world.BaseWorld" title="app.utility.base_world.BaseWorld"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorld</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_websocket.Contact.start">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_websocket.Contact.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_websocket.Contact.stop">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_websocket.Contact.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.contacts.contact_websocket.Handler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.contacts.contact_websocket.</span></span><span class="sig-name descname"><span class="pre">Handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_websocket.Handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.contacts.contact_websocket.Handler.handle">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">socket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.contacts.contact_websocket.Handler.handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="app.contacts.handles.html" class="btn btn-neutral float-right" title="app.contacts.handles namespace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app.api.v2.schemas.html" class="btn btn-neutral float-left" title="app.api.v2.schemas namespace" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

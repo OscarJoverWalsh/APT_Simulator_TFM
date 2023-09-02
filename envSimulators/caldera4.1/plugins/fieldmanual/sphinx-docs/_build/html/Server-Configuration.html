@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Server Configuration &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plugin library" href="Plugin-library.html" />
+    <link rel="prev" title="Basic Usage" href="Basic-Usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Server Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#startup-parameters">Startup parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-file">Configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-configuration-files">Custom configuration files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-ldap-login">Enabling LDAP login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-custom-login-handlers">Setting Custom Login Handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Server Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Server-Configuration.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="server-configuration">
+<h1>Server Configuration<a class="headerlink" href="#server-configuration" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="startup-parameters">
+<h2>Startup parameters<a class="headerlink" href="#startup-parameters" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">server.py</span></code> supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--log</span> <span class="pre">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span></code>: Sets the log option. The <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> option is useful for troubleshooting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--fresh</span></code>: Resets all non-plugin data including custom abilities and adversaries, operations, and the agent list.
+A gzipped, tarball backup of the original content is stored in the <code class="docutils literal notranslate"><span class="pre">data/backup</span></code> directory. This makes it possible to
+recover the server state after an accidental <code class="docutils literal notranslate"><span class="pre">--fresh</span></code> startup by running <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-zxvf</span> <span class="pre">data/backup/backup-&lt;timestamp&gt;.tar.gz</span></code>
+from the root caldera directory before server startup.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--environment</span> <span class="pre">ENVIRONMENT</span></code>: Sets a custom configuration file. See “Custom configuration files” below for additional details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--plugins</span> <span class="pre">PLUGINS</span></code>: Sets CALDERA to run only with the specified plugins</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--insecure</span></code>: Uses the <code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code> file for configuration, not recommended.</p></li>
+</ul>
+</div>
+<div class="section" id="configuration-file">
+<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this heading">¶</a></h2>
+<p>Caldera’s configuration file is located at <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code>, written on the first run. If the server is run with the <code class="docutils literal notranslate"><span class="pre">--insecure</span></code> option (not recommended), CALDERA will use the file located at <code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code>.</p>
+<p>Configuration file changes must be made while the server is shut down. Any changes made to the configuration file while the server is running will be overwritten.</p>
+<p>The YAML configuration file contains all the configuration variables CALDERA requires to boot up and run. A documented configuration file is below:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ability_refresh</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">60</span><span class="w">  </span><span class="c1"># Interval at which ability YAML files will refresh from disk </span>
+<span class="nt">api_key_blue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BLUEADMIN123</span><span class="w">  </span><span class="c1"># API key which grants access to CALDERA blue</span>
+<span class="nt">api_key_red</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ADMIN123</span><span class="w">  </span><span class="c1"># API key which grants access to CALDERA red</span>
+<span class="nt">app.contact.dns.domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mycaldera.caldera</span><span class="w">  </span><span class="c1"># Domain for the DNS contact server</span>
+<span class="nt">app.contact.dns.socket</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:53</span><span class="w">  </span><span class="c1"># Listen host and port for the DNS contact server</span>
+<span class="nt">app.contact.gist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span><span class="w">  </span><span class="c1"># API key for the GIST contact</span>
+<span class="nt">app.contact.html</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/weather</span><span class="w">  </span><span class="c1"># Endpoint to use for the HTML contact</span>
+<span class="nt">app.contact.http</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://0.0.0.0:8888</span><span class="w">  </span><span class="c1"># Server to connect to for the HTTP contact</span>
+<span class="nt">app.contact.tcp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:7010</span><span class="w">  </span><span class="c1"># Listen host and port for the TCP contact server</span>
+<span class="nt">app.contact.udp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:7011</span><span class="w">  </span><span class="c1"># Listen host and port for the UDP contact server</span>
+<span class="nt">app.contact.websocket</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0:7012</span><span class="w">  </span><span class="c1"># Listen host and port for the Websocket contact server</span>
+<span class="nt">objects.planners.default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">atomic</span><span class="w">  </span><span class="c1"># Specify which planner should be used by default (works for all objects, just replace `planners` with the appropriate object type name)</span>
+<span class="nt">crypt_salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REPLACE_WITH_RANDOM_VALUE</span><span class="w">  </span><span class="c1"># Salt for file encryption</span>
+<span class="nt">encryption_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ADMIN123</span><span class="w">  </span><span class="c1"># Encryption key for file encryption</span>
+<span class="nt">exfil_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp</span><span class="w">  </span><span class="c1"># The directory where files exfiltrated through the /file/upload endpoint will be stored</span>
+<span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span><span class="w">  </span><span class="c1"># Host the server will listen on </span>
+<span class="nt">plugins</span><span class="p">:</span><span class="w">  </span><span class="c1"># List of plugins to enable</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">access</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">atomic</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">compass</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debrief</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fieldmanual</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gameboard</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">manx</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">response</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sandcat</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stockpile</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">training</span>
+<span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8888</span><span class="w">  </span><span class="c1"># Port the server will listen on</span>
+<span class="nt">reports_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp</span><span class="w">  </span><span class="c1"># The directory where reports are saved on server shutdown</span>
+<span class="nt">auth.login.handler.module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w">  </span><span class="c1"># Python import path for auth service login handler (&quot;default&quot; will use the default handler)</span>
+<span class="nt">requirements</span><span class="p">:</span><span class="w">  </span><span class="c1"># CALDERA requirements</span>
+<span class="w">  </span><span class="nt">go</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go version</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">installed_program</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.11</span>
+<span class="w">  </span><span class="nt">python</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">attr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">version</span>
+<span class="w">    </span><span class="nt">module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sys</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python_module</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.7.0</span>
+<span class="nt">users</span><span class="p">:</span><span class="w">  </span><span class="c1"># User list for CALDERA blue and CALDERA red</span>
+<span class="w">  </span><span class="nt">blue</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">blue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w">  </span><span class="c1"># Username and password</span>
+<span class="w">  </span><span class="nt">red</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">admin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">    </span><span class="nt">red</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-configuration-files">
+<h2>Custom configuration files<a class="headerlink" href="#custom-configuration-files" title="Permalink to this heading">¶</a></h2>
+<p>Custom configuration files can be created with a new file in the <code class="docutils literal notranslate"><span class="pre">conf/</span></code> directory. The name of the config file can then be specified with the <code class="docutils literal notranslate"><span class="pre">-E</span></code> flag when starting the server.</p>
+<p>Caldera will choose the configuration file to use in the following order:</p>
+<ol class="arabic simple">
+<li><p>A config specified with the <code class="docutils literal notranslate"><span class="pre">-E</span></code> or <code class="docutils literal notranslate"><span class="pre">--environment</span></code> command-line options.  For instance, if started with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">caldera.py</span> <span class="pre">-E</span> <span class="pre">foo</span></code>, CALDERA will load it’s configuration from <code class="docutils literal notranslate"><span class="pre">conf/foo.yml</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code>: Caldera will prefer the local configuration file if no other options are specified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code>: If no config is specified with the <code class="docutils literal notranslate"><span class="pre">-E</span></code> option and it cannot find a <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> configuration file, CALDERA will use its default configuration options.</p></li>
+</ol>
+</div>
+<div class="section" id="enabling-ldap-login">
+<h2>Enabling LDAP login<a class="headerlink" href="#enabling-ldap-login" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA can be configured to allow users to log in using LDAP. To do so add an <code class="docutils literal notranslate"><span class="pre">ldap</span></code> section to the config with the following fields:</p>
+<ul class="simple">
+<li><p><strong>dn</strong>: the base DN under which to search for the user</p></li>
+<li><p><strong>server</strong>: the URL of the LDAP server, optionally including the scheme and port</p></li>
+<li><p><strong>user_attr</strong>: the name of the attribute on the user object to match with the username, e.g. <code class="docutils literal notranslate"><span class="pre">cn</span></code> or <code class="docutils literal notranslate"><span class="pre">sAMAccountName</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">uid</span></code></p></li>
+<li><p><strong>group_attr</strong>: the name of the attribute on the user object to match with the group, e.g. <code class="docutils literal notranslate"><span class="pre">MemberOf</span></code> or <code class="docutils literal notranslate"><span class="pre">group</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">objectClass</span></code></p></li>
+<li><p><strong>red_group</strong>: the value of the group_attr that specifies a red team user. Default: <code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ldap</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org</span>
+<span class="w">  </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ldap://ipa.demo1.freeipa.org</span>
+<span class="w">  </span><span class="nt">user_attr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uid</span>
+<span class="w">  </span><span class="nt">group_attr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">objectClass</span>
+<span class="w">  </span><span class="nt">red_group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">organizationalperson</span>
+</pre></div>
+</div>
+<p>This will allow the <code class="docutils literal notranslate"><span class="pre">employee</span></code> user to log in as <code class="docutils literal notranslate"><span class="pre">uid=employee,cn=users,cn=accounts,dc=demo1,dc=freeipa,dc=org</span></code>. This
+user has an <code class="docutils literal notranslate"><span class="pre">objectClass</span></code> attribute that contains the value <code class="docutils literal notranslate"><span class="pre">organizationalperson</span></code>, so they will be logged in as a red
+team user. In contrast, the <code class="docutils literal notranslate"><span class="pre">admin</span></code> user does not have an <code class="docutils literal notranslate"><span class="pre">objectClass</span></code> of <code class="docutils literal notranslate"><span class="pre">organizationalperson</span></code> so they will be logged
+in as a blue team user.</p>
+<p>Be sure to change these settings to match your specific LDAP environment.</p>
+<p>Note that adding the <code class="docutils literal notranslate"><span class="pre">ldap</span></code> section will disable any accounts listed in the <code class="docutils literal notranslate"><span class="pre">users</span></code> section of the config file;
+only LDAP will be used for logging in.</p>
+</div>
+<div class="section" id="setting-custom-login-handlers">
+<h2>Setting Custom Login Handlers<a class="headerlink" href="#setting-custom-login-handlers" title="Permalink to this heading">¶</a></h2>
+<p>By default, users authenticate to CALDERA by providing credentials (username and password) in the main login page.
+These credentials are verified using CALDERA’s internal user mapping, or via LDAP if LDAP login is enabled for CALDERA.
+If users want to use a different login handler, such as one that handles SAML authentication or a login handler provided
+by a CALDERA plugin, the <code class="docutils literal notranslate"><span class="pre">auth.login.handler.module</span></code> keyword in the CALDERA configuration file
+must be changed from its value of <code class="docutils literal notranslate"><span class="pre">default</span></code>, which is used to load the default login handler.
+The configuration value, if not <code class="docutils literal notranslate"><span class="pre">default</span></code>, must be a Python import path string corresponding to the custom login handler relative to the main CALDERA directory (e.g. <code class="docutils literal notranslate"><span class="pre">auth.login.handler.module:</span> <span class="pre">plugins.customplugin.app.my_custom_handler</span></code>).
+If the keyword is not provided, the default login handler will be used.</p>
+<p>The Python module referenced in the configuration file must implement the following method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_login_handler</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return Python object that extends LoginHandlerInterface from app.service.interfaces.i_login_handler&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>When loading custom login handlers, CALDERA expects the referenced Python module to return an object that extends
+<code class="docutils literal notranslate"><span class="pre">LoginHandlerInterface</span></code> from <code class="docutils literal notranslate"><span class="pre">app.service.interfaces.i_login_handler</span></code>. This interface provides all of the methods
+that CALDERA’s authentication service requires to handle logins. If an invalid login handler is referenced in
+the configuration file, then the server will exit with an error.</p>
+<p>An example login handler Python module may follow the following structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">app.service.interfaces.i_login_handler</span> <span class="kn">import</span> <span class="n">LoginHandlerInterface</span>
+
+<span class="n">HANDLER_NAME</span> <span class="o">=</span> <span class="s1">&#39;My Custom Login Handler&#39;</span>
+
+<span class="k">def</span> <span class="nf">load_login_handler</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">CustomLoginHandler</span><span class="p">(</span><span class="n">services</span><span class="p">,</span> <span class="n">HANDLER_NAME</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">CustomLoginHandler</span><span class="p">(</span><span class="n">LoginHandlerInterface</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">services</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">services</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">handle_login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Handle login</span>
+        <span class="k">pass</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">handle_login_redirect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Handle login redirect</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Plugin-library.html" class="btn btn-neutral float-right" title="Plugin library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Basic-Usage.html" class="btn btn-neutral float-left" title="Basic Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

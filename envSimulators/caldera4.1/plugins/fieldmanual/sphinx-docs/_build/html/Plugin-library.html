@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugin library &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parsers" href="Parsers.html" />
+    <link rel="prev" title="Server Configuration" href="Server-Configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plugin library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sandcat">Sandcat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploy">Deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensions">Extensions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exit-codes">Exit Codes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customizing-default-options-execution-without-cli-options">Customizing Default Options &amp; Execution Without CLI Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mock">Mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manx">Manx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stockpile">Stockpile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compass">Compass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caltack">Caltack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ssl">SSL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-instructions">Setup Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#atomic">Atomic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gameboard">GameBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#human">Human</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training">Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access">Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metasploit-integration">Metasploit Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#builder">Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debrief">Debrief</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Plugin library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Plugin-library.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plugin-library">
+<h1>Plugin library<a class="headerlink" href="#plugin-library" title="Permalink to this heading">¶</a></h1>
+<p>Here you’ll get a run-down of all open-source plugins, all of which can be found in the plugins/ directory as separate
+GIT repositories.</p>
+<p>To enable a plugin, add it to the <code class="docutils literal notranslate"><span class="pre">default.yml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">conf/</span></code> directory. Make sure your server is stopped when editing the <code class="docutils literal notranslate"><span class="pre">default.yml</span></code> file.</p>
+<p>Plugins can also be enabled through the GUI. Go to <em>Advanced -&gt; Configuration</em> and then click on the ‘enable’ button for the plugin you would like to enable.</p>
+<div class="section" id="sandcat">
+<h2>Sandcat<a class="headerlink" href="#sandcat" title="Permalink to this heading">¶</a></h2>
+<p>The Sandcat plugin contains CALDERA’s default agent, which is written in GoLang for
+cross-platform compatibility.</p>
+<p>The agent will periodically beacon to the C2 server to receive instructions, execute instructions
+on the target host, and then send results back to the C2 server.
+The agent also supports payload downloads, file uploads, and a variety of execution and C2 communication options.
+For more details, see the <a class="reference internal" href="plugins/sandcat/Sandcat-Details.html"><span class="doc std std-doc">Sandcat plugin documentation</span></a></p>
+<div class="section" id="deploy">
+<h3>Deploy<a class="headerlink" href="#deploy" title="Permalink to this heading">¶</a></h3>
+<p>To deploy Sandcat, use one of the built-in delivery commands which allows you to run the agent on any operating system.
+Each of these commands downloads the compiled Sandcat executable from CALDERA and runs it immediately. Find
+the commands on the Sandcat plugin tab.</p>
+<p>Once the agent is running, it should show log messages when it beacons into CALDERA.</p>
+<blockquote>
+<div><p>If you have GoLang installed on the CALDERA server, each time you run one of the delivery commands above,
+the agent will re-compile itself dynamically and it will change it’s source code so it gets a different file
+hash (MD5) and a random name that blends into the operating system. This will help bypass file-based signature detections.</p>
+</div></blockquote>
+</div>
+<div class="section" id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h3>
+<p>When deploying a Sandcat agent, there are optional parameters you can use when you start the executable:</p>
+<ul class="simple">
+<li><p><strong>Server</strong>: This is the location of CALDERA. The agent must have connectivity to this host/port.</p></li>
+<li><p><strong>Group</strong>: This is the group name that you would like the agent to join when it starts. The group does not have to exist. A default group of my_group will be used if none is passed in.</p></li>
+<li><p><strong>v</strong>: Use <code class="docutils literal notranslate"><span class="pre">-v</span></code> to see verbose output from sandcat.  Otherwise, sandcat will run silently.</p></li>
+</ul>
+</div>
+<div class="section" id="extensions">
+<h3>Extensions<a class="headerlink" href="#extensions" title="Permalink to this heading">¶</a></h3>
+<p>In order to keep the agent code lightweight, the default Sandcat agent binary ships with limited basic functionality.
+Users can dynamically compile additional features, referred to as “gocat extensions”. Each extension adds to the
+existing <code class="docutils literal notranslate"><span class="pre">gocat</span></code> module code to provide functionality such as peer-to-peer proxy implementations, additional
+executors, and additional C2 contact protocols.</p>
+<p>To request particular gocat extensions, users can
+include the <code class="docutils literal notranslate"><span class="pre">gocat-extensions</span></code> HTTP header when asking the C2 to compile an agent. The header value
+must be a comma-separated list of requested extensions. The server will include the extensions in
+the binary if they exist and if their dependencies are met (i.e. if extension A requires a particular
+Golang module that is not installed on the server, then extension A will not be included).</p>
+<p>Below is an example powershell snippet to request the C2 server to include the <code class="docutils literal notranslate"><span class="pre">proxy_http</span></code> and <code class="docutils literal notranslate"><span class="pre">shells</span></code>
+extensions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$url=&quot;http://192.168.137.1:8888/file/download&quot;; # change server IP/port as needed
+$wc=New-Object System.Net.WebClient;
+$wc.Headers.add(&quot;platform&quot;,&quot;windows&quot;); # specifying Windows build
+$wc.Headers.add(&quot;file&quot;,&quot;sandcat.go&quot;); # requesting sandcat binary
+$wc.Headers.add(&quot;gocat-extensions&quot;,&quot;proxy_http,shells&quot;); # requesting the extensions
+$output=&quot;C:\Users\Public\sandcat.exe&quot;; # specify destination filename
+$wc.DownloadFile($url,$output); # download
+</pre></div>
+</div>
+<p>The following features are included in the stock agent:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HTTP</span></code> C2 contact protocol</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psh</span></code> PowerShell executor (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd</span></code> cmd.exe executor (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sh</span></code> shell executor (Linux/Mac)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proc</span></code> executor to directly spawn processes from executables without needing to invoke a shell (Windows/Linux/Mac)</p></li>
+</ul>
+<p>Additional functionality can be found in the following gocat extensions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gist</span></code> extension provides the Github gist C2 contact protocol.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shells</span></code> extension provides the <code class="docutils literal notranslate"><span class="pre">osascript</span></code> (Mac Osascript) and <code class="docutils literal notranslate"><span class="pre">pwsh</span></code> (Windows powershell core) executors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shellcode</span></code> extension provides the shellcode executors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proxy_http</span></code> extension provides the <code class="docutils literal notranslate"><span class="pre">HTTP</span></code> peer-to-peer proxy receiver.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">proxy_smb_pipe</span></code> extension provides the <code class="docutils literal notranslate"><span class="pre">SmbPipe</span></code> peer-to-peer proxy client and receiver for Windows (peer-to-peer
+communication via SMB named pipes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">donut</span></code> extension provides the Donut functionality to execute various assemblies in memory.
+See https://github.com/TheWover/donut for additional information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shared</span></code> extension provides the C sharing functionality for Sandcat.</p></li>
+</ul>
+<div class="section" id="exit-codes">
+<h4>Exit Codes<a class="headerlink" href="#exit-codes" title="Permalink to this heading">¶</a></h4>
+<p>Exit codes returned from Sandcat vary across executors. Typical shell executors will return the exit code provided by the shell. Certain executor extensions will return values hard-coded in Sandcat.</p>
+<p>Sandcat includes general exit codes which may be utilized by executors, overriden by executors, or used in error cases. The following values describe general Sandcat exit codes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code>: Error (e.g., cannot decode command, payload not available)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Success</p></li>
+</ul>
+<p>The following values describe exit codes utilized by specific executors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shells</span></code>: Returns the exit code provided by the OS/shell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shellcode</span></code>: Utilizes the general Sandcat exit codes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code> and <code class="docutils literal notranslate"><span class="pre">native_aws</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Success</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: Process error (e.g., error while executing code)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: Input error (e.g., invalid parameters)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">donut</span></code>: Returns the exit code provided by the OS/shell.</p></li>
+</ul>
+</div>
+<div class="section" id="customizing-default-options-execution-without-cli-options">
+<h4>Customizing Default Options &amp; Execution Without CLI Options<a class="headerlink" href="#customizing-default-options-execution-without-cli-options" title="Permalink to this heading">¶</a></h4>
+<p>It’s possible to customize the default values of these options when pulling Sandcat from the CALDERA server.<br />
+This is useful if you want to hide the parameters from the process tree. You can do this by passing the values
+in as headers instead of as parameters.</p>
+<p>For example, the following will download a linux executable that will use <code class="docutils literal notranslate"><span class="pre">http://10.0.0.2:8888</span></code> as the server address
+instead of <code class="docutils literal notranslate"><span class="pre">http://localhost:8888</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">sk</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;file:sandcat.go&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;platform:linux&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;server:http://10.0.0.2:8888&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">file</span><span class="o">/</span><span class="n">download</span> <span class="o">&gt;</span> <span class="n">sandcat</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mock">
+<h2>Mock<a class="headerlink" href="#mock" title="Permalink to this heading">¶</a></h2>
+<p>The Mock plugin adds a set of simulated agents to CALDERA and allows you to run complete operations without hooking any other computers up to your server.</p>
+<p>These agents are created inside the <code class="docutils literal notranslate"><span class="pre">conf/agents.yml</span></code> file. They can be edited and you can create as many as you’d like. A sample agent looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">paw</span><span class="p">:</span> <span class="mi">1234</span>
+  <span class="n">username</span><span class="p">:</span> <span class="n">darthvader</span>
+  <span class="n">host</span><span class="p">:</span> <span class="n">deathstar</span>
+  <span class="n">group</span><span class="p">:</span> <span class="n">simulation</span>
+  <span class="n">platform</span><span class="p">:</span> <span class="n">windows</span>
+  <span class="n">location</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>
+  <span class="n">enabled</span><span class="p">:</span> <span class="kc">True</span>
+  <span class="n">privilege</span><span class="p">:</span> <span class="n">User</span>
+  <span class="n">c2</span><span class="p">:</span> <span class="n">HTTP</span>
+  <span class="n">exe_name</span><span class="p">:</span> <span class="n">sandcat</span><span class="o">.</span><span class="n">exe</span>
+  <span class="n">executors</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">pwsh</span>
+    <span class="o">-</span> <span class="n">psh</span>
+</pre></div>
+</div>
+<p>After you load the mock plugin and restart CALDERA, all simulated agents will appear as normal agents in the Chain plugin GUI and can be used in any operation.</p>
+</div>
+<div class="section" id="manx">
+<h2>Manx<a class="headerlink" href="#manx" title="Permalink to this heading">¶</a></h2>
+<p>The terminal plugin adds reverse-shell capability to CALDERA, along with a TCP-based agent called Manx.</p>
+<p>When this plugin is loaded, you’ll get access to a new GUI page which allows you to drop reverse-shells on target hosts
+and interact manually with the hosts.</p>
+<p>You can use the terminal emulator on the Terminal GUI page to interact with your sessions.</p>
+</div>
+<div class="section" id="stockpile">
+<h2>Stockpile<a class="headerlink" href="#stockpile" title="Permalink to this heading">¶</a></h2>
+<p>The stockpile plugin adds a few components to CALDERA:</p>
+<ul class="simple">
+<li><p>Abilities</p></li>
+<li><p>Adversaries</p></li>
+<li><p>Planner</p></li>
+<li><p>Facts</p></li>
+</ul>
+<p>These components are all loaded through the <code class="docutils literal notranslate"><span class="pre">plugins/stockpile/data/*</span></code> directory.</p>
+</div>
+<div class="section" id="response">
+<h2>Response<a class="headerlink" href="#response" title="Permalink to this heading">¶</a></h2>
+<p>The response plugin is an autonomous incident response plugin, which can fight back against adversaries
+on a compromised host.</p>
+<p>Similar to the stockpile plugin, it contains adversaries, abilties, and facts intended for incident response. These components are all loaded through the <code class="docutils literal notranslate"><span class="pre">plugins/response/data/*</span></code> directory.</p>
+</div>
+<div class="section" id="compass">
+<h2>Compass<a class="headerlink" href="#compass" title="Permalink to this heading">¶</a></h2>
+<p>Create visualizations to explore TTPs. Follow the steps below to create your own visualization:</p>
+<ol class="arabic simple">
+<li><p>Click ‘Generate Layer’</p></li>
+<li><p>Click ‘+’ to open a new tab in the navigator</p></li>
+<li><p>Select ‘Open Existing Layer’</p></li>
+<li><p>Select ‘Upload from local’ and upload the generated layer file</p></li>
+</ol>
+<p>Compass leverages ATT&amp;CK Navigator, for more information see: <a class="reference external" href="https://github.com/mitre-attack/attack-navigator">https://github.com/mitre-attack/attack-navigator</a></p>
+</div>
+<div class="section" id="caltack">
+<h2>Caltack<a class="headerlink" href="#caltack" title="Permalink to this heading">¶</a></h2>
+<p>The caltack plugin adds the public MITRE ATT&amp;CK website to CALDERA. This is useful for deployments of CALDERA where an operator cannot access the Internet to reference the MITRE ATT&amp;CK matrix.</p>
+<p>After loading this plugin and restarting, the ATT&amp;CK website is available from the CALDERA home page. Not all parts of the ATT&amp;CK website will be available - but we aim to keep those pertaining to tactics and techniques accessible.</p>
+</div>
+<div class="section" id="ssl">
+<h2>SSL<a class="headerlink" href="#ssl" title="Permalink to this heading">¶</a></h2>
+<p>The SSL plugin adds HTTPS to CALDERA.</p>
+<blockquote>
+<div><p>This plugin only works if CALDERA is running on a Linux or MacOS machine. It requires HaProxy (&gt;= 1.8) to be installed prior to using it.</p>
+</div></blockquote>
+<p>When this plugin has been loaded, CALDERA will start the HAProxy service on the machine and serve CALDERA on all interfaces on port 8443, in addition to the normal http://[YOUR_IP]:8888 (based on the value of the <code class="docutils literal notranslate"><span class="pre">host</span></code> value in the CALDERA settings).</p>
+<p>Plugins and agents will not automatically update to the service at https://[YOUR_IP]:8443. All agents will need to be redeployed using the HTTPS address to use the secure protocol. The address will not automatically populate in the agent deployment menu. If a self-signed certificate is used, deploying agents may require additional commands to disable SSL certificate checks.</p>
+<p><strong>Warning:</strong> This plugin uses a default self-signed ssl certificate and key which should be replaced. In order to use this plugin securely, you need to generate your own certificate. The directions below show how to generate a new self-signed certificate.</p>
+<div class="section" id="setup-instructions">
+<h3>Setup Instructions<a class="headerlink" href="#setup-instructions" title="Permalink to this heading">¶</a></h3>
+<p><em>Note: OpenSSL must be installed on your system to generate a new self-signed certificate</em></p>
+<ol class="arabic simple">
+<li><p>In the root CALDERA directory, navigate to <code class="docutils literal notranslate"><span class="pre">plugins/ssl</span></code>.</p></li>
+<li><p>Place a PEM file containing SSL public and private keys in <code class="docutils literal notranslate"><span class="pre">conf/certificate.pem</span></code>. Follow the instructions below to generate a new self-signed certificate:</p>
+<ul class="simple">
+<li><p>In a terminal, paste the command <code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">req</span> <span class="pre">-x509</span> <span class="pre">-newkey</span> <span class="pre">rsa:4096</span>&#160; <span class="pre">-out</span> <span class="pre">conf/certificate.pem</span> <span class="pre">-keyout</span> <span class="pre">conf/certificate.pem</span> <span class="pre">-nodes</span></code> and press enter.</p></li>
+<li><p>This will prompt you for identifying details. Enter your country code when prompted. You may leave the rest blank by pressing enter.</p></li>
+</ul>
+</li>
+<li><p>Copy the file <code class="docutils literal notranslate"><span class="pre">haproxy.conf</span></code> from the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory to the <code class="docutils literal notranslate"><span class="pre">conf</span></code> directory.</p></li>
+<li><p>Open the file <code class="docutils literal notranslate"><span class="pre">conf/haproxy.conf</span></code> in a text editor.</p></li>
+<li><p>On the line <code class="docutils literal notranslate"><span class="pre">bind</span> <span class="pre">*:8443</span> <span class="pre">ssl</span> <span class="pre">crt</span> <span class="pre">plugins/ssl/conf/insecure_certificate.pem</span></code>, replace <code class="docutils literal notranslate"><span class="pre">insecure_certificate.pem</span></code> with <code class="docutils literal notranslate"><span class="pre">certificate.pem</span></code>.</p></li>
+<li><p>On the line <code class="docutils literal notranslate"><span class="pre">server</span> <span class="pre">caldera_main</span> <span class="pre">127.0.0.1:8888</span> <span class="pre">cookie</span> <span class="pre">caldera_main</span></code>, replace <code class="docutils literal notranslate"><span class="pre">127.0.0.1:8888</span></code> with the host and port defined in CALDERA’s <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> file. This should not be required if CALDERA’s configuration has not been changed.</p></li>
+<li><p>Save and close the file. Congratulations! You can now use CALDERA securely by accessing the UI https://[YOUR_IP]:8443 and redeploying agents using the HTTPS service.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="atomic">
+<h2>Atomic<a class="headerlink" href="#atomic" title="Permalink to this heading">¶</a></h2>
+<p>The Atomic plugin imports all Red Canary Atomic tests from their open-source GitHub repository.</p>
+</div>
+<div class="section" id="gameboard">
+<h2>GameBoard<a class="headerlink" href="#gameboard" title="Permalink to this heading">¶</a></h2>
+<p>The GameBoard plugin allows you to monitor both red-and-blue team operations. The game tracks points for both sides
+and determines which one is “winning”. The scoring seeks to quantify the amount of true/false positives/negatives
+produced by the blue team. The blue team is rewarded points when they are able to catch the red team’s actions, and the
+red team is rewarded when the blue team is not able to correctly do so. Additionally, abilities are rewarded different amounts of
+points depending on the tactic they fulfill.</p>
+<p>To begin a gameboard exercise, first log in as blue user and deploy an agent. The ‘Auto-Collect’ operation will execute automatically. Alternatively, you can begin a different operation with the blue agent if you desire. Log in as red user and begin another operation. Open up the gameboard plugin from the GUI and select these new respective red and blue operations to monitor points for each operation.</p>
+</div>
+<div class="section" id="human">
+<h2>Human<a class="headerlink" href="#human" title="Permalink to this heading">¶</a></h2>
+<p>The Human plugin allows you to build “Humans” that will perform user actions on a target system as a means to obfuscate
+red actions by Caldera. Each human is built for a specific operating system and leverages the Chrome browser along with other native
+OS applications to perform a variety of tasks.  Additionally, these humans can have various aspects of their behavior “tuned”
+to add randomization to the behaviors on the target system.</p>
+<p>On the CALDERA server, there are additional python packages required in order to use the Human plugin.
+These python packages can be installed by navigating to the <code class="docutils literal notranslate"><span class="pre">plugins/human/</span></code> directory and running the command <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p>
+<p>With the python package installed and the plugin enabled in the configuration file, the Human plugin is ready for use.
+When opening the plugin within CALDERA, there are a few actions that the human can perform.
+Check the box for each action you would like the human to perform.
+Once the actions are selected, then “Generate” the human.</p>
+<p>The generated human will show a deployment command for how to run it on a target machine.
+Before deploying the human on a target machine, there are 3 requirements:</p>
+<ol class="arabic simple">
+<li><p>Install python3 on the target machine</p></li>
+<li><p>Install the python package <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> on the target machine</p></li>
+<li><p>Install Google Chrome on the target machine</p></li>
+</ol>
+<p>Once the requirements above are met, then copy the human deployment command from the CALDERA server and run it on the target machine.
+The deployment command downloads a tar file from the CALDERA server, un-archives it, and starts the human using python.
+The human runs in a python virtual environment to ensure there are no package conflicts with pre-existing packages.</p>
+</div>
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this heading">¶</a></h2>
+<p>This plugin allows a user to gain a “User Certificate” which proves their ability to use CALDERA. This is the first of several certificates planned in the future. The plugin takes you through a capture-the-flag style certification course, covering all parts CALDERA.</p>
+</div>
+<div class="section" id="access">
+<h2>Access<a class="headerlink" href="#access" title="Permalink to this heading">¶</a></h2>
+<p>This plugin allows you to task any agent with any ability from the database. It also allows you to conduct <a class="reference internal" href="Initial-Access-Attacks.html"><span class="doc std std-doc">Initial Access Attacks</span></a>.</p>
+<div class="section" id="metasploit-integration">
+<h3>Metasploit Integration<a class="headerlink" href="#metasploit-integration" title="Permalink to this heading">¶</a></h3>
+<p>The Access plugin also allows for the easy creation of abilities for Metasploit exploits.</p>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>An agent running on a host that has Metasploit installed and initialized (run it once to set up Metasploit’s database)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code> option in CALDERA’s configuration includes <code class="docutils literal notranslate"><span class="pre">http://</span></code></p></li>
+<li><p>A fact source that includes a <code class="docutils literal notranslate"><span class="pre">app.api_key.red</span></code> fact with a value equal to the <code class="docutils literal notranslate"><span class="pre">api_key_red</span></code> option in CALDERA’s configuration</p></li>
+</ul>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">build-capabilities</span></code> tactic there is an ability called <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Metasploit</span> <span class="pre">Abilities</span></code>. Run this ability with an agent and fact source as described above, which will add a new ability for each Metasploit exploit. These abilities can then be found under the <code class="docutils literal notranslate"><span class="pre">metasploit</span></code> tactic. Note that this process may take 15 minutes.</p>
+<p>If the exploit has options you want to use, you’ll need to customize the ability’s <code class="docutils literal notranslate"><span class="pre">command</span></code> field. Start an operation in <code class="docutils literal notranslate"><span class="pre">manual</span></code> mode, and modify the <code class="docutils literal notranslate"><span class="pre">command</span></code> field before adding the potential link to the operation. For example, to set <code class="docutils literal notranslate"><span class="pre">RHOSTS</span></code> for the exploit, modify <code class="docutils literal notranslate"><span class="pre">command</span></code> to include <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">RHOSTS</span> <span class="pre">&lt;MY_RHOSTS_VALUE&gt;;</span></code> between <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&lt;EXPLOIT_NAME&gt;;</span></code> and <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
+<p>Alternatively, you can set options by adding a fact for each option with the <code class="docutils literal notranslate"><span class="pre">msf.</span></code> prefix. For example, to set <code class="docutils literal notranslate"><span class="pre">RHOST</span></code>, add a fact called <code class="docutils literal notranslate"><span class="pre">msf.RHOST</span></code>. Then in the ability’s <code class="docutils literal notranslate"><span class="pre">command</span></code> field add <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">RHOSTS</span> <span class="pre">\#{msf.RHOSTS};</span></code> between <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">&lt;EXPLOIT_NAME&gt;;</span></code> and <code class="docutils literal notranslate"><span class="pre">run</span></code>.</p>
+</div>
+</div>
+<div class="section" id="builder">
+<h2>Builder<a class="headerlink" href="#builder" title="Permalink to this heading">¶</a></h2>
+<p>The Builder plugin enables CALDERA to dynamically compile code segments into payloads that can be executed as abilities by implants. Currently, only C# is supported.</p>
+<p>See <a class="reference internal" href="Dynamically-Compiled-Payloads.html"><span class="doc std std-doc">Dynamically-Compiled Payloads</span></a> for examples on how to create abilities that leverage these payloads.</p>
+</div>
+<div class="section" id="debrief">
+<h2>Debrief<a class="headerlink" href="#debrief" title="Permalink to this heading">¶</a></h2>
+<p>The Debrief plugin provides a method for gathering overall campaign information and analytics for a selected set of operations. It provides a centralized view of operation metadata and graphical displays of the operations, the techniques and tactics used, and the facts discovered by the operations.</p>
+<p>The plugin additionally supports the export of campaign information and analytics in PDF format.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Parsers.html" class="btn btn-neutral float-right" title="Parsers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Server-Configuration.html" class="btn btn-neutral float-left" title="Server Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

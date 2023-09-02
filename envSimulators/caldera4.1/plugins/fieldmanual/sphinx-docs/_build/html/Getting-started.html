@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting started &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Learning the terminology" href="Learning-the-terminology.html" />
+    <link rel="prev" title="Installing CALDERA" href="Installing-CALDERA.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#autonomous-red-team-engagements">Autonomous red-team engagements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autonomous-incident-response">Autonomous incident-response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-red-team-engagements">Manual red-team engagements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#research-on-artificial-intelligence">Research on artificial intelligence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Getting-started.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+<p>CALDERA, as a cybersecurity framework, can be used in several ways. For most users, it will be used to run either offensive (red) or defensive (blue) operations.</p>
+<p>Here are the most common use-cases and basic instructions on how to proceed.</p>
+<div class="section" id="autonomous-red-team-engagements">
+<h2>Autonomous red-team engagements<a class="headerlink" href="#autonomous-red-team-engagements" title="Permalink to this heading">¶</a></h2>
+<p>This is the original CALDERA use-case. You can use the framework to build a specific threat (adversary) profile and launch it in a network to see where you may be susceptible. This is good for testing defenses and training blue teams on how to detect threats.</p>
+<p>The following steps will walk through logging in, deploying an agent, selecting an adversary, and running an operation:</p>
+<ol class="arabic simple">
+<li><p>Log in as a red user. By default, a “red” user is creating with a password found in the <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> file (or <code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code> if using insecure settings).</p></li>
+<li><p>Deploy an agent</p>
+<ul class="simple">
+<li><p>Navigate to the Agents page and click the “Click here to deploy an agent”</p></li>
+<li><p>Choose the Sandcat agent and platform (victim operating system)</p></li>
+<li><p>Check that the value for <code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code> matches the host and port the CALDERA server is listening on</p></li>
+<li><p>Run the generated command on the victim machine. Note that some abilities will require elevated privileges, which would require the agent to be deployed in an elevated shell.</p></li>
+<li><p>Ensure that a new agent appears in the table on the Agents page</p></li>
+</ul>
+</li>
+<li><p>Choose an adversary profile</p>
+<ul class="simple">
+<li><p>Navigate to the Adversaries page</p></li>
+<li><p>Select an adversary from the dropdown and review abilities. The “Discovery” and “Hunter” adversaries from the Stockpile plugin are good starting profiles.</p></li>
+</ul>
+</li>
+<li><p>Run an operation</p>
+<ul class="simple">
+<li><p>Navigate to the Operations page and add an operation by toggling the View/Add switch</p></li>
+<li><p>Type in a name for the operation</p></li>
+<li><p>Under the basic options, select a group that contains the recently deployed agent (“red” by default)</p></li>
+<li><p>Under the basic options, select the adversary profile chosen in the last step</p></li>
+<li><p>Click the start button to begin the operation</p></li>
+</ul>
+</li>
+<li><p>Review the operation</p>
+<ul class="simple">
+<li><p>While the operation is running, abilities will be executed on the deployed agent. Click the stars next to run abilities to view the output.</p></li>
+</ul>
+</li>
+<li><p>Export operation results</p>
+<ul class="simple">
+<li><p>Once the operation finishes, users can export operation reports in JSON format by clicking the “Download report”
+button in the operation GUI modal. Users can also export operation event logs in JSON format by clicking the “Download event logs”
+button in the operations modal. The event logs will also be automatically written to disk when the operation finishes.
+For more information on the various export formats and automatic/manual event log generation, see the <a class="reference internal" href="Operation-Results.html"><span class="doc std std-doc">Operation Result page</span></a>.</p></li>
+</ul>
+</li>
+</ol>
+<p>Next steps may include:</p>
+<ul class="simple">
+<li><p>Running an operation with a different adversary profile</p></li>
+<li><p>Creating a new adversary profile</p></li>
+<li><p>Creating custom abilities and adding them to an adversary profile</p></li>
+<li><p>Running an operation with a different planner (such as batch)</p></li>
+</ul>
+</div>
+<div class="section" id="autonomous-incident-response">
+<h2>Autonomous incident-response<a class="headerlink" href="#autonomous-incident-response" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA can be used to perform automated incident response through deployed agents. This is helpful for identifying TTPs that other security tools may not see or block.</p>
+<p>The following steps will walk through logging in to CALDERA blue, deploying a blue agent, selecting a defender, and running an operation:</p>
+<ol class="arabic simple">
+<li><p>Log in as a blue user. By default, a “blue” user is creating with a password found in the <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> file (or <code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code> if using insecure settings).</p></li>
+<li><p>Deploy a blue agent</p>
+<ul class="simple">
+<li><p>Navigate to the Agents page and click the “Click here to deploy an agent”</p></li>
+<li><p>Choose the Sandcat agent and platform (victim operating system)</p></li>
+<li><p>Check that the value for <code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code> matches the host and port the CALDERA server is listening on</p></li>
+<li><p>Run the generated command on the victim machine. The blue agent should be deployed with elevated privileges in most cases.</p></li>
+<li><p>Ensure that a new blue agent appears in the table on the Agents page</p></li>
+</ul>
+</li>
+<li><p>Choose a defender profile</p>
+<ul class="simple">
+<li><p>Navigate to the Defenders page</p></li>
+<li><p>Select a defender from the dropdown and review abilities. The “Incident responder” defender is a good starting profile.</p></li>
+</ul>
+</li>
+<li><p>Choose a fact source. Defender profiles utilize fact sources to determine good vs. bad on a given host.</p>
+<ul class="simple">
+<li><p>Navigate to the Sources page</p></li>
+<li><p>Select a fact source and review facts. Consider adding facts to match the environment (for example, add a fact with the <code class="docutils literal notranslate"><span class="pre">remote.port.unauthorized</span></code> name and a value of <code class="docutils literal notranslate"><span class="pre">8000</span></code> to detect services running on port 8000)</p></li>
+<li><p>Save the source if any changes were made</p></li>
+</ul>
+</li>
+<li><p>Run an operation</p>
+<ul class="simple">
+<li><p>Navigate to the Operations page and add an operation by toggling the View/Add switch</p></li>
+<li><p>Type in a name for the operation</p></li>
+<li><p>Under the basic options, select a group that contains the recently deployed agent (“blue” by default)</p></li>
+<li><p>Under the basic options, select the defender profile chosen previously</p></li>
+<li><p>Under the autonomous menu, select the fact source chosen previously</p></li>
+<li><p>Click the start button to begin the operation</p></li>
+</ul>
+</li>
+<li><p>Review the operation</p>
+<ul class="simple">
+<li><p>While the operation is running, abilities will be executed on the deployed agent. Click the stars next to run abilities to view the output.</p></li>
+<li><p>Consider manually running commands (or <a class="reference internal" href="#autonomous-red-team-engagements"><span class="std std-doc">using an automated adversary</span></a>) which will trigger incident response actions (such as starting a service on an unauthorized port)</p></li>
+</ul>
+</li>
+<li><p>Export operation results</p>
+<ul class="simple">
+<li><p>Once the operation finishes, users can export operation reports in JSON format by clicking the “Download report”
+button in the operation GUI modal. Users can also export operation event logs in JSON format by clicking the “Download event logs”
+button in the operations modal. The event logs will also be automatically written to disk when the operation finishes.
+For more information on the various export formats and automatic/manual event log generation, see the <a class="reference internal" href="Operation-Results.html"><span class="doc std std-doc">Operation Result page</span></a>.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="manual-red-team-engagements">
+<h2>Manual red-team engagements<a class="headerlink" href="#manual-red-team-engagements" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA can be used to perform manual red-team assessments using the Manx agent. This is good for replacing or appending existing offensive toolsets in a manual assessment, as the framework can be extended with any custom tools you may have.</p>
+<p>The following steps will walk through logging in, deploying a Manx agent, and running manual commands:</p>
+<ol class="arabic simple">
+<li><p>Log in as a red user</p></li>
+<li><p>Deploy a Manx agent</p>
+<ul class="simple">
+<li><p>Navigate to the Agents page and click the “Click here to deploy an agent”</p></li>
+<li><p>Choose the Manx agent and platform (victim operating system)</p></li>
+<li><p>Check that the values for <code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code>, <code class="docutils literal notranslate"><span class="pre">app.contact.tcp</span></code>, and <code class="docutils literal notranslate"><span class="pre">app.contact.udp</span></code> match the host and ports the CALDERA server is listening on</p></li>
+<li><p>Run the generated command on the victim machine</p></li>
+<li><p>Ensure that a new agent appears in the table on the Agents page</p></li>
+</ul>
+</li>
+<li><p>Deploy a Manx agent</p>
+<ul class="simple">
+<li><p>Navigate to the Manx plugin</p></li>
+<li><p>Select the deployed agent in the session dropdown</p></li>
+<li><p>Run manual commands in the terminal window</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="research-on-artificial-intelligence">
+<h2>Research on artificial intelligence<a class="headerlink" href="#research-on-artificial-intelligence" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA can be used to test artificial intelligence and other decision-making algorithms using the <a class="reference external" href="https://github.com/mitre/mock">Mock plugin</a>. The plugin adds simulated agents and mock ability responses, which can be used to run simulate an entire operation.</p>
+<p>To use the mock plugin:</p>
+<ol class="arabic simple">
+<li><p>With the server stopped, enable the mock plugin. Restart the server.</p></li>
+<li><p>Log in as a red user</p></li>
+<li><p>In the Agents modal, review the simulated agents that have been spun up</p></li>
+<li><p>Run an operation using any adversary against your simulated agents. Note how the operation runs non-deterministically.</p></li>
+<li><p>Adjust the decision logic in a planner, such as the <code class="docutils literal notranslate"><span class="pre">batch.py</span></code> planner in the Stockpile plugin, to test out different theories</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Learning-the-terminology.html" class="btn btn-neutral float-right" title="Learning the terminology" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Installing-CALDERA.html" class="btn btn-neutral float-left" title="Installing CALDERA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

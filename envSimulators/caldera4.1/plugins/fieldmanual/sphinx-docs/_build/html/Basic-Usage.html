@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Usage &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Server Configuration" href="Server-Configuration.html" />
+    <link rel="prev" title="Learning the terminology" href="Learning-the-terminology.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#agents">Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agent-management">Agent Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agent-settings">Agent Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#abilities">Abilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bootstrap-and-deadman-abilities">Bootstrap and Deadman Abilities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adversary-profiles">Adversary Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#facts">Facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fact-sources">Fact sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rules">Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subnets">Subnets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fact-source-adjustments">Fact Source Adjustments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#planners">Planners</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-atomic-planner">The Atomic planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-planners">Custom Planners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repeatable-abilities-and-planners">Repeatable Abilities and Planners</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#plugins">Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Basic Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Basic-Usage.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="agents">
+<h2>Agents<a class="headerlink" href="#agents" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="agent-management">
+<h3>Agent Management<a class="headerlink" href="#agent-management" title="Permalink to this heading">¶</a></h3>
+<p>To deploy an agent:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the Agents module in the side menu under “Campaigns” and click the “Deploy an agent” button</p></li>
+<li><p>Choose an agent (Sandcat is a good one to start with) and a platform (target operating system)</p></li>
+<li><p>Make sure the agent options are correct (e.g. ensure <code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code> matches the expected host and port for the CALDERA server)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">app.contact.http</span></code> represents the HTTP endpoint (including the IP/hostname and port) that the C2 server is listening on for
+agent requests and beacons. Examples: <code class="docutils literal notranslate"><span class="pre">http://localhost:8888</span></code>, <code class="docutils literal notranslate"><span class="pre">https://10.1.2.3</span></code>, <code class="docutils literal notranslate"><span class="pre">http://myc2domain.com:8080</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">agents.implant_name</span></code> represents the base name of the agent binary.
+For Windows agents, <code class="docutils literal notranslate"><span class="pre">.exe</span></code> will be automatically appended to the base name (e.g. <code class="docutils literal notranslate"><span class="pre">splunkd</span></code> will become <code class="docutils literal notranslate"><span class="pre">splunkd.exe</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">agent.extensions</span></code> takes in a comma-separated list of agent extensions to compile with your agent binary.
+When selecting the associated deployment command, this will instruct the C2 server to compile the agent binary with the
+requested extensions, if they exist. If you just want a basic agent without extensions, leave this field blank.
+See <a class="reference internal" href="plugins/sandcat/Sandcat-Details.html#extensions"><span class="std std-doc">Sandcat extension documentation</span></a> for more information on Sandcat
+extensions.</p></li>
+</ul>
+</li>
+<li><p>Choose a command to execute on the target machine. If you want your agent to be compiled with the
+extensions from <code class="docutils literal notranslate"><span class="pre">agent.extensions</span></code>, you must select the associated deployment command below:
+<code class="docutils literal notranslate"><span class="pre">Compile</span> <span class="pre">red-team</span> <span class="pre">agent</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">comma-separated</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">extensions</span> <span class="pre">(requires</span> <span class="pre">GoLang).</span></code></p></li>
+<li><p>On the target machine, paste the command into the terminal or PowerShell window and execute it</p></li>
+<li><p>The new agent should appear in the table in the Agents tab (if the agent does not appear, check the <a class="reference internal" href="Troubleshooting.html#agent-deployment"><span class="std std-doc">Agent Deployment section of the Troubleshooting page</span></a>)</p></li>
+</ol>
+<p>To kill an agent, use the “Kill Agent” button under the agent-specific settings. The agent will terminate on its next beacon.</p>
+<p>To remove the agent from CALDERA (will not kill the agent), click the red X. Running agents remove from CALDERA will reappear when they check in.</p>
+</div>
+<div class="section" id="agent-settings">
+<h3>Agent Settings<a class="headerlink" href="#agent-settings" title="Permalink to this heading">¶</a></h3>
+<p>Several configuration options are available for agents:</p>
+<ul class="simple">
+<li><p><strong>Beacon Timers</strong>: Set the minimum and maximum seconds the agent will take to beacon home. These timers are applied to all newly-created agents.</p></li>
+<li><p><strong>Watchdog Timer</strong>: Set the number of seconds to wait, once the server is unreachable, before killing an agent. This timer is applied to all newly-created agents.</p></li>
+<li><p><strong>Untrusted Timer</strong>: Set the number of seconds to wait before marking a missing agent as untrusted. Operations will not generate new links for untrusted agents. This is a global timer and will affect all running and newly-created agents.</p></li>
+<li><p><strong>Implant Name</strong>: The base name of newly-spawned agents. If necessary, an extension will be added when an agent is created (e.g. <code class="docutils literal notranslate"><span class="pre">splunkd</span></code> will become <code class="docutils literal notranslate"><span class="pre">splunkd.exe</span></code> when spawning an agent on a Windows machine).</p></li>
+<li><p><strong>Bootstrap Abilities</strong>: A comma-separated list of ability IDs to be run on a new agent beacon. By default, this is set to run a command which clears command history.</p></li>
+<li><p><strong>Deadman Abilities</strong>: A comma-separated list of ability IDs to be run immediately prior to agent termination. The agent must support deadman abilities in order for them to run.</p></li>
+</ul>
+<p>Agents have a number of agent-specific settings that can be modified by clicking on the button under the ‘PID’ column for the agent:</p>
+<ul class="simple">
+<li><p><strong>Group</strong>: Agent group</p></li>
+<li><p><strong>Sleep</strong>: Beacon minimum and maximum sleep timers for this specific agent, separated by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
+<li><p><strong>Watchdog</strong>: The watchdog timer setting for this specific agent</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="abilities">
+<h2>Abilities<a class="headerlink" href="#abilities" title="Permalink to this heading">¶</a></h2>
+<p>The majority of abilities are stored inside the Stockpile plugin (<code class="docutils literal notranslate"><span class="pre">plugins/stockpile/data/abilities</span></code>), along the adversary profiles which use them. Abilities created through the UI will be placed in <code class="docutils literal notranslate"><span class="pre">data/abilities</span></code>.</p>
+<p>Here is a sample ability:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">9</span><span class="n">a30740d</span><span class="o">-</span><span class="mi">3</span><span class="n">aa8</span><span class="o">-</span><span class="mi">4</span><span class="n">c23</span><span class="o">-</span><span class="mi">8</span><span class="n">efa</span><span class="o">-</span><span class="n">d51215e8a5b9</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">Scan</span> <span class="n">WIFI</span> <span class="n">networks</span>
+  <span class="n">description</span><span class="p">:</span> <span class="n">View</span> <span class="nb">all</span> <span class="n">potential</span> <span class="n">WIFI</span> <span class="n">networks</span> <span class="n">on</span> <span class="n">host</span>
+  <span class="n">tactic</span><span class="p">:</span> <span class="n">discovery</span>
+  <span class="n">technique</span><span class="p">:</span>
+    <span class="n">attack_id</span><span class="p">:</span> <span class="n">T1016</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">System</span> <span class="n">Network</span> <span class="n">Configuration</span> <span class="n">Discovery</span>
+  <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">darwin</span><span class="p">:</span>
+      <span class="n">sh</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="o">|</span>
+          <span class="o">./</span><span class="n">wifi</span><span class="o">.</span><span class="n">sh</span> <span class="n">scan</span>
+        <span class="n">payload</span><span class="p">:</span> <span class="n">wifi</span><span class="o">.</span><span class="n">sh</span>
+    <span class="n">linux</span><span class="p">:</span>
+      <span class="n">sh</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="o">|</span>
+          <span class="o">./</span><span class="n">wifi</span><span class="o">.</span><span class="n">sh</span> <span class="n">scan</span>
+        <span class="n">payload</span><span class="p">:</span> <span class="n">wifi</span><span class="o">.</span><span class="n">sh</span>
+    <span class="n">windows</span><span class="p">:</span>
+      <span class="n">psh</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="o">|</span>
+          <span class="o">.</span>\<span class="n">wifi</span><span class="o">.</span><span class="n">ps1</span> <span class="o">-</span><span class="n">Scan</span>
+        <span class="n">payload</span><span class="p">:</span> <span class="n">wifi</span><span class="o">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<p>Things to note:</p>
+<ul class="simple">
+<li><p>Each ability has a random UUID id</p></li>
+<li><p>Each ability requires a name, description, ATT&amp;CK tactic and technique information</p></li>
+<li><p>Each ability requires a platforms list, which should contain at least 1 block for a supported operating system (platform). Currently, abilities can be created for Windows, Linux, and Darwin (MacOS).</p></li>
+<li><p>Abilities can be added to an adversary through the GUI with the ‘add ability’ button</p></li>
+<li><p>The delete_payload field (optional, placed at the top level, expects True or False) specifies whether the agent should remove the payload from the filesystem after the ability completes. The default value, if not provided, is True.</p></li>
+<li><p>The singleton field (optional, placed at the top level, expects True or False) specifies that the ability should only be run successfully once - after it succeeds, it should not be run again in the same operation. The default value, if not provided, is False.</p></li>
+<li><p>The repeatable field (optional, placed at the top level, expects True or False) specifies that the ability can be repeated as many times as the planner desires. The default value, if not provided, is False.</p></li>
+</ul>
+<p>Please note that only one of singleton or repeatable should be True at any one time - singleton operates at an operational level, and repeatable at an agent level. If both are true at the same time, Caldera may behave unexpected.</p>
+<p>For each platform, there should be a list of executors. In the default Sandcat deployment, Darwin and Linux platforms can use sh and Windows can use psh (PowerShell) or cmd (command prompt).</p>
+<p>Each platform block consists of a:</p>
+<ul class="simple">
+<li><p>command (required)</p></li>
+<li><p>payload (optional)</p></li>
+<li><p>uploads (optional)</p></li>
+<li><p>cleanup (optional)</p></li>
+<li><p>parsers (optional)</p></li>
+<li><p>requirements (optional)</p></li>
+<li><p>timeout (optional)</p></li>
+</ul>
+<p><strong>Command</strong>: A command can be 1-line or many and should contain the code you would like the ability to execute. Newlines in the command will be deleted before execution. The command can (optionally) contain variables, which are identified as <code class="docutils literal notranslate"><span class="pre">#{variable}</span></code>.</p>
+<p>Prior to execution of a command, CALDERA will search for variables within the command and attempt to replace them with values. The values used for substitution depend on the type of the variable in the command: user-defined or global variable. User-defined variables are associated with facts can be filled in with fact values from fact sources or parser output, while <em>global  variables</em> are filled in by CALDERA internally and cannot be substituted with fact values.</p>
+<p>The following global variables are defined within CALDERA:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#{server}</span></code> references the FQDN of the CALDERA server itself. Because every agent may know the location of CALDERA differently, using the <code class="docutils literal notranslate"><span class="pre">#{server}</span></code> variable allows you to let the system determine the correct location of the server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{group}</span></code> is the group a particular agent is a part of. This variable is mainly useful for lateral movement, where your command can start an agent within the context of the agent starting it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{paw}</span></code> is the unique identifier - or paw print - of the agent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{location}</span></code> is the location of the agent on the client file system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{exe_name}</span></code> is the executable name of the agent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{upstream_dest}</span></code> is the address of the immediate “next hop” that the agent uses to reach the CALDERA server. For agents that directly connect to the server, this will be the same as the <code class="docutils literal notranslate"><span class="pre">#{server}</span></code> value. For agents that use peer-to-peer, this value will be the peer address used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{origin_link_id}</span></code> is the internal link ID associated with running this command used for agent tracking.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{payload}</span></code> and <code class="docutils literal notranslate"><span class="pre">#{payload:&lt;uuid&gt;}</span></code> are used primarily in cleanup commands to denote a payload file downloaded by an agent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#{app.*}</span></code> are configuration items found in your main CALDERA configuration (e.g., <code class="docutils literal notranslate"><span class="pre">conf/default.yml</span></code>) with a prefix of <code class="docutils literal notranslate"><span class="pre">app.</span></code>. Variables starting with <code class="docutils literal notranslate"><span class="pre">app.</span></code> that are not found in the CALDERA configuration are not treated as global variables and can be subject to fact substitution.</p></li>
+</ul>
+<p><strong>Payload</strong>: A comma-separated list of files which the ability requires in order to run. In the windows executor above, the payload is wifi.ps1. This means, before the ability is used, the agent will download wifi.ps1 from CALDERA. If the file already exists, it will not download it. You can store any type of file in the payload directories of any plugin.</p>
+<blockquote>
+<div><p>Did you know that you can assign functions to execute on the server when specific payloads are requested for download? An example of this is the sandcat.go file. Check the plugins/sandcat/hook.py file to see how special payloads can be handled.</p>
+</div></blockquote>
+<p>Payloads can be stored as regular files or you can xor (encode) them so the anti-virus on the server-side does not pick them up. To do this, run the app/utility/payload_encoder.py against the file to create an encoded version of it. Then store and reference the encoded payload instead of the original.</p>
+<blockquote>
+<div><p>The payload_encoder.py file has a docstring which explains how to use the utility.</p>
+</div></blockquote>
+<p>Payloads also can be ran through a packer to obfuscate them further from detection on a host machine.  To do this you would put the packer module name in front of the filename followed by a colon ‘:’.  This non-filename character will be passed in the agent’s call to the download endpoint, and the file will be packed before sending it back to the agent. UPX is currently the only supported packer, but adding addition packers is a simple task.</p>
+<blockquote>
+<div><p>An example for setting up for a packer to be used would be editing the filename in the payload section of an ability file: - upx:Akagi64.exe</p>
+</div></blockquote>
+<p><strong>Uploads</strong>: A list of files which the agent will upload to the C2 server after running the ability command. The filepaths can be specified as local file paths or absolute paths. The ability assumes that these files will exist during the time of upload.</p>
+<p>Below is an example ability that uses the <code class="docutils literal notranslate"><span class="pre">uploads</span></code> keyword:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+
+<span class="o">-</span> <span class="nb">id</span><span class="p">:</span> <span class="mi">22</span><span class="n">b9a90a</span><span class="o">-</span><span class="mi">50</span><span class="n">c6</span><span class="o">-</span><span class="mi">4</span><span class="n">f6a</span><span class="o">-</span><span class="n">a1a4</span><span class="o">-</span><span class="n">f13cb42a26fd</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">Upload</span> <span class="n">file</span> <span class="n">example</span>
+  <span class="n">description</span><span class="p">:</span> <span class="n">Example</span> <span class="n">ability</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">files</span>
+  <span class="n">tactic</span><span class="p">:</span> <span class="n">exfiltration</span>
+  <span class="n">technique</span><span class="p">:</span>
+    <span class="n">attack_id</span><span class="p">:</span> <span class="n">T1041</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Exfiltration</span> <span class="n">Over</span> <span class="n">C2</span> <span class="n">Channel</span>
+  <span class="n">platforms</span><span class="p">:</span>
+    <span class="n">darwin</span><span class="p">,</span><span class="n">linux</span><span class="p">:</span>
+      <span class="n">sh</span><span class="p">:</span>
+        <span class="n">command</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">echo</span> <span class="s2">&quot;test&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">absolutepath</span><span class="o">.</span><span class="n">txt</span><span class="p">;</span>
+          <span class="n">echo</span> <span class="s2">&quot;test2&quot;</span> <span class="o">&gt;</span> <span class="o">./</span><span class="n">localpath</span><span class="o">.</span><span class="n">txt</span><span class="p">;</span>
+        <span class="n">cleanup</span><span class="p">:</span> <span class="o">|</span>
+          <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">absolutepath</span><span class="o">.</span><span class="n">txt</span> <span class="o">./</span><span class="n">localpath</span><span class="o">.</span><span class="n">txt</span><span class="p">;</span>
+        <span class="n">uploads</span><span class="p">:</span>
+          <span class="o">-</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">absolutepath</span><span class="o">.</span><span class="n">txt</span>
+          <span class="o">-</span> <span class="o">./</span><span class="n">localpath</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><strong>Cleanup</strong>: An instruction that will reverse the result of the command. This is intended to put the computer back into the state it was before the ability was used. For example, if your command creates a file, you can use the cleanup to remove the file. Cleanup commands run after an operation, in the reverse order they were created. Cleaning up an operation is also optional, which means you can start an operation and instruct it to skip all cleanup instructions.</p>
+<p>Cleanup is not needed for abilities, like above, which download files through the payload block. Upon an operation completing, all payload files will be removed from the client (agent) computers.</p>
+<p><strong>Parsers</strong>: A list of parsing modules which can parse the output of the command into new facts. Interested in this topic? Check out <a class="reference internal" href="Parsers.html"><span class="doc std std-doc">how CALDERA parses facts</span></a>, which goes into detail about parsers.</p>
+<p>Abilities can also make use of two CALDERA REST API endpoints, file upload and download.</p>
+<p><strong>Requirements</strong>: Required relationships of facts that need to be established before this ability can be used. See <a class="reference internal" href="Requirements.html"><span class="doc std std-doc">Requirements</span></a> for more information.</p>
+<p><strong>Timeout</strong>: How many seconds to allow the command to run.</p>
+<div class="section" id="bootstrap-and-deadman-abilities">
+<h3>Bootstrap and Deadman Abilities<a class="headerlink" href="#bootstrap-and-deadman-abilities" title="Permalink to this heading">¶</a></h3>
+<p>Bootstrap Abilities are abilities that run immediately after sending their first beacon in. A bootstrap ability can be added through the GUI by entering the ability id into the ‘Bootstrap Abilities’ field in the ‘Agents’ tab. Alternatively, you can edit the <code class="docutils literal notranslate"><span class="pre">conf/agents.yml</span></code> file and include the ability id in the bootstrap ability section of the file (ensure the server is turned off before editing any configuration files).</p>
+<p>Deadman Abilities are abilities that an agent runs just before graceful termination. When the Caldera server receives an initial beacon from an agent that supports deadman abilities, the server will immediately send the configured deadman abilities, along with any configured bootstrap abilities, to the agent. The agent will save the deadman abilities and execute them if terminated via the GUI or if self-terminating due to watchdog timer expiration or disconnection from the C2. Deadman abilities can be added through the GUI by entering a comma-separated list of ability IDs into the ‘Deadman Abilities’ field in the ‘Agents’ tab. Alternatively, you can edit the ‘conf/agents.yml’ file and include the ability ID in the ‘deadman_abilities’ section of the file (ensure the server is turned off before editing any configuration files).</p>
+<p>Below is an example <code class="docutils literal notranslate"><span class="pre">conf/agents.yml</span></code> file with configured bootstrap and deadman abilities:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bootstrap_abilities</span><span class="p">:</span>
+<span class="o">-</span> <span class="mi">43</span><span class="n">b3754c</span><span class="o">-</span><span class="n">def4</span><span class="o">-</span><span class="mi">4699</span><span class="o">-</span><span class="n">a673</span><span class="o">-</span><span class="mi">1</span><span class="n">d85648fda6a</span> <span class="c1"># Clear and avoid logs</span>
+<span class="n">deadman_abilities</span><span class="p">:</span>
+<span class="o">-</span> <span class="mi">5</span><span class="n">f844ac9</span><span class="o">-</span><span class="mi">5</span><span class="n">f24</span><span class="o">-</span><span class="mi">4196</span><span class="o">-</span><span class="n">a70d</span><span class="o">-</span><span class="mi">17</span><span class="n">f0bd44a934</span> <span class="c1"># delete agent executable upon termination</span>
+<span class="n">implant_name</span><span class="p">:</span> <span class="n">splunkd</span>
+<span class="n">sleep_max</span><span class="p">:</span> <span class="mi">60</span>
+<span class="n">sleep_min</span><span class="p">:</span> <span class="mi">30</span>
+<span class="n">untrusted_timer</span><span class="p">:</span> <span class="mi">90</span>
+<span class="n">watchdog</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">deployments</span><span class="p">:</span>
+  <span class="o">-</span> <span class="mi">2</span><span class="n">f34977d</span><span class="o">-</span><span class="mi">9558</span><span class="o">-</span><span class="mi">4</span><span class="n">c12</span><span class="o">-</span><span class="n">abad</span><span class="o">-</span><span class="mi">349716777</span><span class="n">c6b</span> <span class="c1">#Sandcat</span>
+  <span class="o">-</span> <span class="mi">356</span><span class="n">d1722</span><span class="o">-</span><span class="mi">7784</span><span class="o">-</span><span class="mi">40</span><span class="n">c4</span><span class="o">-</span><span class="mi">822</span><span class="n">b</span><span class="o">-</span><span class="mi">0</span><span class="n">cf864b0b36d</span> <span class="c1">#Manx</span>
+  <span class="o">-</span> <span class="mi">0</span><span class="n">ab383be</span><span class="o">-</span><span class="n">b819</span><span class="o">-</span><span class="mi">41</span><span class="n">bf</span><span class="o">-</span><span class="mi">91</span><span class="n">b9</span><span class="o">-</span><span class="mi">1</span><span class="n">bd4404d83bf</span> <span class="c1">#Ragdoll</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adversary-profiles">
+<h2>Adversary Profiles<a class="headerlink" href="#adversary-profiles" title="Permalink to this heading">¶</a></h2>
+<p>The majority of adversary profiles are stored inside the Stockpile plugin (<code class="docutils literal notranslate"><span class="pre">plugins/stockpile/data/adversaries</span></code>). Adversary profiles created through the UI will be placed in <code class="docutils literal notranslate"><span class="pre">data/adversaries</span></code>.</p>
+<p>Adversaries consist of an objective (optional) and a list of abilities under atomic_ordering. This ordering determines the order in which abilities will be run.</p>
+<p>An example adversary is below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">:</span> <span class="mi">5</span><span class="n">d3e170e</span><span class="o">-</span><span class="n">f1b8</span><span class="o">-</span><span class="mi">49</span><span class="n">f9</span><span class="o">-</span><span class="mi">9</span><span class="n">ee1</span><span class="o">-</span><span class="n">c51605552a08</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">Collection</span>
+<span class="n">description</span><span class="p">:</span> <span class="n">A</span> <span class="n">collection</span> <span class="n">adversary</span>
+<span class="n">objective</span><span class="p">:</span> <span class="mi">495</span><span class="n">a9828</span><span class="o">-</span><span class="n">cab1</span><span class="o">-</span><span class="mi">44</span><span class="n">dd</span><span class="o">-</span><span class="n">a0ca</span><span class="o">-</span><span class="mf">66e58177</span><span class="n">d8cc</span>
+<span class="n">atomic_ordering</span><span class="p">:</span>
+    <span class="o">-</span> <span class="mi">1</span><span class="n">f7ff232</span><span class="o">-</span><span class="n">ebf8</span><span class="o">-</span><span class="mi">42</span><span class="n">bf</span><span class="o">-</span><span class="n">a3c4</span><span class="o">-</span><span class="mi">657855794</span><span class="n">cfe</span> <span class="c1">#find company emails</span>
+    <span class="o">-</span> <span class="n">d69e8660</span><span class="o">-</span><span class="mi">62</span><span class="n">c9</span><span class="o">-</span><span class="mf">431e-87</span><span class="n">eb</span><span class="o">-</span><span class="mi">8</span><span class="n">cf6bd4e35cf</span> <span class="c1">#find ip addresses</span>
+    <span class="o">-</span> <span class="mi">90</span><span class="n">c2efaa</span><span class="o">-</span><span class="mi">8205</span><span class="o">-</span><span class="mi">480</span><span class="n">d</span><span class="o">-</span><span class="mi">8</span><span class="n">bb6</span><span class="o">-</span><span class="mi">61</span><span class="n">d90dbaf81b</span> <span class="c1">#find sensitive files</span>
+    <span class="o">-</span> <span class="mi">6469</span><span class="n">befa</span><span class="o">-</span><span class="mi">748</span><span class="n">a</span><span class="o">-</span><span class="mi">4</span><span class="n">b9c</span><span class="o">-</span><span class="n">a96d</span><span class="o">-</span><span class="n">f191fde47d89</span> <span class="c1">#create staging dir</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this heading">¶</a></h2>
+<p>An operation can be started with a number of optional configurations:</p>
+<ul class="simple">
+<li><p><strong>Group</strong>: Which collection of agents would you like to run against</p></li>
+<li><p><strong>Adversary</strong>: Which adversary profile would you like to run</p></li>
+<li><p><strong>Auto-close</strong>: Automatically close the operation when there is nothing left to do. Alternatively, keep the operation forever.</p></li>
+<li><p><strong>Run immediately</strong>: Run the operation immediately or start in a paused state</p></li>
+<li><p><strong>Autonomous</strong>: Run autonomously or manually. Manual mode will ask the operator to approve or discard each command.</p></li>
+<li><p><strong>Planner</strong>: You can select which logic library - or planner - you would like to use.</p></li>
+<li><p><strong>Fact source</strong>: You can attach a source of facts to an operation. This means the operation will start with “pre-knowledge” of the facts, which it can use to fill in variables inside the abilities.</p></li>
+<li><p><strong>Cleanup timeout</strong>: How many seconds to wait for each cleanup command to complete before continuing.</p></li>
+<li><p><strong>Obfuscators</strong>: Select an obfuscator to encode each command with, before they are sent to the agents.</p></li>
+<li><p><strong>Jitter</strong>: Agents normally check in with CALDERA every 60 seconds. Once they realize they are part of an active operation, agents will start checking in according to the jitter time, which is by default 2/8. This fraction tells the agents that they should pause between 2 and 8 seconds (picked at random each time an agent checks in) before using the next ability.</p></li>
+<li><p><strong>Visibility</strong>: How visible should the operation be to the defense. Defaults to 51 because each ability defaults to a visibility of 50. Abilities with a higher visibility than the operation visibility will be skipped.</p></li>
+</ul>
+<p>After starting an operation, users can export the operation report in JSON format by clicking the “Download report” button in the operation GUI modal. For more information on the operation report format, see the <a class="reference internal" href="Operation-Results.html"><span class="doc std std-doc">Operation Result</span></a> section.</p>
+</div>
+<div class="section" id="facts">
+<h2>Facts<a class="headerlink" href="#facts" title="Permalink to this heading">¶</a></h2>
+<p>A fact is an identifiable piece of information about a given computer. Facts can be used to perform variable assignment within abilities.</p>
+<p>Facts are composed of the following:</p>
+<ul class="simple">
+<li><p><strong>name</strong>: a descriptor which identifies the type of the fact and can be used for variable names within abilities. Example: <code class="docutils literal notranslate"><span class="pre">host.user.name</span></code>. Note that CALDERA 3.1.0 and earlier required fact names/traits to be formatted as <code class="docutils literal notranslate"><span class="pre">major.minor.specific</span></code> but this is no longer a requirement.</p></li>
+<li><p><strong>value</strong>: any arbitrary string. An appropriate value for a <code class="docutils literal notranslate"><span class="pre">host.user.name</span></code> may be “Administrator” or “John”.</p></li>
+<li><p><strong>score</strong>: an integer which associates a relative importance for the fact. Every fact, by default, gets a score of 1. If a <code class="docutils literal notranslate"><span class="pre">host.user.password</span></code> fact is important or has a high chance of success if used, you may assign it a score of 5. When an ability uses a fact to fill in a variable, it will use those with the highest scores first. If a fact has a score of 0, it will be blocklisted - meaning it cannot be used in the operation.</p></li>
+</ul>
+<blockquote>
+<div><p>If a property has a prefix of <code class="docutils literal notranslate"><span class="pre">host.</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">host.user.name</span></code>) that fact will only be used by the host that collected it.</p>
+</div></blockquote>
+<p>As hinted above, when CALDERA runs abilities, it scans the command and cleanup instructions for variables. When it finds one, it then looks at the facts it has and sees if it can replace the variables with matching facts (based on the property). It will then create new variants of each command/cleanup instruction for each possible combination of facts it has collected. Each variant will be scored based on the cumulative score of all facts inside the command. The highest scored variants will be executed first.</p>
+<p>Facts can be added or modified through the GUI by navigating to <em>Advanced -&gt; Sources</em> and clicking on ‘+ add row’.</p>
+</div>
+<div class="section" id="fact-sources">
+<h2>Fact sources<a class="headerlink" href="#fact-sources" title="Permalink to this heading">¶</a></h2>
+<p>A fact source is a collection of facts that you have grouped together. A fact source can be applied to an operation when you start it, which gives the operation facts to fill in variables with.</p>
+<p>Fact sources can be added or modified through the GUI by navigating to <em>Advanced -&gt; Sources</em>.</p>
+</div>
+<div class="section" id="rules">
+<h2>Rules<a class="headerlink" href="#rules" title="Permalink to this heading">¶</a></h2>
+<p>A rule is a way of restricting or placing boundaries on CALDERA. Rules are directly related to facts and should be included in a fact sheet.</p>
+<p>Rules act similar to firewall rules and have three key components: fact, action, and match</p>
+<ol class="arabic simple">
+<li><p><strong>Fact</strong> specifies the name of the fact that the rule will apply to</p></li>
+<li><p><strong>Action</strong> (ALLOW, DENY) will allow or deny the fact from use if it matches the rule</p></li>
+<li><p><strong>Match</strong> regex rule on a fact’s value to determine if the rule applies</p></li>
+</ol>
+<p>During an operation, the planning service matches each link against the rule-set, discarding it if any of the fact assignments in the link match a rule specifying DENY and keeping it otherwise. In the case that multiple rules match the same fact assignment, the last one listed will be given priority.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rules</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">action</span><span class="p">:</span> <span class="n">DENY</span>
+    <span class="n">fact</span><span class="p">:</span> <span class="n">file</span><span class="o">.</span><span class="n">sensitive</span><span class="o">.</span><span class="n">extension</span>
+    <span class="n">match</span><span class="p">:</span> <span class="o">.*</span>
+  <span class="o">-</span> <span class="n">action</span><span class="p">:</span> <span class="n">ALLOW</span>
+    <span class="n">fact</span><span class="p">:</span> <span class="n">file</span><span class="o">.</span><span class="n">sensitive</span><span class="o">.</span><span class="n">extension</span>
+    <span class="n">match</span><span class="p">:</span> <span class="n">txt</span>
+</pre></div>
+</div>
+<p>In this example only the txt file extension will be used. Note that the ALLOW action for txt supersedes the DENY for all, as the ALLOW rule is listed later in the policy. If the ALLOW rule was listed first, and the DENY rule second, then all values (including txt) for file.sensitive.extension would be discarded.</p>
+<div class="section" id="subnets">
+<h3>Subnets<a class="headerlink" href="#subnets" title="Permalink to this heading">¶</a></h3>
+<p>Rules can also match against subnets.</p>
+<p><strong>Subnet Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">-</span> <span class="n">action</span><span class="p">:</span> <span class="n">DENY</span>
+    <span class="n">fact</span><span class="p">:</span> <span class="n">my</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">ip</span>
+    <span class="n">match</span><span class="p">:</span> <span class="o">.*</span>
+  <span class="o">-</span> <span class="n">action</span><span class="p">:</span> <span class="n">ALLOW</span>
+    <span class="n">fact</span><span class="p">:</span> <span class="n">my</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">ip</span>
+    <span class="n">match</span><span class="p">:</span> <span class="mf">10.245.112.0</span><span class="o">/</span><span class="mi">24</span>
+</pre></div>
+</div>
+<p>In this example, the rules would permit CALDERA to only operate within the 10.245.112.1 to 10.245.112.254 range.</p>
+<p>Rules can be added or modified through the GUI by navigating to <em>Advanced -&gt; Sources</em> and clicking on ‘+ view rules’.</p>
+</div>
+<div class="section" id="fact-source-adjustments">
+<h3>Fact Source Adjustments<a class="headerlink" href="#fact-source-adjustments" title="Permalink to this heading">¶</a></h3>
+<p>Fact source adjustments allow for dynamic adjustment specific ability’s <code class="docutils literal notranslate"><span class="pre">visibility</span></code> in the context of an operation.</p>
+<p><strong>Adjustment Example (<code class="docutils literal notranslate"><span class="pre">basic</span></code> fact source)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">adjustments</span><span class="p">:</span>
+    <span class="mi">1</span><span class="n">b4fb81c</span><span class="o">-</span><span class="mi">8090</span><span class="o">-</span><span class="mi">426</span><span class="n">c</span><span class="o">-</span><span class="mi">93</span><span class="n">ab</span><span class="o">-</span><span class="mi">0</span><span class="n">a633e7a16a7</span><span class="p">:</span>
+      <span class="n">host</span><span class="o">.</span><span class="n">installed</span><span class="o">.</span><span class="n">av</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">value</span><span class="p">:</span> <span class="n">symantec</span>
+          <span class="n">offset</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="o">-</span> <span class="n">value</span><span class="p">:</span> <span class="n">mcafee</span>
+          <span class="n">offset</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>In this example, if in the process of executing an operation, a <code class="docutils literal notranslate"><span class="pre">host.installed.av</span></code> fact was found with either the value <code class="docutils literal notranslate"><span class="pre">symantec</span></code> or <code class="docutils literal notranslate"><span class="pre">mcafee</span></code>, ability <code class="docutils literal notranslate"><span class="pre">1b4fb81c-8090-426c-93ab-0a633e7a16a7</span></code> (Sniff network traffic) would have its visibility score raised and the status <code class="docutils literal notranslate"><span class="pre">HIGH_VIZ</span></code>.  This framework allows dynamic adjustments to expected ability visibility based on captured facts (in this example the presence of anti-virus software on the target) which may impact our desire to run the ability, as it might be more easily detected in this environment.</p>
+<p>When the “Sniff network traffic” ability is run, its visibility is <em>only</em> adjusted if, at the time of execution, the fact source has a <code class="docutils literal notranslate"><span class="pre">host.installed.av</span></code> fact with either the value <code class="docutils literal notranslate"><span class="pre">symantec</span></code> or <code class="docutils literal notranslate"><span class="pre">mcafee</span></code>.  If one or both of these facts are present, each execution of “Sniff network traffic” will have <code class="docutils literal notranslate"><span class="pre">3</span></code> (the value of it’s <code class="docutils literal notranslate"><span class="pre">offset</span></code>) added to its visibility score.  This visibility adjustment is recorded in the operation report.</p>
+<p>Adjustments must be added or modified through the fact source’s <code class="docutils literal notranslate"><span class="pre">.yml</span></code> file, with the exception of new fact sources created using the REST API’s <code class="docutils literal notranslate"><span class="pre">sources</span></code> endpoint with a well-formed <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request.</p>
+</div>
+</div>
+<div class="section" id="planners">
+<h2>Planners<a class="headerlink" href="#planners" title="Permalink to this heading">¶</a></h2>
+<p>A planner is a module within CALDERA which contains logic for how a running operation should make decisions about which abilities to use and in what order.</p>
+<p>Planners are single module Python files. Planners utilize the core system’s planning_svc.py, which has planning logic useful for various types of planners.</p>
+<div class="section" id="the-atomic-planner">
+<h3>The Atomic planner<a class="headerlink" href="#the-atomic-planner" title="Permalink to this heading">¶</a></h3>
+<p>CALDERA ships with a default planner, <em>atomic</em>. The <em>atomic</em> planner operates by atomically sending a single ability command to each agent in the operation’s group at a time, progressing through abilities as they are enumerated in the underyling adversary profile. When a new agent is added to the operation, the <em>atomic</em> planner will start with the first ability in the adversary profile.</p>
+<p>The <em>atomic</em> planner can be found in the <code class="docutils literal notranslate"><span class="pre">mitre/stockpile</span></code> GitHub repository at <code class="docutils literal notranslate"><span class="pre">app/atomic.py</span></code>.</p>
+</div>
+<div class="section" id="custom-planners">
+<h3>Custom Planners<a class="headerlink" href="#custom-planners" title="Permalink to this heading">¶</a></h3>
+<p>For any other planner behavior and functionality, a custom planner is required. CALDERA has open sourced some custom planners, to include the <em>batch</em> and <em>buckets</em> planners. From time to time, the CALDERA team will open source further planners as they become more widely used, publicly available, etc.</p>
+<p>The <em>batch</em> planner will retrieve all ability commands available and applicable for the operation and send them to the agents found in the operation’s group. The <em>batch</em> planner uses the planning service to retrieve ability commands based on the chosen advsersary and known agents in the operation. The abilities returned to the <em>batch</em> planner are based on the agent matching the operating system (execution platform) of the ability and the ability command having no unsatisfied facts. The <em>batch</em> planner will then send these ability commands to the agents and wait for them to be completed. After each batch of ability commands is completed, the <em>batch</em> planner will again attempt to retrieve all ability commands available for the operation and attempt to repeat the cycle. This is required as once ability commands are executed, new additional ability commands may also become unlocked; e.g. required facts being present now, newly spawned agents, etc. The <em>batch</em> planner should be used for profiles containing repeatable abilities.</p>
+<p>The <em>buckets</em> planner is an example planner to demonstrate how to build a custom planner as well as the planning service utilities available to planners to aid in the formation decision logic.</p>
+<p>The <em>batch</em> and <em>buckets</em> planners can be found in the <code class="docutils literal notranslate"><span class="pre">mitre/stockpile</span></code> github repository at <code class="docutils literal notranslate"><span class="pre">app/batch.py</span></code> and <code class="docutils literal notranslate"><span class="pre">app/buckets.py</span></code>.</p>
+<p>See <a class="reference internal" href="How-to-Build-Planners.html"><span class="doc std std-doc">How to Build Planners</span></a> for full walkthrough of how to build a custom planner and incorporate any custom decision logic that is desired.</p>
+</div>
+<div class="section" id="repeatable-abilities-and-planners">
+<h3>Repeatable Abilities and Planners<a class="headerlink" href="#repeatable-abilities-and-planners" title="Permalink to this heading">¶</a></h3>
+<p>When creating a new operation, selecting a profile with repeatable abilities will disable both the <em>atomic</em> and the <em>buckets</em> planners. Due to the behavior and functionality of these planners, repeatable abilities will result in the planner looping infinitely on the repeatable ability. It is recommended to use the <em>batch</em> planner with profiles containing repeatable abilities.</p>
+</div>
+</div>
+<div class="section" id="plugins">
+<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA is built using a plugin architecture on top of the core system. Plugins are separate git repositories that plug new features into the core system. Each plugin resides in the plugins directory and is loaded into CALDERA by adding it to the local.yml file.</p>
+<p>Plugins can be added through the UI or in the configuration file (likely <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code>). Changes to the configuration file while the server is shut down. The plugins will be enabled when the server restarts.</p>
+<p>Each plugin contains a single hook.py file in its root directory. This file should contain an initialize function, which gets called automatically for each loaded plugin when CALDERA boots. The initialize function contains the plugin logic that is getting “plugged into” the core system. This function takes a single parameter:</p>
+<ul class="simple">
+<li><p><strong>services</strong>: a list of core services that live inside the core system.</p></li>
+</ul>
+<p>A plugin can add nearly any new functionality/features to CALDERA by using the two objects above.</p>
+<p>A list of plugins included with CALDERA can be found on the <a class="reference internal" href="Plugin-library.html"><span class="doc std std-doc">Plugin library</span></a> page.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Server-Configuration.html" class="btn btn-neutral float-right" title="Server Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Learning-the-terminology.html" class="btn btn-neutral float-left" title="Learning the terminology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>app.api.v2.handlers namespace &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="app.api.v2.managers namespace" href="app.api.v2.managers.html" />
+    <link rel="prev" title="app.api.v2 package" href="app.api.v2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">app</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="app.html">app package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="app.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="app.api.html">app.api namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.contacts.html">app.contacts namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.data_encoders.html">app.data_encoders namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.learning.html">app.learning namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.objects.html">app.objects namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.service.html">app.service namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.utility.html">app.utility namespace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#module-app.version">app.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#module-app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">app</a> &raquo;</li>
+        
+          <li><a href="app.html">app package</a> &raquo;</li>
+        
+          <li><a href="app.api.html">app.api namespace</a> &raquo;</li>
+        
+          <li><a href="app.api.v2.html">app.api.v2 package</a> &raquo;</li>
+        
+      <li>app.api.v2.handlers namespace</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/_generated/app.api.v2.handlers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-app.api.v2.handlers">
+<span id="app-api-v2-handlers-namespace"></span><h1>app.api.v2.handlers namespace<a class="headerlink" href="#module-app.api.v2.handlers" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-app.api.v2.handlers.ability_api">
+<span id="app-api-v2-handlers-ability-api-module"></span><h2>app.api.v2.handlers.ability_api module<a class="headerlink" href="#module-app.api.v2.handlers.ability_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.ability_api.</span></span><span class="sig-name descname"><span class="pre">AbilityApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.create_ability">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_ability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.create_ability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.create_or_update_ability">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_ability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.create_or_update_ability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.delete_ability">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_ability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.delete_ability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.get_abilities">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_abilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.get_abilities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.get_ability_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_ability_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.get_ability_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.ability_api.AbilityApi.update_ability">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_ability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.ability_api.AbilityApi.update_ability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.adversary_api">
+<span id="app-api-v2-handlers-adversary-api-module"></span><h2>app.api.v2.handlers.adversary_api module<a class="headerlink" href="#module-app.api.v2.handlers.adversary_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.adversary_api.</span></span><span class="sig-name descname"><span class="pre">AdversaryApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.create_adversary">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_adversary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.create_adversary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.create_on_disk_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_disk_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.create_on_disk_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.create_or_update_adversary">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_adversary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.create_or_update_adversary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.delete_adversary">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_adversary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.delete_adversary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.get_adversaries">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_adversaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.get_adversaries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.get_adversary_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_adversary_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.get_adversary_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.adversary_api.AdversaryApi.update_adversary">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_adversary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.adversary_api.AdversaryApi.update_adversary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.agent_api">
+<span id="app-api-v2-handlers-agent-api-module"></span><h2>app.api.v2.handlers.agent_api module<a class="headerlink" href="#module-app.api.v2.handlers.agent_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.agent_api.</span></span><span class="sig-name descname"><span class="pre">AgentApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.create_agent">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.create_agent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.create_or_update_agent">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.create_or_update_agent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.delete_agent">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.delete_agent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.get_agent_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_agent_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.get_agent_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.get_agents">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.get_agents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.get_deploy_commands">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_deploy_commands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.get_deploy_commands" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.get_deploy_commands_for_ability">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_deploy_commands_for_ability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.get_deploy_commands_for_ability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.agent_api.AgentApi.update_agent">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.agent_api.AgentApi.update_agent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.base_api">
+<span id="app-api-v2-handlers-base-api-module"></span><h2>app.api.v2.handlers.base_api module<a class="headerlink" href="#module-app.api.v2.handlers.base_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_api.BaseApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.base_api.</span></span><span class="sig-name descname"><span class="pre">BaseApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_svc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_api.BaseApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_api.BaseApi.add_routes">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_api.BaseApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_api.BaseApi.get_request_permissions">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_request_permissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_api.BaseApi.get_request_permissions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_api.BaseApi.log">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">log</span></span><a class="headerlink" href="#app.api.v2.handlers.base_api.BaseApi.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_api.BaseApi.parse_json_body">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_json_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Schema</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_api.BaseApi.parse_json_body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.base_object_api">
+<span id="app-api-v2-handlers-base-object-api-module"></span><h2>app.api.v2.handlers.base_object_api module<a class="headerlink" href="#module-app.api.v2.handlers.base_object_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.base_object_api.</span></span><span class="sig-name descname"><span class="pre">BaseObjectApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ram_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_property</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_svc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_api.BaseApi" title="app.api.v2.handlers.base_api.BaseApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.add_routes">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.create_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.create_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.create_on_disk_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_on_disk_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.create_on_disk_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.create_or_update_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.create_or_update_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.create_or_update_on_disk_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_on_disk_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.create_or_update_on_disk_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.delete_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.delete_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.delete_on_disk_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_on_disk_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.delete_on_disk_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.get_all_objects">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.get_all_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.get_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.get_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.update_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.update_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.base_object_api.BaseObjectApi.update_on_disk_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_on_disk_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.base_object_api.BaseObjectApi.update_on_disk_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.config_api">
+<span id="app-api-v2-handlers-config-api-module"></span><h2>app.api.v2.handlers.config_api module<a class="headerlink" href="#module-app.api.v2.handlers.config_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.config_api.ConfigApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.config_api.</span></span><span class="sig-name descname"><span class="pre">ConfigApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.config_api.ConfigApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_api.BaseApi" title="app.api.v2.handlers.base_api.BaseApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.config_api.ConfigApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.config_api.ConfigApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.config_api.ConfigApi.get_config_with_name">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_config_with_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.config_api.ConfigApi.get_config_with_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.config_api.ConfigApi.update_agents_config">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_agents_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.config_api.ConfigApi.update_agents_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.config_api.ConfigApi.update_main_config">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_main_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.config_api.ConfigApi.update_main_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.contact_api">
+<span id="app-api-v2-handlers-contact-api-module"></span><h2>app.api.v2.handlers.contact_api module<a class="headerlink" href="#module-app.api.v2.handlers.contact_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.contact_api.ContactApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.contact_api.</span></span><span class="sig-name descname"><span class="pre">ContactApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.contact_api.ContactApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_api.BaseApi" title="app.api.v2.handlers.base_api.BaseApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.contact_api.ContactApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.contact_api.ContactApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.contact_api.ContactApi.get_available_contact_reports">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_available_contact_reports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.contact_api.ContactApi.get_available_contact_reports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.contact_api.ContactApi.get_contact_report">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_contact_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.contact_api.ContactApi.get_contact_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.fact_api">
+<span id="app-api-v2-handlers-fact-api-module"></span><h2>app.api.v2.handlers.fact_api module<a class="headerlink" href="#module-app.api.v2.handlers.fact_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.fact_api.</span></span><span class="sig-name descname"><span class="pre">FactApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.add_facts">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.add_facts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.add_relationships">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_relationships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.add_relationships" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.delete_facts">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.delete_facts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.delete_relationships">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_relationships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.delete_relationships" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.get_facts">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.get_facts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.get_facts_by_operation_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_facts_by_operation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.get_facts_by_operation_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.get_relationships">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_relationships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.get_relationships" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.get_relationships_by_operation_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_relationships_by_operation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.get_relationships_by_operation_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.update_facts">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.update_facts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_api.FactApi.update_relationships">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_relationships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_api.FactApi.update_relationships" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.fact_source_api">
+<span id="app-api-v2-handlers-fact-source-api-module"></span><h2>app.api.v2.handlers.fact_source_api module<a class="headerlink" href="#module-app.api.v2.handlers.fact_source_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.fact_source_api.</span></span><span class="sig-name descname"><span class="pre">FactSourceApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.create_fact_source">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_fact_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.create_fact_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.create_or_update_source">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.create_or_update_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.delete_source">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.delete_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.get_fact_source_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_fact_source_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.get_fact_source_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.get_fact_sources">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_fact_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.get_fact_sources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.fact_source_api.FactSourceApi.update_fact_source">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_fact_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.fact_source_api.FactSourceApi.update_fact_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.health_api">
+<span id="app-api-v2-handlers-health-api-module"></span><h2>app.api.v2.handlers.health_api module<a class="headerlink" href="#module-app.api.v2.handlers.health_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.health_api.HealthApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.health_api.</span></span><span class="sig-name descname"><span class="pre">HealthApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.health_api.HealthApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_api.BaseApi" title="app.api.v2.handlers.base_api.BaseApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.health_api.HealthApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.health_api.HealthApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.health_api.HealthApi.get_health_info">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_health_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.health_api.HealthApi.get_health_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.obfuscator_api">
+<span id="app-api-v2-handlers-obfuscator-api-module"></span><h2>app.api.v2.handlers.obfuscator_api module<a class="headerlink" href="#module-app.api.v2.handlers.obfuscator_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.obfuscator_api.ObfuscatorApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.obfuscator_api.</span></span><span class="sig-name descname"><span class="pre">ObfuscatorApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.obfuscator_api.ObfuscatorApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.obfuscator_api.ObfuscatorApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.obfuscator_api.ObfuscatorApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.obfuscator_api.ObfuscatorApi.get_obfuscator_by_name">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_obfuscator_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.obfuscator_api.ObfuscatorApi.get_obfuscator_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.obfuscator_api.ObfuscatorApi.get_obfuscators">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_obfuscators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.obfuscator_api.ObfuscatorApi.get_obfuscators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.objective_api">
+<span id="app-api-v2-handlers-objective-api-module"></span><h2>app.api.v2.handlers.objective_api module<a class="headerlink" href="#module-app.api.v2.handlers.objective_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.objective_api.</span></span><span class="sig-name descname"><span class="pre">ObjectiveApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.create_objective">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.create_objective" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.create_or_update_objective">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.create_or_update_objective" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.get_objective_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_objective_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.get_objective_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.get_objectives">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_objectives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.get_objectives" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.objective_api.ObjectiveApi.update_objective">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.objective_api.ObjectiveApi.update_objective" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.operation_api">
+<span id="app-api-v2-handlers-operation-api-module"></span><h2>app.api.v2.handlers.operation_api module<a class="headerlink" href="#module-app.api.v2.handlers.operation_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.operation_api.</span></span><span class="sig-name descname"><span class="pre">OperationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.create_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.create_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.create_operation">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.create_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.create_potential_link">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_potential_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.create_potential_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.delete_operation">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.delete_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_event_logs">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_event_logs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_event_logs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_link">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_link_result">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_link_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_link_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_links">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operation_report">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operation_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operation_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_operations">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_operations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_potential_links">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_potential_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_potential_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.get_potential_links_by_paw">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_potential_links_by_paw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.get_potential_links_by_paw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.update_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.update_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.update_operation">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.update_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.operation_api.OperationApi.update_operation_link">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_operation_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.operation_api.OperationApi.update_operation_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.planner_api">
+<span id="app-api-v2-handlers-planner-api-module"></span><h2>app.api.v2.handlers.planner_api module<a class="headerlink" href="#module-app.api.v2.handlers.planner_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.planner_api.PlannerApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.planner_api.</span></span><span class="sig-name descname"><span class="pre">PlannerApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.planner_api.PlannerApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.planner_api.PlannerApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.planner_api.PlannerApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.planner_api.PlannerApi.get_planner_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_planner_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.planner_api.PlannerApi.get_planner_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.planner_api.PlannerApi.get_planners">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_planners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.planner_api.PlannerApi.get_planners" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.plugins_api">
+<span id="app-api-v2-handlers-plugins-api-module"></span><h2>app.api.v2.handlers.plugins_api module<a class="headerlink" href="#module-app.api.v2.handlers.plugins_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.plugins_api.PluginApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.plugins_api.</span></span><span class="sig-name descname"><span class="pre">PluginApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.plugins_api.PluginApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.plugins_api.PluginApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.plugins_api.PluginApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.plugins_api.PluginApi.get_plugin_by_name">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_plugin_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.plugins_api.PluginApi.get_plugin_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.plugins_api.PluginApi.get_plugins">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.plugins_api.PluginApi.get_plugins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.api.v2.handlers.schedule_api">
+<span id="app-api-v2-handlers-schedule-api-module"></span><h2>app.api.v2.handlers.schedule_api module<a class="headerlink" href="#module-app.api.v2.handlers.schedule_api" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.api.v2.handlers.schedule_api.</span></span><span class="sig-name descname"><span class="pre">ScheduleApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">services</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.api.v2.handlers.base_object_api.BaseObjectApi" title="app.api.v2.handlers.base_object_api.BaseObjectApi"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseObjectApi</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.add_routes">
+<span class="sig-name descname"><span class="pre">add_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.add_routes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.create_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.create_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.create_or_update_object">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.create_or_update_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.create_or_update_schedule">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_or_update_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.create_or_update_schedule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.create_schedule">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.create_schedule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.delete_schedule">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.delete_schedule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.get_schedule_by_id">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schedule_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.get_schedule_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.get_schedules">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schedules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.get_schedules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.api.v2.handlers.schedule_api.ScheduleApi.update_schedule">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.api.v2.handlers.schedule_api.ScheduleApi.update_schedule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="app.api.v2.managers.html" class="btn btn-neutral float-right" title="app.api.v2.managers namespace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app.api.v2.html" class="btn btn-neutral float-left" title="app.api.v2 package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

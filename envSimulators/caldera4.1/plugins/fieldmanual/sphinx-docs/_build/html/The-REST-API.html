@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The REST API &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Build Plugins" href="How-to-Build-Plugins.html" />
+    <link rel="prev" title="Exfiltration Scenarios and Setup" href="plugins/stockpile/Exfiltration-How-Tos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api-rest">/api/rest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agents">Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#delete">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adversaries">Adversaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operations">Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">POST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#put">PUT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-upload">/file/upload</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-download">/file/download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>The REST API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/The-REST-API.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-rest-api">
+<h1>The REST API<a class="headerlink" href="#the-rest-api" title="Permalink to this heading">¶</a></h1>
+<p><em>Note: The original REST API has been deprecated. The new REST API v2 has been released, with <span class="xref myst">documentation
+available here after server startup</span>. Alternatively, this can be viewed by scrolling
+to the bottom of the CALDERA navigation menu and selecting “api docs.”</em></p>
+<p>All REST API functionality can be viewed in the rest_api.py module in the source code.</p>
+<div class="section" id="api-rest">
+<h2>/api/rest<a class="headerlink" href="#api-rest" title="Permalink to this heading">¶</a></h2>
+<p>You can interact with all parts of CALDERA through the core REST API endpoint /api/rest. If you
+send requests to “localhost” - you are not required to pass a key header. If you send requests to
+127.0.0.1 or any other IP addresses, the key header is required. You can set the API key in the
+conf/default.yml file. Some examples below will use the header, others will not, for example.</p>
+<blockquote>
+<div><p>Any request to this endpoint must include an “index” as part of the request, which routes it to the appropriate object type.</p>
+</div></blockquote>
+<p>Here are the available REST API functions:</p>
+</div>
+<div class="section" id="agents">
+<h2>Agents<a class="headerlink" href="#agents" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="delete">
+<h3>DELETE<a class="headerlink" href="#delete" title="Permalink to this heading">¶</a></h3>
+<p>Delete any agent.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;KEY:$API_KEY&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">DELETE</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">rest</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;index&quot;:&quot;agents&quot;,&quot;paw&quot;:&quot;$agent_paw&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post">
+<h3>POST<a class="headerlink" href="#post" title="Permalink to this heading">¶</a></h3>
+<p>View the abilities a given agent could execute.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;KEY:$API_KEY&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">access</span><span class="o">/</span><span class="n">abilities</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;paw&quot;:&quot;$PAW&quot;}&#39;</span>
+</pre></div>
+</div>
+<p>Execute a given ability against an agent, outside the scope of an operation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;KEY:$API_KEY&quot;</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">access</span><span class="o">/</span><span class="n">exploit</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;paw&quot;:&quot;$PAW&quot;,&quot;ability_id&quot;:&quot;$ABILITY_ID&quot;,&quot;obfuscator&quot;:&quot;plain-text&quot;}&#39;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>You can optionally POST an obfuscator and/or a facts dictionary with key/value pairs to fill in any variables the chosen ability requires.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;paw&quot;</span><span class="p">:</span><span class="s2">&quot;$PAW&quot;</span><span class="p">,</span><span class="s2">&quot;ability_id&quot;</span><span class="p">:</span><span class="s2">&quot;$ABILITY_ID&quot;</span><span class="p">,</span><span class="s2">&quot;obfuscator&quot;</span><span class="p">:</span><span class="s2">&quot;base64&quot;</span><span class="p">,</span><span class="s2">&quot;facts&quot;</span><span class="p">:[{</span><span class="s2">&quot;trait&quot;</span><span class="p">:</span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;admin&quot;</span><span class="p">},{</span><span class="s2">&quot;trait&quot;</span><span class="p">:</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;123&quot;</span><span class="p">}]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adversaries">
+<h2>Adversaries<a class="headerlink" href="#adversaries" title="Permalink to this heading">¶</a></h2>
+<p>View all abilities for a specific adversary_id (the UUID of the adversary).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;KEY:$API_KEY&quot;</span> <span class="s1">&#39;http://localhost:8888/api/rest&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;index&quot;:&quot;adversaries&quot;,&quot;adversary_id&quot;:&quot;$adversary_id&quot;}&#39;</span>
+</pre></div>
+</div>
+<p>View all abilities for all adversaries.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;KEY:$API_KEY&quot;</span> <span class="s1">&#39;http://localhost:8888/api/rest&#39;</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;index&quot;:&quot;adversaries&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id1">
+<h3>DELETE<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Delete any operation. Operation ID must be a integer.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;KEY:</span><span class="nv">$API_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>http://localhost:8888/api/rest<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;index&quot;:&quot;operations&quot;,&quot;id&quot;:&quot;$operation_id&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>POST<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>Change the state of any operation. In addition to finished, you can also use: paused, run_one_link or running.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;KEY:</span><span class="nv">$API_KEY</span><span class="s2">&quot;</span><span class="w"> </span>http://localhost:8888/api/rest<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;index&quot;:&quot;operation&quot;, &quot;op_id&quot;:123, &quot;state&quot;:&quot;finished&quot;}&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put">
+<h3>PUT<a class="headerlink" href="#put" title="Permalink to this heading">¶</a></h3>
+<p>Create a new operation. All that is required is the operation name, similar to creating a new operation
+in the browser.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;KEY:</span><span class="nv">$API_KEY</span><span class="s2">&quot;</span><span class="w"> </span>http://127.0.0.1:8888/api/rest<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;index&quot;:&quot;operations&quot;,&quot;name&quot;:&quot;testoperation1&quot;}&#39;</span>
+</pre></div>
+</div>
+<p>Optionally, you can include:</p>
+<ol class="arabic simple">
+<li><p>group (defaults to empty string)</p></li>
+<li><p>adversary_id (defaults to empty string)</p></li>
+<li><p>planner (defaults to <em>batch</em>)</p></li>
+<li><p>source (defaults to <em>basic</em>’)</p></li>
+<li><p>jitter (defaults to <em>2/8</em>)</p></li>
+<li><p>obfuscator (defaults to <em>plain-text</em>)</p></li>
+<li><p>visibility (defaults to <em>50</em>)</p></li>
+<li><p>autonomous (defaults to <em>1</em>)</p></li>
+<li><p>phases_enabled (defaults to <em>1</em>)</p></li>
+<li><p>auto_close (defaults to <em>0</em>)</p></li>
+</ol>
+<p>To learn more about these options, read the “What is an operation?” documentation section.</p>
+</div>
+</div>
+<div class="section" id="file-upload">
+<h2>/file/upload<a class="headerlink" href="#file-upload" title="Permalink to this heading">¶</a></h2>
+<p>Files can be uploaded to CALDERA by POST’ing a file to the /file/upload endpoint. Uploaded files will be put in the exfil_dir location specified in the default.yml file.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-F<span class="w"> </span><span class="s1">&#39;data=@path/to/file&#39;</span><span class="w"> </span>http://localhost:8888/file/upload
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="file-download">
+<h2>/file/download<a class="headerlink" href="#file-download" title="Permalink to this heading">¶</a></h2>
+<p>Files can be dowloaded from CALDERA through the /file/download endpoint. This endpoint requires an HTTP header called “file” with the file name as the value. When a file is requested, CALDERA will look inside each of the payload directories listed in the local.yml file until it finds a file matching the name.</p>
+<p>Files can also be downloaded indirectly through the <a class="reference internal" href="Learning-the-terminology.html"><span class="doc std std-doc">payload block of an ability</span></a>.</p>
+<blockquote>
+<div><p>Additionally, the <a class="reference internal" href="Plugin-library.html"><span class="doc std std-doc">Sandcat plugin</span></a> delivery commands utilize the file download endpoint to drop the agent on a host</p>
+</div></blockquote>
+<div class="section" id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;file:wifi.sh&quot;</span><span class="w"> </span>http://localhost:8888/file/download<span class="w"> </span>&gt;<span class="w"> </span>wifi.sh
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="How-to-Build-Plugins.html" class="btn btn-neutral float-right" title="How to Build Plugins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plugins/stockpile/Exfiltration-How-Tos.html" class="btn btn-neutral float-left" title="Exfiltration Scenarios and Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

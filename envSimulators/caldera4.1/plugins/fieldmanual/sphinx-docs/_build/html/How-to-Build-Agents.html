@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Build Agents &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="app" href="_generated/modules.html" />
+    <link rel="prev" title="How to Build Planners" href="How-to-Build-Planners.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Build Agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-contacts">Understanding contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-an-agent-http-contact">Building an agent: HTTP contact</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-1">Part #1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-2">Part #2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-3">Part #3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-4">Part 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-5">Part #5</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lateral-movement-tracking">Lateral Movement Tracking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sandcat">Sandcat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to Build Agents</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/How-to-Build-Agents.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-build-agents">
+<h1>How to Build Agents<a class="headerlink" href="#how-to-build-agents" title="Permalink to this heading">¶</a></h1>
+<p>Building your own agent is a way to create a unique - or undetectable - footprint on compromised machines. Our
+default agent, Sandcat, is a representation of what an agent can do. This agent is written in GoLang and offers
+an extensible collection of command-and-control (C2) protocols, such as communicating over HTTP or GitHub Gist.</p>
+<p>You can extend Sandcat by adding your own C2 protocols in place or you can follow this guide to create your own agent
+from scratch.</p>
+<div class="section" id="understanding-contacts">
+<h2>Understanding contacts<a class="headerlink" href="#understanding-contacts" title="Permalink to this heading">¶</a></h2>
+<p>Agents are processes which are deployed on compromised hosts and connect with the C2 server periodically for instructions.
+An agent connects to the server through a <em>contact</em>, which is a specific connection point on the server.</p>
+<p>Each contact is defined in an independent Python module and is registered with the contact_svc when the server starts.</p>
+<p>There are currently several built-in contacts available: http, tcp, udp, websocket, gist (via Github), and dns.</p>
+<p>For additional stealth, supporting agents can use communication tunnels to tunnel built-in contacts like HTTP, TCP, and UDP. For more information on C2 communication tunneling, see the <a class="reference internal" href="C2-Tunneling.html"><span class="doc std std-doc">C2 tunneling section</span></a>.</p>
+</div>
+<div class="section" id="building-an-agent-http-contact">
+<h2>Building an agent: HTTP contact<a class="headerlink" href="#building-an-agent-http-contact" title="Permalink to this heading">¶</a></h2>
+<p>Start by getting a feel for the HTTP endpoint, which are located in the contacts/contact_http.py module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">beacon</span> 
+</pre></div>
+</div>
+<div class="section" id="part-1">
+<h3>Part #1<a class="headerlink" href="#part-1" title="Permalink to this heading">¶</a></h3>
+<p>Start by writing a POST request to the /beacon endpoint.</p>
+<p>In your agent code, create a flat JSON dictionary of key/value pairs and ensure the following properties are included
+as keys. Add values which correlate to the host your agent will be running on. Note - all of these properties are
+optional - but you should aim to cover as many as you can.</p>
+<blockquote>
+<div><p>If you don’t include a platform and executors then the server will never provide instructions to the agent, as it
+won’t know which ones are valid to send.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>server</strong>: The location (IP or FQDN) of the C2 server</p></li>
+<li><p><strong>platform</strong>: The operating system</p></li>
+<li><p><strong>host</strong>: The hostname of the machine</p></li>
+<li><p><strong>group</strong>: Either red or blue. This determines if your agent will be used as a red or blue agent.</p></li>
+<li><p><strong>paw</strong>: The current unique identifier for the agent, either initially generated by the agent itself or provided by the C2 on initial beacon.</p></li>
+<li><p><strong>username</strong>: The username running the agent</p></li>
+<li><p><strong>architecture</strong>: The architecture of the host</p></li>
+<li><p><strong>executors</strong>: A list of executors allowed on the host</p></li>
+<li><p><strong>privilege</strong>: The privilege level of the agent process, either User or Elevated</p></li>
+<li><p><strong>pid</strong>: The process identifier of the agent</p></li>
+<li><p><strong>ppid</strong>: The process identifier of the agent’s parent process</p></li>
+<li><p><strong>location</strong>: The location of the agent on disk</p></li>
+<li><p><strong>exe_name</strong>: The name of the agent binary file</p></li>
+<li><p><strong>host_ip_addrs</strong>: A list of valid IPv4 addresses on the host</p></li>
+<li><p><strong>proxy_receivers</strong>: a dict (key: string, value: list of strings) that maps a peer-to-peer proxy protocol name to a list of addresses that the agent is listening on for peer-to-peer client requests.</p></li>
+<li><p><strong>deadman_enabled</strong>: a boolean that tells the C2 server whether or not this agent supports deadman abilities. If this value is not provided, the server assumes that the agent does not support deadman abilities.</p></li>
+<li><p><strong>upstream_dest</strong>: The “next hop” upstream destination address (e.g. IP or FQDN) that the agent uses to
+reach the C2 server. If the agent is using peer-to-peer communication to reach the C2, this value will contain
+the peer address rather than the C2 address.</p></li>
+</ul>
+<p>At this point, you are ready to make a POST request with the profile to the /beacon endpoint. You should get back:</p>
+<ol class="arabic simple">
+<li><p>The recommended number of seconds to sleep before sending the next beacon</p></li>
+<li><p>The recommended number of seconds (watchdog) to wait before killing the agent, once the server is unreachable (0 means infinite)</p></li>
+<li><p>A list of instructions - base64 encoded.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>profile=$(echo &#39;{&quot;server&quot;:&quot;http://127.0.0.1:8888&quot;,&quot;platform&quot;:&quot;darwin&quot;,&quot;executors&quot;:[&quot;sh&quot;]}&#39; | base64)
+curl -s -X POST -d $profile localhost:8888/beacon | base64 --decode
+...{&quot;paw&quot;: &quot;dcoify&quot;, sleep&quot;: 59, &quot;watchdog&quot;: 0, &quot;instructions&quot;: &quot;[...]&quot;}
+</pre></div>
+</div>
+<p>If you get a malformed base64 error, that means the operating system you are using is adding an empty space to the
+profile variable. You can prove this by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $profile
+</pre></div>
+</div>
+<p>To resolve this error, simply change the line to (note the only difference is ‘-w 0’):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>profile=$(echo &#39;{&quot;server&quot;:&quot;http://127.0.0.1:8888&quot;,&quot;platform&quot;:&quot;darwin&quot;,&quot;executors&quot;:[&quot;sh&quot;]}&#39; | base64 -w 0)
+</pre></div>
+</div>
+<blockquote>
+<div><p>The paw property returned back from the server represents a unique identifier for your new agent. Each
+time you call the /beacon endpoint without this paw, a new agent will be created on the server - so you should ensure
+that future beacons include it.</p>
+</div></blockquote>
+<p>You can now navigate to the CALDERA UI, click into the agents tab and view your new agent.</p>
+</div>
+<div class="section" id="part-2">
+<h3>Part #2<a class="headerlink" href="#part-2" title="Permalink to this heading">¶</a></h3>
+<p>Now it’s time to execute the instructions.</p>
+<p>Looking at the previous response, you can see each instruction contains:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: The link ID associated to the ability</p></li>
+<li><p><strong>sleep</strong>: A recommended pause to take after running this instruction</p></li>
+<li><p><strong>command</strong>: A base64 encoded command to run</p></li>
+<li><p><strong>executor</strong>: The executor to run the command under</p></li>
+<li><p><strong>timeout</strong>: How long to let the command run before timing it out</p></li>
+<li><p><strong>payload</strong>: A payload file name which must be downloaded before running the command, if applicable</p></li>
+<li><p><strong>uploads</strong>: A list of file names that the agent must upload to the C2 server after running the command.</p></li>
+</ul>
+<p>Now, you’ll want to revise your agent to loop through all the instructions, executing each command
+and POSTing the response back to the /beacon endpoint. You should pause after running each instruction, using the sleep time provided inside the instruction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>data=$(echo &#39;{&quot;paw&quot;:&quot;$paw&quot;,&quot;results&quot;:[{&quot;id&quot;:$id, &quot;output&quot;:$output, &quot;stderr&quot;:$stderr, &quot;exit_code&quot;:$exit_code, &quot;status&quot;: $status, &quot;pid&quot;:$pid}]}&#39; | base64)
+curl -s -X POST -d $data localhost:8888/beacon
+sleep $instruction_sleep
+</pre></div>
+</div>
+<p>The POST details inside the result are as follows:</p>
+<ul class="simple">
+<li><p><strong>id</strong>: the ID of the instruction you received</p></li>
+<li><p><strong>output</strong>: the base64 encoded output (or stdout) from running the instruction</p></li>
+<li><p><strong>stderr</strong>: the base64 encoded error messages (or stderr) from running the instruction</p></li>
+<li><p><strong>exit_code</strong>: the OS or process exit code from running the instruction.  If unsure, leave blank.</p></li>
+<li><p><strong>status</strong>: the status code from running the instruction. If unsure, put 0.</p></li>
+<li><p><strong>pid</strong>: the process identifier the instruction ran under. If unsure, put 0.</p></li>
+</ul>
+<p>Once all instructions are run, the agent should sleep for the specified time in the beacon before calling the /beacon
+endpoint again. This process should repeat forever.</p>
+</div>
+<div class="section" id="part-3">
+<h3>Part #3<a class="headerlink" href="#part-3" title="Permalink to this heading">¶</a></h3>
+<p>Inside each instruction, there is an optional <em>payload</em> property that contains a filename of a file to download
+before running the instruction. To implement this, add a file download capability to your agent, directing it to
+the /file/download endpoint to retrieve the file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">payload</span><span class="o">=</span><span class="s1">&#39;some_file_name.txt&quot;</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;file:$payload&quot;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8888</span><span class="o">/</span><span class="n">file</span><span class="o">/</span><span class="n">download</span> <span class="o">&gt;</span> <span class="n">some_file_name</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-4">
+<h3>Part 4<a class="headerlink" href="#part-4" title="Permalink to this heading">¶</a></h3>
+<p>Inside each instruction, there is an optional <strong>uploads</strong> property that contains a list of filenames to upload to the C2 after running the instruction and submitting the execution results. To implement this, add a file upload capability to your agent. If using the HTTP contact, the file upload should hit the <code class="docutils literal notranslate"><span class="pre">/file/upload</span></code> upload endpoint of the server.</p>
+</div>
+<div class="section" id="part-5">
+<h3>Part #5<a class="headerlink" href="#part-5" title="Permalink to this heading">¶</a></h3>
+<p>You should implement the watchdog configuration. This property, passed to the agent in every beacon, contains
+the number of seconds to allow a dead beacon before killing the agent.</p>
+</div>
+</div>
+<div class="section" id="lateral-movement-tracking">
+<h2>Lateral Movement Tracking<a class="headerlink" href="#lateral-movement-tracking" title="Permalink to this heading">¶</a></h2>
+<p>Additionally, you may want to take advantage of CALDERA’s lateral movement tracking capabilities. CALDERA’s current
+implementation for tracking lateral movement depends on passing the ID of the Link spawning the agent as
+an argument to the agent’s spawn command and upon the agent’s check in, for this Link ID to be returned as part of the
+agent’s profile. The following section explains how lateral movement tracking has been enabled for the default agent,
+Sandcat.</p>
+<div class="section" id="sandcat">
+<h3>Sandcat<a class="headerlink" href="#sandcat" title="Permalink to this heading">¶</a></h3>
+<p>An example Sandcat spawn command has been copied from the <a class="reference external" href="https://github.com/mitre/stockpile/blob/master/data/abilities/execution/95727b87-175c-4a69-8c7a-a5d82746a753.yml">Service Creation ability</a>
+and included below for reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>\<span class="n">s4ndc4t</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">server</span> <span class="c1">#{server} -originLinkID #{origin_link_id}</span>
+</pre></div>
+</div>
+<p>If the CALDERA server is running on <code class="docutils literal notranslate"><span class="pre">http://192.168.0.1:8888</span></code> and the ID of the Link with the spawn command is <code class="docutils literal notranslate"><span class="pre">cd63fdbb-0f3a-49ea-b4eb-306a3ff40f81</span></code>,
+the populated command will appear as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>\<span class="n">s4ndc4t</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">server</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.0.1</span><span class="p">:</span><span class="mi">8888</span> <span class="o">-</span><span class="n">originLinkID</span> <span class="n">cd63fdbb</span><span class="o">-</span><span class="mi">0</span><span class="n">f3a</span><span class="o">-</span><span class="mi">49</span><span class="n">ea</span><span class="o">-</span><span class="n">b4eb</span><span class="o">-</span><span class="mi">306</span><span class="n">a3ff40f81</span>
+</pre></div>
+</div>
+<p>The Sandcat agent stores the value of this global variable in its profile, which is then returned to the CALDERA server
+upon first check-in as a key\value pair <code class="docutils literal notranslate"><span class="pre">origin_link_id</span> <span class="pre">:</span> <span class="pre">cd63fdbb-0f3a-49ea-b4eb-306a3ff40f81</span></code> in the JSON dictionary. The CALDERA server will
+automatically store this pair when creating the Agent object and use it when generating the Attack Path graph in the
+Debrief plugin.</p>
+<p><strong>NOTE: The <code class="docutils literal notranslate"><span class="pre">origin_link_id</span></code> key is optional and not required for the CALDERA server to register and use new agents as
+expected. It is only required to take advantage of the lateral movement tracking in the Debrief plugin.</strong></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="_generated/modules.html" class="btn btn-neutral float-right" title="app" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="How-to-Build-Planners.html" class="btn btn-neutral float-left" title="How to Build Planners" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

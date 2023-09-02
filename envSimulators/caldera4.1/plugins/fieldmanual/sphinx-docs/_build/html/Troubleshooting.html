@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Resources" href="resources.html" />
+    <link rel="prev" title="Uninstall CALDERA" href="Uninstalling-CALDERA.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-caldera">Installing CALDERA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starting-caldera">Starting CALDERA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-not-found-error">Module Not Found Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stopping-caldera">Stopping CALDERA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agent-deployment">Agent Deployment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#downloading-the-agent">Downloading the agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-agent">Running the agent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operations">Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#no-operation-output">No operation output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opening-files">Opening Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Troubleshooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Troubleshooting.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="installing-caldera">
+<h2>Installing CALDERA<a class="headerlink" href="#installing-caldera" title="Permalink to this heading">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">donut-shellcode</span></code> installation fails, ensure that prerequisite packages are installed</p>
+<ul class="simple">
+<li><p>Amazon Linux 2:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">gcc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3-devel</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="starting-caldera">
+<h2>Starting CALDERA<a class="headerlink" href="#starting-caldera" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Ensure that CALDERA has been cloned recursively. Plugins are stored in submodules and must be cloned along with the core code.</p></li>
+<li><p>Check that Python 3.7+ is installed and being used.</p></li>
+<li><p>Confirm that all <code class="docutils literal notranslate"><span class="pre">pip</span></code> requirements have been fulfilled.</p></li>
+<li><p>Run the CALDERA server with the <code class="docutils literal notranslate"><span class="pre">--log</span> <span class="pre">DEBUG</span></code> parameter to see if there is additional output.</p></li>
+<li><p>Consider removing the <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> and letting CALDERA recreate the file when the server runs again.</p></li>
+</ol>
+<div class="section" id="module-not-found-error">
+<h3>Module Not Found Error<a class="headerlink" href="#module-not-found-error" title="Permalink to this heading">¶</a></h3>
+<p>If you get an error like <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'plugins.manx.app'</span></code> when starting CALDERA:</p>
+<ol class="arabic simple">
+<li><p>Check to see if the <code class="docutils literal notranslate"><span class="pre">plugins/manx</span></code> folder is empty</p>
+<ol class="arabic simple">
+<li><p>Ensure that CALDERA has been cloned recursively. Plugins are stored in submodules and must be cloned along with the core code.</p></li>
+<li><p>Alternatively, from the plugins folder, you can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/mitre/manx.git</span></code> to grab only the manx repo.</p></li>
+</ol>
+</li>
+<li><p>Check your <code class="docutils literal notranslate"><span class="pre">conf/local.yml</span></code> to make sure manx is enabled</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="stopping-caldera">
+<h2>Stopping CALDERA<a class="headerlink" href="#stopping-caldera" title="Permalink to this heading">¶</a></h2>
+<p>CALDERA has a backup, cleanup, and save procedure that runs when the key combination <code class="docutils literal notranslate"><span class="pre">CTRL+C</span></code> is pressed. This is the recommended method to ensure proper shutdown of the server. If the Python process executing CALDERA is halted abruptly (for example SIGKILL) it can cause information from plugins to get lost or configuration settings to not reflect on a server restart.</p>
+</div>
+<div class="section" id="agent-deployment">
+<h2>Agent Deployment<a class="headerlink" href="#agent-deployment" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="downloading-the-agent">
+<h3>Downloading the agent<a class="headerlink" href="#downloading-the-agent" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Check the server logs for the incoming connection. If there is no connection:</p>
+<ol class="arabic simple">
+<li><p>Check for any output from the agent download command which could give additional information.</p></li>
+<li><p>Make sure the agent is attempting to connect to the correct address (not <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code> and likely not <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>).</p></li>
+<li><p>Check that the listen interface is the same interface the agent is attempting to connect to.</p></li>
+<li><p>Check that the firewall is open, allowing network connections, between the remote computer running the agent and the server itself.</p></li>
+</ol>
+</li>
+<li><p>Ensure Go is properly installed (required to dynamically-compile Sandcat):</p>
+<ol class="arabic">
+<li><p>Make sure the Go environment variables are properly set. Ensure the PATH variable includes the Go binaries by adding this to the <code class="docutils literal notranslate"><span class="pre">/etc/profile</span></code> or similar file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/usr/local/go/bin
+</pre></div>
+</div>
+</li>
+<li><p>If there are issues with a specific package, run something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">go</span> <span class="n">get</span> <span class="o">-</span><span class="n">u</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">go</span><span class="o">-</span><span class="n">github</span><span class="o">/</span><span class="n">github</span>
+<span class="n">go</span> <span class="n">get</span> <span class="o">-</span><span class="n">u</span> <span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">x</span><span class="o">/</span><span class="n">oauth2</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="running-the-agent">
+<h3>Running the agent<a class="headerlink" href="#running-the-agent" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Run the agent with the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag and without the <code class="docutils literal notranslate"><span class="pre">-WindowStyle</span> <span class="pre">hidden</span></code> parameter to view output.</p></li>
+<li><p>Consider removing bootstrap abilities so the console isn’t cleared.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="no-operation-output">
+<h3>No operation output<a class="headerlink" href="#no-operation-output" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Ensure that at least one agent is running before running the operation.</p>
+<ol class="arabic simple">
+<li><p>Check that the agent is running either on the server or in the agent-specific settings under last checked in time.</p></li>
+<li><p>Alternatively, clear out the running agent list using the red X’s. Wait for active agents to check in and repopulate the table.</p></li>
+</ol>
+</li>
+<li><p>Ensure that an adversary is selected before running the operation.</p></li>
+<li><p>Check each ability on the adversary profile.</p>
+<ol class="arabic simple">
+<li><p>Abilities show an icon for which operating system they run on. Match this up with the operating systems of the running agents.</p></li>
+<li><p>Abilities have specific executors in the details. Match this up with the executors of the running agents (found under the agent-specific settings).</p></li>
+<li><p>Look at each ability command. If there is a fact variable inside - shown by #{} syntax - the ability will need to be “unlocked” by another ability, in a prior step, before it can run.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="opening-files">
+<h2>Opening Files<a class="headerlink" href="#opening-files" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Files are encrypted by default and can be decrypted with the following utility: <a class="reference external" href="https://github.com/mitre/caldera/blob/master/app/utility/file_decryptor.py">https://github.com/mitre/caldera/blob/master/app/utility/file_decryptor.py</a></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="resources.html" class="btn btn-neutral float-right" title="Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Uninstalling-CALDERA.html" class="btn btn-neutral float-left" title="Uninstall CALDERA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

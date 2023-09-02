@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Build Planners &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Build Agents" href="How-to-Build-Agents.html" />
+    <link rel="prev" title="How to Build Plugins" href="How-to-Build-Plugins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Plugins.html">How to Build Plugins</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Build Planners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#buckets">Buckets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-planner">Creating a Planner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-python-module">Creating the Python Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-planner-object">Creating the Planner Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-planner">Using the Planner</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-minimal-planner">A Minimal Planner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-fact-usage">Advanced Fact Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fact-origins">Fact Origins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fact-links-relationships">Fact Links/Relationships</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fact-score">Fact Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#planning-service-utilities">Planning Service Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operation-utilities">Operation Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#knowledge-service">Knowledge Service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to Build Planners</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/How-to-Build-Planners.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-build-planners">
+<h1>How to Build Planners<a class="headerlink" href="#how-to-build-planners" title="Permalink to this heading">¶</a></h1>
+<p>For any desired planner decision logic not encapsulated in the default <em>batch</em> planner (or any other existing planner), CALDERA requires that a new planner be implemented to encode such decision logic.</p>
+<div class="section" id="buckets">
+<h2>Buckets<a class="headerlink" href="#buckets" title="Permalink to this heading">¶</a></h2>
+<p>The cornerstone of how planners make decisions is centered on a concept we call ‘buckets’. Buckets denote the planner’s state machine and are intended to correspond to <em>buckets</em> of CALDERA abilities. Within a planner, macro level decision control is encoded by specifying which buckets (i.e. states) follow other buckets, thus forming a bucket state machine. Micro level decisions are made within the buckets, by specifying any logic detailing which abilities to send to agents and when to do so.</p>
+<p>CALDERA abilities are also tagged by the buckets they are in. By default, when abilities are loaded by CALDERA, they are tagged with the bucket of the ATT&amp;CK technique they belong to. CALDERA abilities can also be tagged/untagged at will by any planner as well, before starting the operation or at any point in it. The intent is for buckets to work with the abilities that have been tagged for that bucket, but this is by no means enforced.</p>
+</div>
+<div class="section" id="creating-a-planner">
+<h2>Creating a Planner<a class="headerlink" href="#creating-a-planner" title="Permalink to this heading">¶</a></h2>
+<p>Let’s dive into creating a planner to see the power and flexibility of the CALDERA planner component. For this example, we will implement a planner that will carry out the following state machine:</p>
+<p><img alt="privileged persistence sm screenshot" src="_images/privileged_persistence_state_machine.png" /></p>
+<p>The planner will consist of 5 buckets:  <em>Privilege Escalation</em>, <em>Collection</em>, <em>Persistence</em>, <em>Discovery</em>, and <em>Lateral Movement</em>. As implied by the state machine, this planner will use the underlying adversary abilities to attempt to spread to as many hosts as possible and establish persistence. As an additional feature, if an agent cannot obtain persistence due to unsuccessful privilege escalation attempts, then the agent will execute collection abilities immediately in case it loses access to the host.</p>
+<p>This document will walk through creating three basic components of a planner module (initialization, entrypoint method, and bucket methods), creating the planner data object, and applying the planner to a new operation.</p>
+<div class="section" id="creating-the-python-module">
+<h3>Creating the Python Module<a class="headerlink" href="#creating-the-python-module" title="Permalink to this heading">¶</a></h3>
+<p>We will create a python module called <code class="docutils literal notranslate"><span class="pre">privileged_persistence.py</span></code> and nest it under <code class="docutils literal notranslate"><span class="pre">app/</span></code> in the <code class="docutils literal notranslate"><span class="pre">mitre/stockpile</span></code> plugin at <code class="docutils literal notranslate"><span class="pre">plugins/stockpile/app/privileged_persistence.py</span></code>.</p>
+<p><strong><em>First, lets build the static initialization of the planner:</em></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LogicalPlanner</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">planning_svc</span><span class="p">,</span> <span class="n">stopping_conditions</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">operation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span> <span class="o">=</span> <span class="n">planning_svc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_conditions</span> <span class="o">=</span> <span class="n">stopping_conditions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_condition_met</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state_machine</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;privilege_escalation&#39;</span><span class="p">,</span> <span class="s1">&#39;persistence&#39;</span><span class="p">,</span> <span class="s1">&#39;collection&#39;</span><span class="p">,</span> <span class="s1">&#39;discovery&#39;</span><span class="p">,</span> <span class="s1">&#39;lateral_movement&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;privilege_escalation&#39;</span>
+</pre></div>
+</div>
+<p>Look closer at these lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">planning_svc</span><span class="p">,</span> <span class="n">stopping_conditions</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">operation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span> <span class="o">=</span> <span class="n">planning_svc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_conditions</span> <span class="o">=</span> <span class="n">stopping_conditions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_condition_met</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method for a planner must take and store the required arguments for the <code class="docutils literal notranslate"><span class="pre">operation</span></code> instance, <code class="docutils literal notranslate"><span class="pre">planning_svc</span></code> handle, and any supplied <code class="docutils literal notranslate"><span class="pre">stopping_conditions</span></code>.</p>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">self.stopping_condition_met</span></code>, which is used to control when to stop bucket execution, is initially set to <code class="docutils literal notranslate"><span class="pre">False</span></code>. During bucket execution, this property will be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> if any facts gathered by the operation exactly match (both name and value) any of the facts provided in <code class="docutils literal notranslate"><span class="pre">stopping_conditions</span></code>. When this occurs, the operation will stop running new abilities.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">state_machine</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;privilege_escalation&#39;</span><span class="p">,</span> <span class="s1">&#39;persistence&#39;</span><span class="p">,</span> <span class="s1">&#39;collection&#39;</span><span class="p">,</span> <span class="s1">&#39;discovery&#39;</span><span class="p">,</span> <span class="s1">&#39;lateral_movement&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">self.state_machine</span></code> variable is an optional list enumerating the base line order of the planner state machine. This ordered list <strong><em>does not</em></strong> control the bucket execution order, but is used to define a base line state machine that we can refer back to in our decision logic. This will be demonstrated in our example below when we create the bucket methods.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;privilege_escalation&#39;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">self.next_bucket</span></code> variable holds the next bucket to be executed. This is the next bucket that the planner will enter and whose bucket method will next control the planning logic. Initially, we set <code class="docutils literal notranslate"><span class="pre">self.next_bucket</span></code> to the first bucket the planner will begin in. We will modify <code class="docutils literal notranslate"><span class="pre">self.next_bucket</span></code> from within our bucket methods in order to specify the next bucket to execute.</p>
+<p><em>Additional Planner class variables</em></p>
+<p>It is also important to note that a planner may define any required variables that it may need. For instance, many custom planners require information to be passed from one bucket to another during execution. This can be done by creating class variables to store information which can be accessed within any bucket method and will persist between bucket transitions.</p>
+<p><strong><em>Now, lets the define the planner’s entrypoint method: <code class="docutils literal notranslate"><span class="pre">execute</span></code></em></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">execute_planner</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">execute</span></code> is where the planner starts and where any runtime initialization is done. <code class="docutils literal notranslate"><span class="pre">execute_planner</span></code> works by executing the bucket specified by <code class="docutils literal notranslate"><span class="pre">self.next_bucket</span></code> until the <code class="docutils literal notranslate"><span class="pre">self.stopping_condition_met</span></code> variable is set to True. For our planner, no further runtime initialization is required in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> method.</p>
+<p><strong><em>Finally, lets create our bucket methods:</em></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">privilege_escalation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ability_links</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;privilege escalation&#39;</span><span class="p">])</span>
+        <span class="n">paw</span> <span class="o">=</span> <span class="n">ability_links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">paw</span> <span class="k">if</span> <span class="n">ability_links</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">link_ids</span> <span class="o">=</span> <span class="p">[</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ability_links</span><span class="p">]</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">wait_for_links_completion</span><span class="p">(</span><span class="n">link_ids</span><span class="p">)</span>
+        <span class="n">successful</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">has_fact</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.privilege.root&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">paw</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">has_fact</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.privilege.admin&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">paw</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">successful</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;persistence&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;collection&#39;</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">persistence</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">exhaust_bucket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;persistence&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">default_next_bucket</span><span class="p">(</span><span class="s1">&#39;persistence&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_machine</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">collection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">exhaust_bucket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;collection&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;discovery&#39;</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">discovery</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">exhaust_bucket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;discovery&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+        <span class="n">lateral_movement_unlocked</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">get_links</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lateral_movement&#39;</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="n">lateral_movement_unlocked</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">default_next_bucket</span><span class="p">(</span><span class="s1">&#39;discovery&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_machine</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># planner will transtion from this bucket to being done</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">lateral_movement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span><span class="o">.</span><span class="n">exhaust_bucket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;lateral_movement&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_bucket</span> <span class="o">=</span> <span class="s1">&#39;privilege_escalation&#39;</span>
+</pre></div>
+</div>
+<p>These bucket methods are where all inter-bucket transitions and intra-bucket logic will be encoded. For every bucket in our planner state machine, we must define a corresponding bucket method.</p>
+<p>Lets look at each of the bucket methods in detail:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">privilege_escalation()</span></code> - We first use <code class="docutils literal notranslate"><span class="pre">get_links</span></code> planning service utility to retrieve all abilities (links) tagged as <em>privilege escalation</em> from the operation adversary. We then push these links to the agent with <code class="docutils literal notranslate"><span class="pre">apply</span></code> and wait for these links to complete with <code class="docutils literal notranslate"><span class="pre">wait_for_links_completion()</span></code>, both from the operation utility. After the links complete, we check for the creation of custom facts that indicate the privilege escalation was successful (Note: this assumes the privilege escalation abilities we are using create custom facts in the format “{paw}.privilege.root” or “{paw}.privilege.admin” with values of <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>). If privilege escalation was successful, set the next bucket to be executed to <em>persistence</em>, otherwise <em>collection</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">persistence()</span></code>, <code class="docutils literal notranslate"><span class="pre">collection()</span></code>, <code class="docutils literal notranslate"><span class="pre">lateral_movement()</span></code> - These buckets have no complex logic, we just want to execute all links available and are tagged for the given bucket. We can use the <code class="docutils literal notranslate"><span class="pre">exhaust_bucket()</span></code> planning service utility to apply all links for the given bucket tag. Before exiting, we set the next bucket as desired. Note that in the <code class="docutils literal notranslate"><span class="pre">persistence()</span></code> bucket we use the <code class="docutils literal notranslate"><span class="pre">default_next_bucket()</span></code> planning service utility, which will automatically choose the next bucket after “persistence” in the provided <code class="docutils literal notranslate"><span class="pre">self.state_machine</span></code> ordered list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">discovery()</span></code> - This bucket starts by running all <em>discovery</em> ability links available. Then we utilize a useful trick to determine if the planner should proceed to the <em>lateral movement</em> bucket. We use <code class="docutils literal notranslate"><span class="pre">get_links()</span></code> to determine if the <em>discovery</em> links that were just executed ended up unlocking ability links for <em>lateral movement</em>. From there we set the next bucket accordingly.</p></li>
+</ul>
+<p><strong><em>Additional Notes on Privileged Persistence Planner</em></strong></p>
+<ul class="simple">
+<li><p>You may have noticed that the <em>privileged_persistence</em> planner is only notionally more sophisticated than running certain default adversary profiles. This is correct. If you can find or create an adversary profile whose ability enumeration (i.e. order) can carry out your desired operational progression between abilities and can be executed in batch (by the default <em>batch</em> planner) or in a sequentially atomic order (by <em>atmomic</em> planner), it is advised to go that route. However, any decision logic above those simple planners will have to be implemented in a new planner.</p></li>
+<li><p>The <em>privileged persistence</em> planner did not have explicit logic to handle multiple agents. We just assumed the planner buckets would only have to handle a single active agent given the available ability links returned from the planning service.</p></li>
+</ul>
+</div>
+<div class="section" id="creating-the-planner-object">
+<h3>Creating the Planner Object<a class="headerlink" href="#creating-the-planner-object" title="Permalink to this heading">¶</a></h3>
+<p>In order to use this planner inside CALDERA, we will create the following YAML file at <code class="docutils literal notranslate"><span class="pre">plugins/stockpile/data/planners/80efdb6c-bb82-4f16-92ae-6f9d855bfb0e.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+
+<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80efdb6c-bb82-4f16-92ae-6f9d855bfb0e</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">privileged_persistence</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">Privileged Persistence Planner: Attempt to spread to as many hosts as possible and establish persistence.</span>
+<span class="w">  </span><span class="no">If privilege escalation attempts succeed, establish persistence. Then, collect data.</span>
+<span class="nt">module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugins.stockpile.app.privileged_persistence</span>
+<span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="nt">ignore_enforcement_modules</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+<p>This will create a planner in CALDERA which will call the module we’ve created at <code class="docutils literal notranslate"><span class="pre">plugins.stockpile.app.privileged_persistence</span></code>.</p>
+<p><em>NOTE: For planners intended to be used with profiles containing repeatable abilities, <code class="docutils literal notranslate"><span class="pre">allow_repeatable_abilities:</span> <span class="pre">True</span></code> must be added to the planner YAML file. Otherwise, CALDERA will default the value to <code class="docutils literal notranslate"><span class="pre">False</span></code> and assume the planner does not support repeatable abilities.</em></p>
+</div>
+<div class="section" id="using-the-planner">
+<h3>Using the Planner<a class="headerlink" href="#using-the-planner" title="Permalink to this heading">¶</a></h3>
+<p>To use the planner, create an Operation and select the “Use privileged_persistence planner” option in the planner dropdown (under Autonomous). Any selected planner will use the abilities in the selected adversary profile during the operation. Since abilities are automatically added to buckets which correlate to MITRE ATT&amp;CK tactics, any abilities with the following tactics will be executed by the privileged_persistence planner: <em>privilege_escalation</em>, <em>persistence</em>, <em>collection</em>, <em>discovery</em>, and <em>lateral_movement</em>.</p>
+</div>
+</div>
+<div class="section" id="a-minimal-planner">
+<h2>A Minimal Planner<a class="headerlink" href="#a-minimal-planner" title="Permalink to this heading">¶</a></h2>
+<p>Custom planners do not have to use the buckets approach to work with the CALDERA operation interface if not desired. Here is a minimal planner that will still work with the operation interface.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">class</span> <span class="nc">LogicalPlanner</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">planning_svc</span><span class="p">,</span> <span class="n">stopping_conditions</span><span class="o">=</span><span class="p">()):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operation</span> <span class="o">=</span> <span class="n">operation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">planning_svc</span> <span class="o">=</span> <span class="n">planning_svc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_conditions</span> <span class="o">=</span> <span class="n">stopping_conditions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopping_condition_met</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#</span>
+        <span class="c1"># Implement Planner Logic</span>
+        <span class="c1">#</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="advanced-fact-usage">
+<h2>Advanced Fact Usage<a class="headerlink" href="#advanced-fact-usage" title="Permalink to this heading">¶</a></h2>
+<p>In addition to the basic (name, value) information present in facts and documented in <a class="reference internal" href="Basic-Usage.html#facts"><span class="std std-doc">Basic Usage</span></a>, there are some additional fields that may prove useful when developing and working with planners.</p>
+<div class="section" id="fact-origins">
+<h3>Fact Origins<a class="headerlink" href="#fact-origins" title="Permalink to this heading">¶</a></h3>
+<p>As of Caldera v4.0, facts now have the new <code class="docutils literal notranslate"><span class="pre">origin_type</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> fields, which identify how Caldera learned that fact. There are 5 possible values for the <code class="docutils literal notranslate"><span class="pre">origin_type</span></code> field:</p>
+<ul class="simple">
+<li><p>DOMAIN - This fact originates from Caldera’s general knowledge about environments</p></li>
+<li><p>SEEDED - This fact originates from a source file, which was used to seed an operation</p></li>
+<li><p>LEARNED - This fact originates from an operation, which uncovered it</p></li>
+<li><p>IMPORTED - This fact originates from a previous operation, or another pre-existing fact collection</p></li>
+<li><p>USER - This fact originates from a User, i.e. was entered through the GUI</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">source</span></code> field, on the other hand, contains a UUID4 that corresponds to the originating object described by <code class="docutils literal notranslate"><span class="pre">origin_type</span></code>.</p>
+</div>
+<div class="section" id="fact-links-relationships">
+<h3>Fact Links/Relationships<a class="headerlink" href="#fact-links-relationships" title="Permalink to this heading">¶</a></h3>
+<p>As of Caldera v4.0, facts also now have new fields in them that track the Links and Relationships that have contributed to that fact in some way, accessible as <code class="docutils literal notranslate"><span class="pre">links</span></code> and <code class="docutils literal notranslate"><span class="pre">relationships</span></code> respectively. Each of these properties is a list of corresponding objects, with <code class="docutils literal notranslate"><span class="pre">links</span></code> corresponding to all Link objects that generated/identified this Fact, and <code class="docutils literal notranslate"><span class="pre">relationships</span></code> corresponding to all Relationship objects that reference this Fact.</p>
+</div>
+<div class="section" id="fact-score">
+<h3>Fact Score<a class="headerlink" href="#fact-score" title="Permalink to this heading">¶</a></h3>
+<p>One potentially useful Fact property for planners is the <code class="docutils literal notranslate"><span class="pre">score</span></code> property. This tracks how many times a fact has been used successfully in links, allowing facts to have an inherent ‘weight’ to them when they are useful. Facts start with a score of 1, a value that typically increases by 1 every time a link uses it (though scores can be increased or decreased by varying amounts by other means). For context, a link’s score, when generated by Caldera’s core planning services, is simply the sum of the scores of the facts utilized by that link.</p>
+</div>
+</div>
+<div class="section" id="planning-service-utilities">
+<h2>Planning Service Utilities<a class="headerlink" href="#planning-service-utilities" title="Permalink to this heading">¶</a></h2>
+<p>Within a planner, these utilities are available from <code class="docutils literal notranslate"><span class="pre">self.planning_svc</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exhaust_bucket()</span></code> - Apply all links for specified bucket. Blocks execution until all links are completed, either after batch push, or separately for every pushed link. Allows a single agent to be specified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute_links()</span></code> - Wait for links to complete and update stopping conditions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default_next_bucket()</span></code> - Returns next bucket as specified in the given state machine. If the current bucket is the last in the list, the bucket order loops from last bucket to first. Used in the above example to advance to the next bucket in the persistence and discovery buckets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_ability_to_next_bucket()</span></code> - Applies a custom bucket to an ability. This can be used to organize abilities into buckets that aren’t standard MITRE ATT&amp;CK tactics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execute_planner()</span></code> - Executes the default planner execution flow, progressing from bucket to bucket. Execution will stop if: all buckets have been executed (<code class="docutils literal notranslate"><span class="pre">self.next_bucket</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>), planner stopping conditions have been met, or the operation is halted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_links()</span></code> - For an operation and agent combination, create links (that can be executed). When no agent is supplied, links for all agents in an operation are returned. Uses <code class="docutils literal notranslate"><span class="pre">operation.all_facts()</span></code> to determine if an ability has been unlocked. Used in the above example in the discovery bucket to determine if any lateral movement abilities have been unlocked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_cleanup_links()</span></code> - Generates cleanup links for a given operation, to be run when a operation is completed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generate_and_trim_links()</span></code> - Creates new links based on provided operation, agent, and abilities. Optionally, trim links using <code class="docutils literal notranslate"><span class="pre">trim_links()</span></code> to return only valid links with completed facts. Facts are selected from the operation using <code class="docutils literal notranslate"><span class="pre">operation.all_facts()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check_stopping_conditions()</span></code> - Checks the collected operation facts against the stopping conditions set by the planner.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">update_stopping_condition_met()</span></code> - Update a planner’s <code class="docutils literal notranslate"><span class="pre">stopping_condition_met</span></code> property with the results of <code class="docutils literal notranslate"><span class="pre">check_stopping_conditions()</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="operation-utilities">
+<h2>Operation Utilities<a class="headerlink" href="#operation-utilities" title="Permalink to this heading">¶</a></h2>
+<p>Within a planner, all public utilities are available from <code class="docutils literal notranslate"><span class="pre">self.operation</span></code>. The following may assist in planner development:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">apply()</span></code> - Add a link to the operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wait_for_links_completion()</span></code> - Wait for started links to be completed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all_facts()</span></code> - Return a list of all facts collected during an operation. These will include both learned and seeded (from the operation source) facts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_fact()</span></code> - Search an operation for a fact with a particular name and value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">all_relationships()</span></code> - Return a list of all relationships collected during an operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">active_agents()</span></code> - Find all agents in the operation that have been active since operation start.</p></li>
+</ul>
+</div>
+<div class="section" id="knowledge-service">
+<h2>Knowledge Service<a class="headerlink" href="#knowledge-service" title="Permalink to this heading">¶</a></h2>
+<p>As of Caldera V4.0, a new service has been added to the core of Caldera for use with planners and other components that make use of facts: the Knowledge Service. This service allows the creation, retrieval, updating, and deletion of facts, relationships, and rules.
+Typically, users should not need to interact with this service directly, as common usage patterns are already baked into core objects such as <code class="docutils literal notranslate"><span class="pre">Link</span></code>, <code class="docutils literal notranslate"><span class="pre">Agent</span></code>, and <code class="docutils literal notranslate"><span class="pre">Operation</span></code>, but the service can be accessed by using <code class="docutils literal notranslate"><span class="pre">BaseService.get_service('knowledge_svc')</span></code>, should the need arise for more complex interactions with the available data.
+The Knowledge Service stores data persistently in the same manner that Caldera’s internal Data Service does (by writing it to a file on shutdown), and can be cleared in much the same way if necessary (by using the <code class="docutils literal notranslate"><span class="pre">--fresh</span></code> argument on the server).</p>
+<p>The following methods are available from the Knowledge Service:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">secondclass</span><span class="o">.</span><span class="n">c_fact</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.add_fact(fact)</span></code> - Add a fact to the Knowledge Service’s datastore. The <code class="docutils literal notranslate"><span class="pre">fact</span></code> argument must be an already instantiated <code class="docutils literal notranslate"><span class="pre">Fact()</span></code> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.delete_fact(criteria)</span></code> - Remove matching facts from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary with fields to match existing facts against for selection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.get_facts(criteria)</span></code> - Retrieve matching facts from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary with fields to match existing facts against for selection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.update_fact(criteria,</span> <span class="pre">updates)</span></code> - Update an existing fact in the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary with fields to match existing facts against for selection, and <code class="docutils literal notranslate"><span class="pre">updates</span></code> should be a dictionary with fields to change and their new values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.get_fact_origin(fact)</span></code> - Identifies the location/source of a provided fact. The <code class="docutils literal notranslate"><span class="pre">fact</span></code> argument can be either a name to search for or a full blown Fact object. The return is a tuple of the ID corresponding to the origin object for this fact, and the type of origin object.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">secondclass</span><span class="o">.</span><span class="n">c_relationship</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.add_relationship(relationship)</span></code> - Add a relationship to the datastore. The <code class="docutils literal notranslate"><span class="pre">relationship</span></code> argument must be an already instantiated <code class="docutils literal notranslate"><span class="pre">Relationship()</span></code> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.delete_relationship(criteria)</span></code> - Remove a relationship from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary containing fields to match relationships against.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.get_relationships(criteria)</span></code> - Retrieve a relationship from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary containing fields to match relationships against, and can contain further dictionaries to match facts in relationships against.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.update_relationship(criteria,</span> <span class="pre">updates)</span></code> - Update an existing relationship in the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary containing files to match relationships and their component facts against, while the <code class="docutils literal notranslate"><span class="pre">updates</span></code> argument should be dictionary of similar form, containing the values to update.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">secondclass</span><span class="o">.</span><span class="n">c_rule</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.add_rule(rule)</span></code> - Add a rule to the datastore. The <code class="docutils literal notranslate"><span class="pre">rule</span></code> argument must be an already existing <code class="docutils literal notranslate"><span class="pre">Rule()</span></code> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.delete_rule(criteria)</span></code> - Remove a rule from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary containing fields and values to match existing rules against.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KnowledgeService.get_rules(criteria)</span></code> - Retrieve matching rules from the datastore. The <code class="docutils literal notranslate"><span class="pre">criteria</span></code> argument should be a dictionary containing files to match existing rules against.</p></li>
+</ul>
+<p>All objects added to the Knowledge service are checked against existing objects in order to enforce de-duplication, with one caveat. As origin is tracked for facts generated by links in the current implementation, this means duplicate facts created during different operations can exist in the fact store simultaneously. Facts/Relationships are usually automatically added to the fact store by <code class="docutils literal notranslate"><span class="pre">Link</span></code> objects as part of the process of parsing output, though they can be added manually should the need arise.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="How-to-Build-Agents.html" class="btn btn-neutral float-right" title="How to Build Agents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="How-to-Build-Plugins.html" class="btn btn-neutral float-left" title="How to Build Plugins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Build Plugins &mdash; caldera  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Build Planners" href="How-to-Build-Planners.html" />
+    <link rel="prev" title="The REST API" href="The-REST-API.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/caldera-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Usage Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installing-CALDERA.html">Installing CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Learning-the-terminology.html">Learning the terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic-Usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Server-Configuration.html">Server Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Plugin-library.html">Plugin library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parsers.html">Parsers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Relationships.html">Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operation-Results.html">Operation Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initial-Access-Attacks.html">Initial Access Attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lateral-Movement-Guide.html">Windows Lateral Movement Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dynamically-Compiled-Payloads.html">Dynamically-Compiled Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exfiltration.html">Exfiltration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sandcat-Peer-to-Peer.html">Peer-to-Peer Proxy Functionality for Sandcat Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2-Tunneling.html">C2 Communications Tunneling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uninstalling-CALDERA.html">Uninstall CALDERA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/sandcat/Sandcat-Details.html">Sandcat Plugin Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html">Exfiltration Scenarios and Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#an-example">An Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/stockpile/Exfiltration-How-Tos.html#wrap-up">Wrap-up</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Information</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="The-REST-API.html">The REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Build Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-structure">Creating the structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-enable-function">The <em>enable</em> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-the-code">Writing the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-it-visual">Making it visual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-documentation">Adding documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Planners.html">How to Build Planners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How-to-Build-Agents.html">How to Build Agents</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core System API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_generated/modules.html">app</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">caldera</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>How to Build Plugins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/How-to-Build-Plugins.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-build-plugins">
+<h1>How to Build Plugins<a class="headerlink" href="#how-to-build-plugins" title="Permalink to this heading">¶</a></h1>
+<p>Building your own plugin allows you to add custom functionality to CALDERA.</p>
+<p>A plugin can be nearly anything, from a RAT/agent (like Sandcat) to a new GUI or a collection of abilities that you want to keep in “closed-source”.</p>
+<p>Plugins are stored in the plugins directory. If a plugin is also listed in the local.yml file, it will be loaded into CALDERA each time the server starts. A plugin is loaded through its hook.py file, which is “hooked” into the core system via the server.py (main) module.</p>
+<blockquote>
+<div><p>When constructing your own plugins, you should avoid importing modules from the core code base, as these can change.
+There are two exceptions to this rule</p>
+<ol class="arabic simple">
+<li><p>The services dict() passed to each plugin can be used freely. Only utilize the public functions on these services
+however. These functions will be defined on the services’ corresponding interface.</p></li>
+<li><p>Any c_object that implements the FirstClassObjectInterface. Only call the functions on this interface, as the others
+are subject to changing.</p></li>
+</ol>
+</div></blockquote>
+<p>This guide is useful as it covers how to create a simple plugin from scratch.
+However, if this is old news to you and you’re looking for an even faster start,
+consider trying out <a class="reference external" href="https://github.com/mitre/skeleton">Skeleton</a>
+(a plugin for building other plugins).
+Skeleton will generate a new plugin directory that contains all the standard
+boilerplate.</p>
+<div class="section" id="creating-the-structure">
+<h2>Creating the structure<a class="headerlink" href="#creating-the-structure" title="Permalink to this heading">¶</a></h2>
+<p>Start by creating a new directory called “abilities” in CALDERA’s plugins directory. In this directory, create a hook.py file and ensure it looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Abilities&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A sample plugin for demonstration purposes&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>The name should always be a single word, the description a phrase, and the address should be None, unless your plugin exposes new GUI pages. Our example plugin will be called “abilities”.</p>
+</div>
+<div class="section" id="the-enable-function">
+<h2>The <em>enable</em> function<a class="headerlink" href="#the-enable-function" title="Permalink to this heading">¶</a></h2>
+<p>The enable function is what gets hooked into CALDERA at boot time. This function accepts one parameter:</p>
+<ol class="arabic simple">
+<li><p><strong>services</strong>: a list of core services that CALDERA creates at boot time, which allow you to interact with the core system in a safe manner.</p></li>
+</ol>
+<p>Core services can be found in the app/services directory.</p>
+</div>
+<div class="section" id="writing-the-code">
+<h2>Writing the code<a class="headerlink" href="#writing-the-code" title="Permalink to this heading">¶</a></h2>
+<p>Now it’s time to fill in your own enable function. Let’s start by appending a new REST API endpoint to the server. When this endpoint is hit, we will direct the request to a new class (AbilityFetcher) and function (get_abilities). The full hook.py file now looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">web</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Abilities&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A sample plugin for demonstration purposes&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;app_svc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">application</span>
+    <span class="n">fetcher</span> <span class="o">=</span> <span class="n">AbilityFetcher</span><span class="p">(</span><span class="n">services</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;/get/abilities&#39;</span><span class="p">,</span> <span class="n">fetcher</span><span class="o">.</span><span class="n">get_abilities</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">AbilityFetcher</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">services</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">services</span> <span class="o">=</span> <span class="n">services</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_abilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">abilities</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_svc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="s1">&#39;abilities&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">web</span><span class="o">.</span><span class="n">json_response</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">abilities</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">display</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">abilities</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Now that our initialize function is filled in, let’s add the plugin to the default.yml file and restart CALDERA. Once running, in a browser or via cURL, navigate to 127.0.0.1:8888/get/abilities. If all worked, you should get a JSON response back, with all the abilities within CALDERA.</p>
+</div>
+<div class="section" id="making-it-visual">
+<h2>Making it visual<a class="headerlink" href="#making-it-visual" title="Permalink to this heading">¶</a></h2>
+<p>Now we have a usable plugin, but we want to make it more visually appealing.</p>
+<p>Start by creating a “templates” directory inside your plugin directory (abilities). Inside the templates directory, create a new file called abilities.html. Ensure the content looks like:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;abilities-new-section&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;section-profile&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;topleft duk-icon&quot;</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;removeSection(&#39;abilities-new-section&#39;)&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/gui/img/x.png&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;column section-border&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;flex:25%;text-align:left;padding:15px;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size:70px;margin-top:-20px;&quot;</span><span class="p">&gt;</span>Abilities<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;column&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;flex:75%;padding:15px;text-align: left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                {% for a in abilities %}
+                    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:grey&quot;</span><span class="p">&gt;</span>{{ a }}<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+                {% endfor %}
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Then, back in your hook.py file, let’s fill in the address variable and ensure we return the new abilities.html page when a user requests 127.0.0.1/get/abilities. Here is the full hook.py:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiohttp_jinja2</span> <span class="kn">import</span> <span class="n">template</span><span class="p">,</span> <span class="n">web</span>
+
+<span class="kn">from</span> <span class="nn">app.service.auth_svc</span> <span class="kn">import</span> <span class="n">check_authorization</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Abilities&#39;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;A sample plugin for demonstration purposes&#39;</span>
+<span class="n">address</span> <span class="o">=</span> <span class="s1">&#39;/plugin/abilities/gui&#39;</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="n">services</span><span class="p">):</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;app_svc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">application</span>
+    <span class="n">fetcher</span> <span class="o">=</span> <span class="n">AbilityFetcher</span><span class="p">(</span><span class="n">services</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;/plugin/abilities/gui&#39;</span><span class="p">,</span> <span class="n">fetcher</span><span class="o">.</span><span class="n">splash</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">router</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/get/abilities&#39;</span><span class="p">,</span> <span class="n">fetcher</span><span class="o">.</span><span class="n">get_abilities</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">AbilityFetcher</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">services</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">services</span> <span class="o">=</span> <span class="n">services</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_svc</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;auth_svc&#39;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_abilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">abilities</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_svc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="s1">&#39;abilities&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">web</span><span class="o">.</span><span class="n">json_response</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">abilities</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">display</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">abilities</span><span class="p">]))</span>
+
+    <span class="nd">@check_authorization</span>
+    <span class="nd">@template</span><span class="p">(</span><span class="s1">&#39;abilities.html&#39;</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">splash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">abilities</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_svc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">locate</span><span class="p">(</span><span class="s1">&#39;abilities&#39;</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">abilities</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">display</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">abilities</span><span class="p">]))</span>
+
+</pre></div>
+</div>
+<p>Restart CALDERA and navigate to the home page. Be sure to run <code class="docutils literal notranslate"><span class="pre">server.py</span></code>
+with the <code class="docutils literal notranslate"><span class="pre">--fresh</span></code> flag to flush the previous object store database.</p>
+<p>You should see a new “abilities” tab at the top, clicking on this should navigate you to the new abilities.html page you created.</p>
+</div>
+<div class="section" id="adding-documentation">
+<h2>Adding documentation<a class="headerlink" href="#adding-documentation" title="Permalink to this heading">¶</a></h2>
+<p>Any Markdown or reStructured text in the plugin’s <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory will appear in the documentation generated by the fieldmanual plugin. Any resources, such as images and videos, will be added as well.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="How-to-Build-Planners.html" class="btn btn-neutral float-right" title="How to Build Planners" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="The-REST-API.html" class="btn btn-neutral float-left" title="The REST API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, The MITRE Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
