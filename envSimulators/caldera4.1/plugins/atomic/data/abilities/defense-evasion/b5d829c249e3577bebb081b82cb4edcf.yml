@@ -1,0 +1,22 @@
+- description: 'Changes a file or folder''s permissions using chmod and a specified
+    numeric mode.
+
+    '
+  id: b5d829c249e3577bebb081b82cb4edcf
+  name: chmod - Change file or folder mode (numeric mode)
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: chmod 755 /tmp/AtomicRedTeam/atomics/T1222.002
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: chmod 755 /tmp/AtomicRedTeam/atomics/T1222.002
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1222.002
+    name: 'File and Directory Permissions Modification: Linux and Mac File and Directory
+      Permissions Modification'

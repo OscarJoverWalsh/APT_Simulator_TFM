@@ -1,0 +1,16 @@
+- description: 'Loadable Kernel Module based Rootkit
+
+    '
+  id: b090e40b24bc742cb16c0224e7ec7065
+  name: Loadable Kernel Module based Rootkit
+  platforms:
+    linux:
+      sh:
+        cleanup: sudo modprobe -r T1014; sudo rm /lib/modules/$(uname -r)/T1014.ko;
+          sudo depmod -a
+        command: sudo modprobe T1014
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1014
+    name: Rootkit

@@ -1,0 +1,17 @@
+- description: 'Mimic execution of compressed executable. When successfully executed,
+    calculator.exe will open.
+
+    '
+  id: fcbaf10bb84ae47998ae094c053bdef8
+  name: Execution from Compressed File
+  platforms:
+    windows:
+      cmd:
+        cleanup: taskkill /f /im calculator.exe >nul 2>nul && rmdir /S /Q %temp%\temp_T1027.zip
+          >nul 2>nul && del /Q "%temp%\T1027.zip" >nul 2>nul
+        command: '"%temp%\temp_T1027.zip\T1027.exe"'
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1027
+    name: Obfuscated Files or Information

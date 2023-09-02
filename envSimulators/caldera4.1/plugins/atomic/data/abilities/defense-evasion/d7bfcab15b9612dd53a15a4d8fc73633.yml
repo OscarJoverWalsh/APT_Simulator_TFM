@@ -1,0 +1,17 @@
+- description: 'Adversaries may supply CMSTP.exe with INF files infected with malicious
+    commands
+
+    '
+  id: d7bfcab15b9612dd53a15a4d8fc73633
+  name: CMSTP Executing Remote Scriptlet
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: cmstp.exe /s 0deff5_T1218.003.inf
+        payloads:
+        - 0deff5_T1218.003.inf
+  tactic: defense-evasion
+  technique:
+    attack_id: T1218.003
+    name: 'Signed Binary Proxy Execution: CMSTP'

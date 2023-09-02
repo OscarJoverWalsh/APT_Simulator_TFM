@@ -1,0 +1,53 @@
+- additional_info: {}
+  privilege: ''
+  tactic: defense-evasion
+  executors:
+  - command: 'if [ -e  e9248b_T1027-004-test.c ]; then : ; else wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.c
+      -O e9248b_T1027-004-test.c; fi;  ;  gcc e9248b_T1027-004-test.c && ./a.out;
+      clang e9248b_T1027-004-test.c && ./a.out'
+    additional_info: {}
+    uploads: []
+    name: sh
+    variations: []
+    cleanup: []
+    parsers: []
+    language: null
+    platform: darwin
+    build_target: null
+    timeout: 60
+    code: null
+    payloads:
+    - e9248b_T1027-004-test.c
+  - command: 'if [ -e e9248b_T1027-004-test.c ]; then : else wget https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.004/src/T1027-004-test.c
+      -O e9248b_T1027-004-test.c; fi && gcc e9248b_T1027-004-test.c && ./a.out &&
+      clang e9248b_T1027-004-test.c && ./a.out
+
+      '
+    additional_info: {}
+    uploads: []
+    name: sh
+    variations: []
+    cleanup: []
+    parsers: []
+    language: null
+    platform: linux
+    build_target: null
+    timeout: 60
+    code: null
+    payloads:
+    - e9248b_T1027-004-test.c
+  name: C compile
+  technique_id: T1027.004
+  buckets:
+  - defense-evasion
+  description: 'Compile a c file with either gcc or clang on Linux or Macos.
+
+    '
+  singleton: false
+  delete_payload: true
+  technique_name: 'Obfuscated Files or Information: Compile After Delivery'
+  access: {}
+  requirements: []
+  plugin: atomic
+  repeatable: false
+  id: ec7c28b75e9af98aecb33ce5ae14e8c2

