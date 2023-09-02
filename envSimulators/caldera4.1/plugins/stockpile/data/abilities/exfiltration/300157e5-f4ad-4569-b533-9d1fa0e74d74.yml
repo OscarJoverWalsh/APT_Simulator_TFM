@@ -1,0 +1,106 @@
+- singleton: false
+  name: Compress staged directory
+  access: {}
+  tactic: exfiltration
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+  repeatable: false
+  buckets:
+  - exfiltration
+  additional_info: {}
+  technique_id: T1560.001
+  privilege: ''
+  delete_payload: true
+  executors:
+  - parsers:
+    - parserconfigs:
+      - source: host.dir.compress
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+      module: plugins.stockpile.app.parsers.basic
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - 'rm #{host.dir.staged}.tar.gz'
+    additional_info: {}
+    command: 'tar -P -zcf #{host.dir.staged}.tar.gz #{host.dir.staged} && echo #{host.dir.staged}.tar.gz'
+    platform: darwin
+    code: null
+    language: null
+    uploads: []
+  - parsers:
+    - parserconfigs:
+      - source: host.dir.compress
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+      module: plugins.stockpile.app.parsers.basic
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - 'rm #{host.dir.staged}.tar.gz'
+    additional_info: {}
+    command: 'tar -P -zcf #{host.dir.staged}.tar.gz #{host.dir.staged} && echo #{host.dir.staged}.tar.gz'
+    platform: linux
+    code: null
+    language: null
+    uploads: []
+  - parsers:
+    - parserconfigs:
+      - source: host.dir.compress
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+      module: plugins.stockpile.app.parsers.basic
+    name: psh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - 'rm #{host.dir.staged}.zip'
+    additional_info: {}
+    command: 'Compress-Archive -Path #{host.dir.staged} -DestinationPath #{host.dir.staged}.zip
+      -Force;
+
+      sleep 1; ls #{host.dir.staged}.zip | foreach {$_.FullName} | select'
+    platform: windows
+    code: null
+    language: null
+    uploads: []
+  - parsers:
+    - parserconfigs:
+      - source: host.dir.compress
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+      module: plugins.stockpile.app.parsers.basic
+    name: pwsh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - 'rm #{host.dir.staged}.zip'
+    additional_info: {}
+    command: 'Compress-Archive -Path #{host.dir.staged} -DestinationPath #{host.dir.staged}.zip
+      -Force;
+
+      sleep 1; ls #{host.dir.staged}.zip | foreach {$_.FullName} | select'
+    platform: windows
+    code: null
+    language: null
+    uploads: []
+  technique_name: 'Archive Collected Data: Archive via Utility'
+  plugin: stockpile
+  description: Compress a directory on the file system
+  id: 300157e5-f4ad-4569-b533-9d1fa0e74d74

