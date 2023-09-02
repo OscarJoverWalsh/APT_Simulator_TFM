@@ -1,0 +1,8 @@
+wheel
+chunk
+systemd
+token
+ufw
+requests
+pip
+google

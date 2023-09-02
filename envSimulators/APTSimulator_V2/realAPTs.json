@@ -1,0 +1,164 @@
+{
+    "advanced thief": {
+        "adversary_id": "eddc8f03-f930-41e7-95ba-33fb87bfed74",
+        "description": "An adversary to steal sensitive files",
+        "atomic_ordering_size": 3,
+        "platform": ["linux", "windows"]
+    },
+    "advanced thief via dropbox": {
+        "adversary_id": "01c96671-afd3-47d4-8d31-8c116cc0221a",
+        "description": "Find, stage, and exfiltrate sensitive files over Dropbox",
+        "atomic_ordering_size": 3,
+        "platform": ["linux", "windows"]
+    },
+    "advanced thief via ftp": {
+        "adversary_id": "fbc41624-1052-490c-b5ec-4fd718e2501d",
+        "description": "Find, stage, and exfiltrate sensitive files over FTP",
+        "atomic_ordering_size": 3,
+        "platform": ["linux", "windows"]
+    },
+    "advanced thief via github gist": {
+        "adversary_id": "e89a10d3-004f-4c15-b0eb-d1ba76a4b67f",
+        "description": "Exfil a compressed archive to a GitHub Gist (Base64 Encoded)",
+        "atomic_ordering_size": 3,
+        "platform": ["linux", "windows"]
+    },
+    "advanced thief via github repo": {
+        "adversary_id": "09ad625e-6cba-490f-afe3-5417e7edb9c6",
+        "description": "Find, stage, and exfiltrate sensitive files to GitHub Repository",
+        "atomic_ordering_size": 3,
+        "platform": ["linux", "windows"]
+    },
+    "check": {
+        "adversary_id": "01d77744-2515-401a-a497-d9f7241aac3c",
+        "description": "Profile to check proper platform configuration. Observe outputs to verify.",
+        "atomic_ordering_size": 8,
+        "platform": ["linux", "windows"]
+    },
+    "collection": {
+        "adversary_id": "5d3e170e-f1b8-49f9-9ee1-c51605552a08",
+        "description": "A collection adversary",
+        "atomic_ordering_size": 2,
+        "platform": ["linux", "windows"]
+    },
+    "discovery": {
+        "adversary_id": "0f4c3c67-845e-49a0-927e-90ed33c044e0",
+        "description": "A discovery adversary",
+        "atomic_ordering_size": 12,
+        "platform": ["windows"]
+    },
+    "enumerator": {
+        "adversary_id": "d6ea4c1e-7959-4eb1-a292-b6fd2b06c73e",
+        "description": "Enumerate Processes in all the ways",
+        "atomic_ordering_size": 5,
+        "platform": ["windows"]
+    },
+    "everything bagel": {
+        "adversary_id": "785baa02-df5d-450a-ab3a-1a863f22b4b0",
+        "description": "An adversary with all adversary abilities",
+        "atomic_ordering_size": 1450,
+        "platform": ["linux", "windows"]
+    },
+    "lateral movement - certutil": {
+        "adversary_id": "c220a8e6-609c-4d5b-8456-0a8441e6a6c6",
+        "description": "Lateral Movement using certutil.exe",
+        "atomic_ordering_size": 3,
+        "platform": ["windows"]
+    },
+    "lateral movement - esentutl": {
+        "adversary_id": " 1bac97ca-77fc-4c9a-835e-4de1b1b7f639",
+        "description": "Discovers other hosts on the domain and moves binary agents using LoL to disguise implant as `splunk.log` on remote host to take advantage of ADS",
+        "atomic_ordering_size": 3,
+        "platform": ["windows"]
+    },
+    "nosy neighbor": {
+        "adversary_id": "0b73bf34-fc5b-48f7-9194-dce993b915b1",
+        "description": "Find preferred WIFI networks & disrupt the current connection",
+        "atomic_ordering_size": 7,
+        "platform": ["linux", "windows"]
+    },
+    "printer queue": {
+        "adversary_id": "e4324b88-8836-4803-b6b7-09b3c6cd4e94",
+        "description": "Locate files that are queued for printing",
+        "atomic_ordering_size": 2,
+        "platform": ["linux"]
+    },
+    "ransack": {
+        "adversary_id": "de07f52d-9928-4071-9142-cb1d3bd851e8",
+        "description": "Discover host details and steal sensitive files",
+        "atomic_ordering_size": 18,
+        "platform": ["linux", "windows"]
+    },
+    "service creation lateral movement": {
+        "adversary_id": "dbd49a4a-ba2d-40d0-9348-2db24fc4b0b6",
+        "description": "Lateral movement via SMB copy and execution via creation of Windows service 'sandsvc'",
+        "atomic_ordering_size": 3,
+        "platform": ["windows"]
+    },
+    "signed binary proxy execution": {
+        "adversary_id": "bcdbf6b9-14c5-495c-be84-37bce32c312b",
+        "description": "Perform Signed Binary Proxy Execution",
+        "atomic_ordering_size": 3,
+        "platform": ["windows"]
+    },
+    "stowaway": {
+        "adversary_id": "4c28c132-d7d7-4a04-8908-d643b7cb1d58",
+        "description": "Inject sandcat into a process (NOTE - Requires MinGW to be installed on Caldera Server)",
+        "atomic_ordering_size": 2,
+        "platform": ["windows"]
+    },
+    "super spy": {
+        "adversary_id": "564ae20d-778d-4965-93dc-b523be2e2ab4",
+        "description": "Monitor the active user and navigate through their digital belongings",
+        "atomic_ordering_size": 15,
+        "platform": ["linux", "windows"]
+    },
+    "terminal": {
+        "adversary_id": "a82d5a3a-25db-4de3-96ea-83683704d61a",
+        "description": "Adversary with basic terminal activities",
+        "atomic_ordering_size": 1,
+        "platform": ["linux", "windows"]
+    },
+    "thief": {
+        "adversary_id": "1a98b8e6-18ce-4617-8cc5-e65a1a9d490e",
+        "description": "An adversary to steal sensitive files",
+        "atomic_ordering_size": 5,
+        "platform": ["linux", "windows"]
+    },
+    "undercover": {
+        "adversary_id": "f98193a0-8b5b-4b5e-a5aa-e8c3adfcd4e6",
+        "description": "Adversary to swap from built-in PowerShell to Core",
+        "atomic_ordering_size": 2,
+        "platform": ["windows"]
+    },
+    "windows worm 1": {
+        "adversary_id": "0b5636cf-f019-4ec9-aa7c-6e4f55505374",
+        "description": "Move laterally any way possible",
+        "atomic_ordering_size": 5,
+        "platform": ["windows"]
+    },
+    "windows worm 2": {
+        "adversary_id": "725226e0-45b8-4432-84ee-144d3f37ff8d",
+        "description": "Windows worm #2",
+        "atomic_ordering_size": 4,
+        "platform": ["windows"]
+    },
+    "windows worm 3": {
+        "adversary_id": "ddbd1850-5fd7-41d5-a7a1-1b15dac49090",
+        "description": "Move laterally with SMB and WinRM",
+        "atomic_ordering_size": 5,
+        "platform": ["windows"]
+    },
+    "worm": {
+        "adversary_id": "78e7504d-968f-477d-8806-4d6c04b94431",
+        "description": "Move laterally any way possible",
+        "atomic_ordering_size": 13,
+        "platform": ["windows"]
+    },
+    "you shall not bypass": {
+        "adversary_id": "c724545d-a4cc-492e-8075-2ab9a699c847",
+        "description": "This adversary consists of several abilities to bypass UAC on an updated Windows 10 system",
+        "atomic_ordering_size": 4,
+        "platform": ["windows"]
+    }
+}

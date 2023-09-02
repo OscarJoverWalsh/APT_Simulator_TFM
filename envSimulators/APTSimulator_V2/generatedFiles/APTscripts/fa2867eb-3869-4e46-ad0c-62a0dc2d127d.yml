@@ -1,0 +1,12 @@
+---
+
+id: fa2867eb-3869-4e46-ad0c-62a0dc2d127d
+name: prueba
+description: Description of the APT
+atomic_ordering:
+  - 0503af9fd6d1fbc9ddc632c91e32d2de
+  - c0da588f-79f0-4263-8998-7496b1a40596
+  - 30732a56-4a23-4307-9544-09caf2ed29d5
+  - c01780a26cb87c321879cb4b8527ee6f
+  - 6b895fe897f459d889a8506746095cf7
+  - 5f407c31b29d92be4648b3cff37e0abe

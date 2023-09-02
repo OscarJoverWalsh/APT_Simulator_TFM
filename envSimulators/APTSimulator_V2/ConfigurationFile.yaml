@@ -1,0 +1,10 @@
+# YAML DOCUMENT TO GENERATE AN APT GROUP WITH PARAMETERS
+---
+  Platform: Linux
+  Name: Prueba
+  Description: Description of the APT
+
+  N_Abilities: 6
+  TimeStep: 60
+  Goal: 314
+  Desired_Steps: [209]
