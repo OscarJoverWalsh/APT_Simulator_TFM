@@ -1,0 +1,18 @@
+- description: 'Windows Auto Update Option to Notify before download. Redline is using
+    this as part of its defense evasion.
+
+    '
+  id: c0d2e758c07d1ecb991ac940c3b6db73
+  name: Windows Auto Update Option to Notify before download
+  platforms:
+    windows:
+      cmd:
+        cleanup: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"
+          /v "AUOptions" /t REG_DWORD /d 3
+        command: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"
+          /v "AUOptions" /t REG_DWORD /d 2
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1112
+    name: Modify Registry

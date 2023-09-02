@@ -1,0 +1,18 @@
+- description: 'Disable Win Defender Notification. Redline is using this to disable
+    this win defender feature.
+
+    '
+  id: 609ae2466dfa661ac22a8d3a1c15d16a
+  name: Disable Win Defender Notification
+  platforms:
+    windows:
+      cmd:
+        cleanup: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security
+          Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 0
+        command: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security
+          Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 1
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1112
+    name: Modify Registry

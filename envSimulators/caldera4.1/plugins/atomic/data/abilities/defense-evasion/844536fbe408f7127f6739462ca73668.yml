@@ -1,0 +1,24 @@
+- description: 'An Adversary may set the bash history files size environment variable
+    (HISTFILESIZE) to zero to prevent the logging of commands to the history file
+    after they log out of the system.
+
+
+    Note: we don''t wish to log out, so we are just confirming the value of HISTFILESIZE.
+    In this test we 1. echo HISTFILESIZE 2. set it to zero 3. confirm that HISTFILESIZE
+    is set to zero.
+
+    '
+  id: 844536fbe408f7127f6739462ca73668
+  name: Setting the HISTFILESIZE environment variable
+  platforms:
+    linux:
+      sh:
+        cleanup: export HISTCONTROL=$(echo $TEST)
+        command: TEST=$(echo $HISTFILESIZE); echo $HISTFILESIZE; export HISTFILESIZE=0;
+          if [ $(echo $HISTFILESIZE) -eq 0 ]; then echo "\$HISTFILESIZE is zero";
+          fi
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1562.003
+    name: 'Impair Defenses: HISTCONTROL'

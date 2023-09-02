@@ -1,0 +1,29 @@
+- description: 'You can use the Exchange Management Shell to enable or disable mailbox
+    audit logging for a mailbox.
+
+    Unified or Admin Audit logs are disabled via the Exchange Powershell cmdline.
+
+    https://github.com/Azure/Azure-Sentinel/blob/master/Detections/OfficeActivity/exchange_auditlogdisabled.yaml
+
+    '
+  id: eb9de85953f93fc247c48f1b236839fc
+  name: Office 365 - Exchange Audit Log Disabled
+  platforms:
+    unknown:
+      psh:
+        cleanup: $secure_pwd = "None" | ConvertTo-SecureString -AsPlainText -Force;
+          $creds = New-Object System.Management.Automation.PSCredential -ArgumentList
+          "None", $secure_pwd; Connect-ExchangeOnline -Credential $creds; Set-AdminAuditLogConfig
+          -UnifiedAuditLogIngestionEnabled $True
+        command: $secure_pwd = "None" | ConvertTo-SecureString -AsPlainText -Force;
+          $creds = New-Object System.Management.Automation.PSCredential -ArgumentList
+          "None", $secure_pwd; Connect-ExchangeOnline -Credential $creds; Set-AdminAuditLogConfig
+          -UnifiedAuditLogIngestionEnabled $False
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1562.008
+    name: 'Impair Defenses: Disable Cloud Logs'

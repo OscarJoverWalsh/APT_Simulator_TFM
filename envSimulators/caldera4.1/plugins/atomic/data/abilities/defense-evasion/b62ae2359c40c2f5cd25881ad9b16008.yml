@@ -1,0 +1,18 @@
+- description: Adversaries may build a container image directly on a host to bypass
+    defenses that monitor for the retrieval of malicious images from a public registry.
+    An adversary may take advantage of that build API to build a custom image on the
+    host that includes malware downloaded from their C2 server, and then they then
+    may utilize Deploy Container using that custom image.
+  id: b62ae2359c40c2f5cd25881ad9b16008
+  name: Build Image On Host
+  platforms:
+    unknown:
+      sh:
+        cleanup: docker stop t1612_container; docker rmi -f t1612
+        command: docker build -t t1612  $PathtoAtomicsFolder/T1612/src/; docker run
+          --name t1612_container  -d -t t1612; docker exec t1612_container ./test.sh
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1612
+    name: Build Image on Host
