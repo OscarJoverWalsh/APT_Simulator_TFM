@@ -1,0 +1,15 @@
+- description: 'Enumerates system service using systemctl
+
+    '
+  id: 4f4b640f1cc25b1ecc03690327517411
+  name: System Service Discovery - systemctl
+  platforms:
+    linux:
+      sh:
+        cleanup: ''
+        command: systemctl --type=service
+        payloads: []
+  tactic: discovery
+  technique:
+    attack_id: T1007
+    name: System Service Discovery
