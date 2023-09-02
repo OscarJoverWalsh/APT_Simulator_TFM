@@ -1,0 +1,53 @@
+- singleton: false
+  name: Data Transfer Size Limits
+  access: {}
+  tactic: exfiltration
+  requirements: []
+  repeatable: false
+  buckets:
+  - exfiltration
+  additional_info: {}
+  technique_id: T1030
+  privilege: ''
+  delete_payload: true
+  executors:
+  - parsers: []
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - if [ -f /tmp/T1030/safe_to_delete ]; then rm -rf /tmp/T1030; fi;
+    additional_info: {}
+    command: if [ ! -f /tmp/T1030/T1030_urandom ]; then if [ ! -d /tmp/T1030 ]; then
+      mkdir -p /tmp/T1030; touch /tmp/T1030/safe_to_delete; fi; dd if=/dev/urandom
+      of=/tmp/T1030/T1030_urandom bs=25000000 count=1; fi;  ;  cd /tmp/T1030; split
+      -b 5000000 T1030_urandom; ls -l /tmp/T1030
+    platform: darwin
+    code: null
+    language: null
+    uploads: []
+  - parsers: []
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup:
+    - if [ -f /tmp/T1030/safe_to_delete ]; then rm -rf /tmp/T1030; fi;
+    additional_info: {}
+    command: if [ ! -f /tmp/T1030/T1030_urandom ]; then if [ ! -d /tmp/T1030 ]; then
+      mkdir -p /tmp/T1030; touch /tmp/T1030/safe_to_delete; fi; dd if=/dev/urandom
+      of=/tmp/T1030/T1030_urandom bs=25000000 count=1; fi;  ;  cd /tmp/T1030; split
+      -b 5000000 T1030_urandom; ls -l /tmp/T1030
+    platform: linux
+    code: null
+    language: null
+    uploads: []
+  technique_name: Data Transfer Size Limits
+  plugin: atomic
+  description: 'Take a file/directory, split it into 5Mb chunks
+
+    '
+  id: bbb0df644aaeee17fa4c4ca0d3a8a29e

