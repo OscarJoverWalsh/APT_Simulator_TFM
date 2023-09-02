@@ -1,0 +1,15 @@
+- description: '/etc/passwd file is accessed in Linux environments
+
+    '
+  id: bdd7294d26bde5f398e6ec5d846cdee5
+  name: Access /etc/passwd (Local)
+  platforms:
+    linux:
+      sh:
+        cleanup: rm -f /tmp/T1003.008.txt
+        command: cat /etc/passwd > /tmp/T1003.008.txt; cat /tmp/T1003.008.txt
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1003.008
+    name: 'OS Credential Dumping: /etc/passwd and /etc/shadow'

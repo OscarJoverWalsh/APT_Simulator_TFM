@@ -1,0 +1,16 @@
+- description: "### Keychain Files\n\n  ~/Library/Keychains/\n\n  /Library/Keychains/\n\
+    \n  /Network/Library/Keychains/\n\n  [Security Reference](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/security.1.html)\n\
+    \n  [Keychain dumper](https://github.com/juuso/keychaindump)\n"
+  id: 59c02702e85383fa2fe0c95c257166de
+  name: Keychain
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: security -h; security find-certificate -a -p > /tmp/certs.pem; security
+          import /tmp/certs.pem -k
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1555.001
+    name: 'Credentials from Password Stores: Keychain'

