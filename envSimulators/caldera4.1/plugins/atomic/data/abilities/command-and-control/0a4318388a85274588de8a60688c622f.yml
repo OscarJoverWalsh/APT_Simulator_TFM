@@ -1,0 +1,21 @@
+- description: 'An adversary may attempt to trick the user into downloading MSP360
+    Connect for use as a C2 channel.
+
+    Upon successful execution, MSP360 Connect will be executed.
+
+    '
+  id: 0a4318388a85274588de8a60688c622f
+  name: MSP360 Connect Execution
+  platforms:
+    windows:
+      psh:
+        cleanup: Stop-Process -Name "Connect" -force -erroraction silentlycontinue
+        command: Start-Process $env:ProgramFiles\Connect\Connect.exe
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: command-and-control
+  technique:
+    attack_id: T1219
+    name: Remote Access Software

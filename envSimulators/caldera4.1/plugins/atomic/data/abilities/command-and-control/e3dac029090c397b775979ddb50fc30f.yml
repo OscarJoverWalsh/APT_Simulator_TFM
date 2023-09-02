@@ -1,0 +1,23 @@
+- description: 'Enable traffic redirection.
+
+
+    Note that this test may conflict with pre-existing system configuration.
+
+    '
+  id: e3dac029090c397b775979ddb50fc30f
+  name: Connection Proxy
+  platforms:
+    darwin:
+      sh:
+        cleanup: unset http_proxy; unset https_proxy
+        command: export
+        payloads: []
+    linux:
+      sh:
+        cleanup: unset http_proxy; unset https_proxy
+        command: export
+        payloads: []
+  tactic: command-and-control
+  technique:
+    attack_id: T1090.001
+    name: 'Proxy: Internal Proxy'

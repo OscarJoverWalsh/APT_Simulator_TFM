@@ -1,0 +1,37 @@
+- delete_payload: true
+  additional_info: {}
+  privilege: ''
+  tactic: command-and-control
+  singleton: false
+  technique_name: 'Proxy: Multi-hop Proxy'
+  technique_id: T1090.003
+  description: "This test is designed to launch the tor proxy service, which is what\
+    \ is utilized in the background by the Tor Browser and other applications with\
+    \ add-ons in order to provide onion routing functionality.\nUpon successful execution,\
+    \ the tor proxy service will be launched. \n"
+  repeatable: false
+  access: {}
+  executors:
+  - cleanup:
+    - sudo systemctl stop tor
+    additional_info: {}
+    payloads: []
+    build_target: null
+    code: null
+    language: null
+    uploads: []
+    command: 'if [ -x "$(command -v tor)" ]; then sudo systemctl start tor; else sudo
+      apt-get -y install tor; sudo systemctl start tor; fi
+
+      '
+    parsers: []
+    platform: linux
+    name: sh
+    variations: []
+    timeout: 60
+  requirements: []
+  name: Tor Proxy Usage - Debian/Ubuntu
+  plugin: atomic
+  buckets:
+  - command-and-control
+  id: a17ba4dfbcf9117ba3fcb935ff91f49c

