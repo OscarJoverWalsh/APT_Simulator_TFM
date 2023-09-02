@@ -1,0 +1,33 @@
+- buckets:
+  - defense-evasion
+  additional_info: {}
+  requirements: []
+  access: {}
+  singleton: false
+  privilege: ''
+  executors:
+  - additional_info: {}
+    platform: linux
+    language: null
+    build_target: null
+    name: sh
+    code: null
+    parsers: []
+    cleanup: []
+    command: truncate -s 0 /var/log/syslog
+    variations: []
+    timeout: 60
+    payloads: []
+    uploads: []
+  name: Overwrite Linux Log
+  repeatable: false
+  technique_name: 'Indicator Removal on Host: Clear Linux or Mac System Logs'
+  tactic: defense-evasion
+  delete_payload: true
+  technique_id: T1070.002
+  plugin: atomic
+  description: 'This test overwrites the specified log. This technique was used by
+    threat actor Rocke during the exploitation of Linux web servers.
+
+    '
+  id: 6b895fe897f459d889a8506746095cf7

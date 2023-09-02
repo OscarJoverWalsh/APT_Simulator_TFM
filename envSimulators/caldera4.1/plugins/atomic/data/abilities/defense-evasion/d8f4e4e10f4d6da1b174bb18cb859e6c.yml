@@ -1,0 +1,15 @@
+- description: 'Clears bash history via truncate
+
+    '
+  id: d8f4e4e10f4d6da1b174bb18cb859e6c
+  name: Clear Bash history (truncate)
+  platforms:
+    linux:
+      sh:
+        cleanup: ''
+        command: truncate -s0 ~/.bash_history
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070.003
+    name: 'Indicator Removal on Host: Clear Command History'

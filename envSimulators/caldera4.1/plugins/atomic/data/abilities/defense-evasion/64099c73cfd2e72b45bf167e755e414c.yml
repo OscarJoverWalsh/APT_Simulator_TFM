@@ -1,0 +1,51 @@
+- buckets:
+  - defense-evasion
+  access: {}
+  plugin: atomic
+  name: Clear and Disable Bash History Logging
+  tactic: defense-evasion
+  delete_payload: true
+  requirements: []
+  technique_id: T1070.003
+  description: 'Clears the history and disable bash history logging of the current
+    shell and future shell sessions
+
+    '
+  executors:
+  - parsers: []
+    language: null
+    platform: darwin
+    name: sh
+    variations: []
+    payloads: []
+    uploads: []
+    cleanup:
+    - sed -i 's/set +o history//g' ~/.bashrc; . ~/.bashrc; set -o history
+    command: set +o history; echo 'set +o history' >> ~/.bashrc; . ~/.bashrc; history
+      -c
+    build_target: null
+    code: null
+    additional_info: {}
+    timeout: 60
+  - parsers: []
+    language: null
+    platform: linux
+    name: sh
+    variations: []
+    payloads: []
+    uploads: []
+    cleanup:
+    - sed -i 's/set +o history//g' ~/.bashrc; . ~/.bashrc; set -o history
+    command: 'sed -i ''s/set +o history//g'' ~/.bashrc; . ~/.bashrc; set -o history
+
+      '
+    build_target: null
+    code: null
+    additional_info: {}
+    timeout: 60
+  repeatable: false
+  additional_info: {}
+  technique_name: 'Indicator Removal on Host: Clear Command History'
+  singleton: false
+  privilege: ''
+  id: 64099c73cfd2e72b45bf167e755e414c

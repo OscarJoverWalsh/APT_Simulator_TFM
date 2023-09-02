@@ -1,0 +1,18 @@
+- description: "Executes the code specified within a XSL script tag during XSL transformation\
+    \ using a local payload. \nRequires download of MSXSL. No longer available from\
+    \ Microsoft.\n(Available via Internet Archive https://web.archive.org/web/20200825011623/https://www.microsoft.com/en-us/download/details.aspx?id=21714\
+    \ ) \nOpen Calculator.exe when test successfully executed, while AV turned off.\n"
+  id: 95828bbf041dab6f9743339122c4b7e1
+  name: MSXSL Bypass using local files
+  platforms:
+    windows:
+      cmd:
+        cleanup: del PathToAtomicsFolder\T1220\bin\msxsl.exe >nul 2>&1
+        command: PathToAtomicsFolder\T1220\bin\msxsl.exe 70a91b_msxslxmlfile.xml 96ede8_msxslscript.xsl
+        payloads:
+        - 70a91b_msxslxmlfile.xml
+        - 96ede8_msxslscript.xsl
+  tactic: defense-evasion
+  technique:
+    attack_id: T1220
+    name: XSL Script Processing

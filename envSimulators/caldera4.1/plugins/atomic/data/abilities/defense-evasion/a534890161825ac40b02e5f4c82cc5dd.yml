@@ -1,0 +1,20 @@
+- description: 'Clears bash history via cat /dev/null
+
+    '
+  id: a534890161825ac40b02e5f4c82cc5dd
+  name: Clear Bash history (cat dev/null)
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: cat /dev/null > ~/.bash_history
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: cat /dev/null > ~/.bash_history
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070.003
+    name: 'Indicator Removal on Host: Clear Command History'

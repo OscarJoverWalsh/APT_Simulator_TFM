@@ -1,0 +1,17 @@
+- description: 'This test deletes main log datastore, inflight log data, time-to-live
+    data(TTL), fault and error content
+
+    '
+  id: 53fc12696bbc0d92d0311e8b40858735
+  name: Delete log files using built-in log utility
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: sudo log erase --all; sudo log erase --ttl; sudo log erase --predicate
+          'subsystem == "com.apple.appstore"'
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070.002
+    name: 'Indicator Removal on Host: Clear Linux or Mac System Logs'

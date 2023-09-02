@@ -1,0 +1,15 @@
+- description: 'Executes an MSI containing embedded JScript code using msiexec.exe
+
+    '
+  id: fc919667b226b75eafa70b29f8f5e4f7
+  name: Msiexec.exe - Execute Local MSI file with embedded JScript
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: '#{msi_exe} /q /#{action} "#{msi_payload}"'
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1218.007
+    name: 'Signed Binary Proxy Execution: Msiexec'
