@@ -1,0 +1,23 @@
+- description: Add a value to a Windows registry SSP key, simulating an adversarial
+    modification of those keys.
+  id: 7675653e29a9ca33083f7d66d87bec13
+  name: Modify SSP configuration in registry
+  platforms:
+    windows:
+      psh:
+        cleanup: ''
+        command: $SecurityPackages = Get-ItemProperty HKLM:\System\CurrentControlSet\Control\Lsa
+          -Name 'Security Packages' | Select-Object -ExpandProperty 'Security Packages';
+          $SecurityPackagesUpdated = $SecurityPackages; $SecurityPackagesUpdated +=
+          "not-a-ssp"; Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa
+          -Name 'Security Packages' -Value $SecurityPackagesUpdated; Set-ItemProperty
+          HKLM:\SYSTEM\CurrentControlSet\Control\Lsa -Name 'Security Packages' -Value
+          $SecurityPackages
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1547.005
+    name: 'Boot or Logon Autostart Execution: Security Support Provider'

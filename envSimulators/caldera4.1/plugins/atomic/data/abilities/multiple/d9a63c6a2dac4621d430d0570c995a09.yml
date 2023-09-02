@@ -1,0 +1,30 @@
+- description: 'This test adds a script to /etc/cron.hourly, /etc/cron.daily, /etc/cron.monthly
+    and /etc/cron.weekly folders configured to execute on a schedule. This technique
+    was used by the threat actor Rocke during the exploitation of Linux web servers.
+
+    '
+  id: d9a63c6a2dac4621d430d0570c995a09
+  name: Cron - Add script to all cron subfolders
+  platforms:
+    darwin:
+      sh:
+        cleanup: rm /etc/cron.daily/persistevil; rm /etc/cron.hourly/persistevil;
+          rm /etc/cron.monthly/persistevil; rm /etc/cron.weekly/persistevil
+        command: echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.daily/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.hourly/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.monthly/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.weekly/persistevil
+        payloads: []
+    linux:
+      sh:
+        cleanup: rm /etc/cron.daily/persistevil; rm /etc/cron.hourly/persistevil;
+          rm /etc/cron.monthly/persistevil; rm /etc/cron.weekly/persistevil
+        command: echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.daily/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.hourly/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.monthly/persistevil;
+          echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.weekly/persistevil
+        payloads: []
+  tactic: multiple
+  technique:
+    attack_id: T1053.003
+    name: 'Scheduled Task/Job: Cron'
