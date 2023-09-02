@@ -1,0 +1,33 @@
+- tactic: defense-evasion
+  requirements: []
+  buckets:
+  - defense-evasion
+  privilege: ''
+  delete_payload: true
+  technique_name: 'Impair Defenses: Disable or Modify Tools'
+  description: 'suspend Shell History seen in Awfulshred wiper- https://unix.stackexchange.com/questions/10922/temporarily-suspend-bash-history-on-a-given-shell
+
+    '
+  executors:
+  - uploads: []
+    payloads: []
+    cleanup:
+    - set -o history
+    platform: linux
+    timeout: 60
+    build_target: null
+    variations: []
+    parsers: []
+    language: null
+    command: set +H
+    name: sh
+    additional_info: {}
+    code: null
+  access: {}
+  repeatable: false
+  singleton: false
+  name: Suspend History
+  additional_info: {}
+  plugin: atomic
+  technique_id: T1562.001
+  id: 69ac4d0ed190b9442fca7e16f649a2be

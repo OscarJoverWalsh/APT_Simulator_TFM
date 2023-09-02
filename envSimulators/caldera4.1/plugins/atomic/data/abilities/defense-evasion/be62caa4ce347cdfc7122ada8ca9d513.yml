@@ -1,0 +1,19 @@
+- description: "Attempting to use Defender Control software to disable Windows Defender.\
+    \ Upon successful execution, Windows Defender will be turned off. \n"
+  id: be62caa4ce347cdfc7122ada8ca9d513
+  name: Disable Defender with Defender Control
+  platforms:
+    windows:
+      psh:
+        cleanup: cmd /c $env:temp\DefenderControl\DefenderControl\DefenderControl.exe
+          /E | Out-Null
+        command: cmd /c $env:temp\DefenderControl\DefenderControl\DefenderControl.exe
+          /D FFFF | Out-Null
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1562.001
+    name: 'Impair Defenses: Disable or Modify Tools'

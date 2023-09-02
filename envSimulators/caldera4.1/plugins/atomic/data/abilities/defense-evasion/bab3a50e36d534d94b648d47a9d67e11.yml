@@ -1,0 +1,19 @@
+- description: 'Copies and modifies mail data on Linux
+
+    '
+  id: bab3a50e36d534d94b648d47a9d67e11
+  name: Copy and Modify Mailbox Data on Linux
+  platforms:
+    linux:
+      sh:
+        cleanup: rm -rf /var/spool/mail/copy
+        command: mkdir -p /var/spool/mail/copy; for file in /var/spool/mail/*; do   if
+          [ "$(basename "$file")" != "copy" ];   then     cp -R "$file" /var/spool/mail/copy/;     if
+          [ -f "/var/spool/mail/copy/$(basename "$file")" ]; then       echo "Modification
+          for Atomic Red Test" >> "/var/spool/mail/copy/$(basename "$file")";     fi;   fi;
+          done
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1070.008
+    name: 'Email Collection: Mailbox Manipulation'

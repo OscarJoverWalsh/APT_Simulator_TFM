@@ -1,0 +1,15 @@
+- description: 'Disables macOS Gatekeeper
+
+    '
+  id: 93127a8c6cdb05fd84f871a5faa9d7c7
+  name: Disable macOS Gatekeeper
+  platforms:
+    darwin:
+      sh:
+        cleanup: sudo spctl --master-enable
+        command: sudo spctl --master-disable
+        payloads: []
+  tactic: defense-evasion
+  technique:
+    attack_id: T1562.001
+    name: 'Impair Defenses: Disable or Modify Tools'
