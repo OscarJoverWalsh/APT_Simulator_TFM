@@ -24,21 +24,23 @@ El proyecto se ha creado utilizando las siguientes tecnologías:
 * Previo a la instalación del proyecto, deberá tener instalado el software de virtualización virtualBox. Para más información en como instalar esta herrmaineta, acceda a este enlace: [Pagina oficial]([https://attack.mitre.org/](https://www.virtualbox.org/)) de VirtualBox. Adicionalmente, deberá contar con una máquina Linux Ubunutu donde se despelgará la herrmianta y servidor CALDERA. Para la creación de máquinas víctimas, deberá contar con una máquina virtual Linux Ubuntu o windows. El escenario simulado en este proyecto consiste en una máquina atacante Linux Ubuntu 20.04 que alberga la herramienta de simulación de APTs y una máuquina Linux Ubuntu 22.04, donde se desplegará la víctima.
 * Adicionalmente, se deberá instalar python en ambas máquinas.
 ```$ sudo apt install python3```
-**Nota:** Para comprobar la versión de python instalada, puede ejecutar el siguiente comando: ```python3 -verison```.
+**Nota:** Para comprobar la versión de python instalada, puede ejecutar el siguiente comando: ```python3 --verison```.
 
 Para el arranque del proyecto deberá:
-* En la máquina atacante deberá instalar la carpeta envSimulators. Esta carteta contiene la herrmianta de modelado de APTs aplicando algoritmos de aprendizaje por refuerzo ```APTSimulator_V2``` y la herrmianta empleada para la simulación de APTs ```caldera4.1```. El directorio se podrá descargar de forma manual o através de el siguiente comnado.
+* En la máquina atacante deberá instalar la carpeta envSimulator. Esta carteta contiene la herrmianta de modelado de APTs aplicando algoritmos de aprendizaje por refuerzo ```APTSimulator_V2``` y la herrmianta empleada para la simulación de APTs ```caldera4.1```. El directorio se podrá descargar de forma manual o através de el siguiente comnado.
 ```$ sudo apt-get install https://github.com/OscarJoverWalsh/APT_Simulator_TFM.git```
 * En la máquina víctima deberá instalar la carpeta Agent. Esta contiene el script necesario para conectar el agente con el servidor CALDERA.
 
 
 ## Ejecución
-Previo a la ejecución, será necesario modificar la dirección en la que se almacena la base de datos dentro en el equipo local. Deberá introducir en ```APTModelGenerator``` la ruta completa del fichero ```APT_Data_Model_ddbb.sqlite```.
+Previo a la ejecución, el escenario deberá ser el siguiente: Por un lado, la máquina atacante con la carpeta envSimulator y por otro lado, la máquina víctima con la carpeta Agente, ambas carpetas situada dentro de sus respectivos directorios ```/home```.
 
-Una vez instaldo el programa y realizados los cambios anterioriormente descritos, se podrá ejecutar desde el terminal con el siguiente comando.
+Una vez instaldo el programa, se podrá ejecutar siguiendo los pasos a continuación.
 
-```$ python APTModelGenerator.py```.
+1º Lanzamos dos terminales en la máquina atacante. En el primero de ellos nos desplazaremos al directorio de trabajo deonde se encuentre el directorio ```caldera4.1```. El el segundo, nos desplazaremos a la directorio de trabajo ```APTSimulator_V2```.
 
-Paso seguido, el programa solicitará introducir el número de patrones de ataque que se desean extraer en la consulta a la base de datos de ATTA&CK. El resultado de esta ejecución es un fichero de nombre ```APTModelGenerated.json``` con el modelo APT generado. 
+2º Desde el terminal situado en ```caldera4.1``` lanzamos el siguiente comando ```$ python3 server.py--insecure```. Con ello lanzamos el servidor CALDERA. Una vez recibido el mensaje ```INFO  (server.py:72 run_tasks) All systems ready.```, podemos abrir a nuestro navegador y acceder a la dirección ```http://0.0.0.0:8888/?#home```. A continuación introduciremos las credenciales del usuario administrador. User: ```admin```, Password: ```admin```.
 
-Para la representación gráfica de los distintos componentes que constituyen el modelo, el fichero generado deberá introducirse en el [visualizador STIX](https://oasis-open.github.io/cti-stix-visualization/n).
+3º Lamzamos un nuevo terminal en la máquina víctima y nos desplazamos al directorio ```Agent```. A continuación, ejecutamos el comnado ```sudo bash ubuntuAgent.sh``` para conectar un nuevo agente al servidor caldera levantado. Si se realiza correctamente debemos observar el mensaje repetido ```Beacon (HTTP): ALIVE```. Si accedemos al menú agents del servidor caldera, también debemos observar la creación de un nuevo agente.
+
+4º Finalmente, desde el segundo terminal en la máquina atacante, ejecutamos el comando ```python3 main.py``` para lanzar la herrmienta de generación y simulación de APTs.
