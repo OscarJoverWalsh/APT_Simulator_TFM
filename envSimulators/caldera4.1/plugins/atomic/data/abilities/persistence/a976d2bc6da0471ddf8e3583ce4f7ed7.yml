@@ -1,0 +1,22 @@
+- description: Creates a new user in Azure AD via the Azure CLI. Upon successful creation,
+    a new user will be created. Adversaries create new users so that their malicious
+    activity does not interrupt the normal functions of the compromised users and
+    can remain undetected for a long time.
+  id: a976d2bc6da0471ddf8e3583ce4f7ed7
+  name: Azure AD - Create a new user via Azure CLI
+  platforms:
+    unknown:
+      psh:
+        cleanup: az ad user delete --id
+        command: az login; $userprincipalname = "atomicredteam@yourdomain.com"; $username
+          = "atomicredteam"      ; $password = "reallylongcredential12345ART-ydsfghsdgfhsdgfhgsdhfg";
+          az ad user create --display-name $username --password $password --user-principal-name
+          $userprincipalname; az ad user list --filter "displayname eq 'atomicredteam'"
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: persistence
+  technique:
+    attack_id: T1136.003
+    name: 'Create Account: Cloud Account'
