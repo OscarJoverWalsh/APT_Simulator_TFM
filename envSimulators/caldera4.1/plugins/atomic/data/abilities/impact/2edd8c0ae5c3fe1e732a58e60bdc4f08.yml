@@ -1,0 +1,23 @@
+- description: Gpg4win is a Windows tool (also called Kleopatra which is the preferred
+    certificate manager) that uses email and file encryption packages for symmetric
+    encryption. It is used by attackers to encrypt disks. User will need to add pass
+    phrase to encrypt file as automation is not allowed under newer versions.
+  id: 2edd8c0ae5c3fe1e732a58e60bdc4f08
+  name: Data Encrypted with GPG4Win
+  platforms:
+    windows:
+      psh:
+        cleanup: remove-item '$env:temp\test.txt.gpg' -force -erroraction silentlycontinue
+          | out-null
+        command: if (test-path 'C:\Program Files (x86)\GnuPG\bin\gpg.exe') { ; } else
+          {invoke-webrequest "https://files.gpg4win.org/gpg4win-4.1.0.exe" -outfile
+          "$env:temp\gpginstall.exe"; cmd /c "$env:temp\gpginstall.exe" /S};  ;  cmd
+          /c 'C:\Program Files (x86)\GnuPG\bin\gpg.exe' -c '$env:temp\test.txt'
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1486
+    name: Data Encrypted for Impact

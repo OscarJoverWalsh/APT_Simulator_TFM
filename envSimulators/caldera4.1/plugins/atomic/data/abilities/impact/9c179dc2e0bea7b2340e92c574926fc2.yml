@@ -1,0 +1,20 @@
+- description: 'This test restarts a macOS/Linux system via `reboot`.
+
+    '
+  id: 9c179dc2e0bea7b2340e92c574926fc2
+  name: Restart System via `reboot` - macOS/Linux
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: reboot
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: reboot
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1529
+    name: System Shutdown/Reboot

@@ -1,0 +1,28 @@
+- description: "Upon successful execution, this test will test for anonymous access\
+    \ to Azure storage containers by invoking a web request and outputting the results\
+    \ to a file. \nThe corresponding response could then be interpreted to determine\
+    \ whether or not the resource/container exists, as well as other information.\
+    \ \nSee https://ninocrudele.com/the-three-most-effective-and-dangerous-cyberattacks-to-azure-and-countermeasures-part-2-attack-the-azure-storage-service\
+    \     \n"
+  id: 6f408258cabdeda38f81cfdc239fb6c0
+  name: Azure - Scan for Anonymous Access to Azure Storage (Powershell)
+  platforms:
+    unknown:
+      psh:
+        cleanup: remove-item $env:temp\T1530Test2.txt -erroraction silentlycontinue
+        command: 'try{$response = invoke-webrequest "https://T1530Test2.blob.core.windows.net/None/None"
+          -method "GET"}; catch [system.net.webexception]; {if($_.Exception.Response
+          -ne $null); {$Response = $_.Exception.Response.GetResponseStream(); $ReadResponse
+          = New-Object System.IO.StreamReader($Response); $ReadResponse.BaseStream.Position
+          = 0; $responseBody = $ReadResponse.ReadToEnd()}; else {$responseBody = "The
+          storage account could not be anonymously accessed."}}; "Response received
+          for T1530Test2.blob.core.windows.net/None/None: $responsebody" | out-file
+          -filepath $env:temp\T1530Test2.txt -append'
+        parsers:
+          plugins.atomic.app.parsers.atomic_powershell:
+          - source: validate_me
+        payloads: []
+  tactic: collection
+  technique:
+    attack_id: T1530
+    name: Data from Cloud Storage Object

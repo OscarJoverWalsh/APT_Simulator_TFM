@@ -1,0 +1,23 @@
+- description: 'This test simulates a high CPU load as you might observe during cryptojacking
+    attacks.
+
+    End the test by using CTRL/CMD+C to break.
+
+    '
+  id: 5f407c31b29d92be4648b3cff37e0abe
+  name: macOS/Linux - Simulate CPU Load with Yes
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: yes > /dev/null
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: yes > /dev/null
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1496
+    name: Resource Hijacking

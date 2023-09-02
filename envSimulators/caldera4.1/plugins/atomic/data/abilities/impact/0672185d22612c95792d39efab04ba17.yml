@@ -1,0 +1,15 @@
+- description: 'Uses 7z to encrypt a file
+
+    '
+  id: 0672185d22612c95792d39efab04ba17
+  name: Encrypt files using 7z (Linux)
+  platforms:
+    linux:
+      sh:
+        cleanup: $which_7z e /tmp/passwd.zip; rm /tmp/passwd.zip
+        command: $which_7z a -ppasswd /tmp/passwd.zip /etc/passwd
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1486
+    name: Data Encrypted for Impact

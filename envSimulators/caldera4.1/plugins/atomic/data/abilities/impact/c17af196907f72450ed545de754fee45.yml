@@ -1,0 +1,15 @@
+- description: 'This test shuts down a Linux system using `poweroff`.
+
+    '
+  id: c17af196907f72450ed545de754fee45
+  name: Shutdown System via `poweroff` - Linux
+  platforms:
+    linux:
+      sh:
+        cleanup: ''
+        command: poweroff
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1529
+    name: System Shutdown/Reboot

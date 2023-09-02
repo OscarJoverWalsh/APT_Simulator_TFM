@@ -1,0 +1,56 @@
+- access: {}
+  repeatable: false
+  delete_payload: true
+  description: 'An adversary may compress data (e.g., sensitive documents) that is
+    collected prior to exfiltration. This test uses standard zip compression.
+
+    '
+  name: Data Compressed - nix - zip
+  privilege: ''
+  buckets:
+  - collection
+  tactic: collection
+  additional_info: {}
+  technique_name: 'Archive Collected Data: Archive via Utility'
+  executors:
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup:
+    - rm -f $HOME/data.zip
+    command: 'if [ $(ls /var/log/{w,b}tmp | wc -l) > 0 ] && [ -x $(which zip) ] ;
+      then : ; else (which yum && yum -y install epel-release zip)||(which apt-get
+      && apt-get install -y zip); echo Please set input_files argument to include
+      files that exist; fi;  ;  zip $HOME/data.zip /var/log/{w,b}tmp'
+    language: null
+    additional_info: {}
+    payloads: []
+    variations: []
+    platform: darwin
+    uploads: []
+    code: null
+  - build_target: null
+    parsers: []
+    name: sh
+    timeout: 60
+    cleanup:
+    - rm -f $HOME/data.zip
+    command: 'if [ $(ls /var/log/{w,b}tmp | wc -l) -gt 0 ] && [ -x $(which zip) ];
+      then : ; else (which yum && yum -y install epel-release zip) || (which apt-get
+      && apt-get install -y zip); echo "Please set input_files argument to include
+      files that exist"; fi; zip $HOME/data.zip /var/log/{w,b}tmp
+
+      '
+    language: null
+    additional_info: {}
+    payloads: []
+    variations: []
+    platform: linux
+    uploads: []
+    code: null
+  technique_id: T1560.001
+  singleton: false
+  requirements: []
+  plugin: atomic
+  id: c6c8a02a5633bdc9f887b94140a95934

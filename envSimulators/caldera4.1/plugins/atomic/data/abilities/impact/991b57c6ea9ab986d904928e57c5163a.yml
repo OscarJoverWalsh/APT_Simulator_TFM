@@ -1,0 +1,15 @@
+- description: 'This test shuts down a Linux system using `halt`.
+
+    '
+  id: 991b57c6ea9ab986d904928e57c5163a
+  name: Shutdown System via `halt` - Linux
+  platforms:
+    linux:
+      sh:
+        cleanup: ''
+        command: halt -p
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1529
+    name: System Shutdown/Reboot

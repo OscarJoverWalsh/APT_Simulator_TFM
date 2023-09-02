@@ -1,0 +1,18 @@
+- description: 'Deletes Windows Volume Shadow Copies via WMI. This technique is used
+    by numerous ransomware families and APT malware such as Olympic Destroyer.
+
+    Shadow copies can only be created on Windows server or Windows 8.
+
+    '
+  id: c156ac5c9fa67080365268d95f29053d
+  name: Windows - Delete Volume Shadow Copies via WMI
+  platforms:
+    windows:
+      cmd:
+        cleanup: ''
+        command: wmic.exe shadowcopy delete
+        payloads: []
+  tactic: impact
+  technique:
+    attack_id: T1490
+    name: Inhibit System Recovery

