@@ -11,10 +11,10 @@
 Como solución se propone el desarrollo de un proyecto para el modelado y simulación de APTs basada en inteligencia artificial, para su uso en pruebas de penetración en entornos simulados. El proceso de generación del modelo se basa en la construcción de cadenas de habilidades aplicando el algoritmo de aprendizaje por refuerzo Q-Learning. Este proyecto tiene como objetivo la definición formal de los modelos que permitan caracterizar los APTs siguiendo el estándar MITRE.
 Esta herramienta ha sido desarrollada y probada en versiones previas para su implementación en el proyecto COBRA. Este proyecto, financiado por el Mando Conjunto del Ciberespacio (MCCE) del gobierno Español, está orientado al desarrollo de cibermaniobras adaptables y personalizables de simulación hiperrealista de APT, así como entrenamiento en ciberdefensa a través de la gamificación. COBRA.
 
-<figure align="center">
+<p align="center">
   <img src="img/diagrama_bloques.png">
-  <figcaption> Arquitectura herramienta de generación y simulación de APTs </figcaption>
-</figure>
+  <h3> Arquitectura herramienta de generación y simulación de APTs </h3>
+</p>
 
 
 ## Tecnologías
