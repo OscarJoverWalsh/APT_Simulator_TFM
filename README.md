@@ -13,7 +13,7 @@ Esta herramienta ha sido desarrollada y probada en versiones previas para su imp
 
 <p align="center">
   <img src="img/diagrama_bloques.png">
-  <h5  align="center"> Arquitectura herramienta de generación y simulación de APTs </h5>
+  <h5 align="center"> Arquitectura herramienta de generación y simulación de APTs </h5>
 </p>
 
 
