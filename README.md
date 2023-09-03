@@ -12,11 +12,9 @@ Como solución se propone el desarrollo de un proyecto para el modelado y simula
 Esta herramienta ha sido desarrollada y probada en versiones previas para su implementación en el proyecto COBRA. Este proyecto, financiado por el Mando Conjunto del Ciberespacio (MCCE) del gobierno Español, está orientado al desarrollo de cibermaniobras adaptables y personalizables de simulación hiperrealista de APT, así como entrenamiento en ciberdefensa a través de la gamificación. COBRA.
 
 <p align="center">
-  <img width="460" height="300" src="img/diagrama_bloques.png">
+  <img src="img/diagrama_bloques.png">
 </p>
 *Arquitectura herramienta de generación y simulación de APTs*
-
-
 
 
 ## Tecnologías
